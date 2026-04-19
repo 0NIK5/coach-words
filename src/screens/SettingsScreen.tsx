@@ -1,14 +1,23 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { AppSettings, CardProgress, Word } from '../types'
-import { getSettings, getAllProgress, resetAllProgress } from '../lib/db'
+import { getSettings, getAllProgress, resetAllProgress, saveAllProgress, saveSettings } from '../lib/db'
 import wordsData from '../data/words.json'
 
 const allWords = wordsData as Word[]
+
+interface BackupData {
+  version: 1
+  exportedAt: string
+  settings: AppSettings
+  progress: CardProgress[]
+}
 
 export default function SettingsScreen() {
   const [settings, setSettings] = useState<AppSettings | null>(null)
   const [progress, setProgress] = useState<CardProgress[]>([])
   const [showConfirm, setShowConfirm] = useState(false)
+  const [importStatus, setImportStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     Promise.all([getSettings(), getAllProgress()]).then(([s, p]) => { setSettings(s); setProgress(p) })
@@ -18,6 +27,48 @@ export default function SettingsScreen() {
     await resetAllProgress()
     const [s, p] = await Promise.all([getSettings(), getAllProgress()])
     setSettings(s); setProgress(p); setShowConfirm(false)
+  }
+
+  function handleExport() {
+    if (!settings) return
+    const backup: BackupData = {
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      settings,
+      progress,
+    }
+    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `coachwords-backup-${new Date().toISOString().split('T')[0]}.json`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  function handleImportClick() {
+    setImportStatus('idle')
+    fileInputRef.current?.click()
+  }
+
+  async function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    if (!file) return
+    try {
+      const text = await file.text()
+      const backup = JSON.parse(text) as BackupData
+      if (backup.version !== 1 || !backup.settings || !Array.isArray(backup.progress)) {
+        throw new Error('invalid format')
+      }
+      await saveAllProgress(backup.progress)
+      await saveSettings(backup.settings)
+      const [s, p] = await Promise.all([getSettings(), getAllProgress()])
+      setSettings(s); setProgress(p)
+      setImportStatus('success')
+    } catch {
+      setImportStatus('error')
+    }
+    e.target.value = ''
   }
 
   if (!settings) return <div className="p-4 text-slate-400">Загрузка...</div>
@@ -47,6 +98,26 @@ export default function SettingsScreen() {
           ))}
         </div>
       </div>
+
+      <div className="bg-slate-800 rounded-2xl p-4 mb-4">
+        <h2 className="font-semibold mb-3 text-slate-300">Резервная копия</h2>
+        <div className="space-y-3">
+          <button onClick={handleExport} className="w-full py-3 rounded-xl bg-slate-700 text-green-400 font-medium">
+            💾 Сохранить прогресс на устройство
+          </button>
+          <button onClick={handleImportClick} className="w-full py-3 rounded-xl bg-slate-700 text-blue-400 font-medium">
+            📂 Загрузить прогресс с устройства
+          </button>
+          <input ref={fileInputRef} type="file" accept=".json" className="hidden" onChange={handleFileChange} />
+          {importStatus === 'success' && (
+            <p className="text-sm text-green-400 text-center">Прогресс успешно загружен!</p>
+          )}
+          {importStatus === 'error' && (
+            <p className="text-sm text-red-400 text-center">Ошибка: неверный файл резервной копии</p>
+          )}
+        </div>
+      </div>
+
       <div className="bg-slate-800 rounded-2xl p-4">
         <h2 className="font-semibold mb-3 text-slate-300">Опасная зона</h2>
         {!showConfirm ? (
