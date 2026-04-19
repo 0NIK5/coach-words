@@ -14,7 +14,11 @@ export function addDays(dateISO: string, days: number): string {
   return date.toISOString().split('T')[0]
 }
 
-export function calculateSM2(card: CardProgress, correct: boolean): CardProgress {
+export function calculateSM2(
+  card: CardProgress,
+  correct: boolean,
+  today: string = getTodayISO()
+): CardProgress {
   const grade = correct ? 4 : 1
   let { easeFactor, interval, repetitions } = card
 
@@ -40,10 +44,10 @@ export function calculateSM2(card: CardProgress, correct: boolean): CardProgress
     easeFactor,
     interval,
     repetitions,
-    nextReview: addDays(getTodayISO(), interval),
+    nextReview: addDays(today, interval),
   }
 }
 
-export function isDue(card: CardProgress): boolean {
-  return card.nextReview <= getTodayISO()
+export function isDue(card: CardProgress, today: string = getTodayISO()): boolean {
+  return card.nextReview <= today
 }

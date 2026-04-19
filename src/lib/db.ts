@@ -22,11 +22,6 @@ export async function getProgress(wordId: string): Promise<CardProgress | undefi
   return db.get('progress', wordId)
 }
 
-export async function getAllProgress(): Promise<CardProgress[]> {
-  const db = await getDB()
-  return db.getAll('progress')
-}
-
 export async function saveProgress(card: CardProgress): Promise<void> {
   const db = await getDB()
   await db.put('progress', card)
@@ -40,12 +35,21 @@ export async function saveAllProgress(cards: CardProgress[]): Promise<void> {
 }
 
 export async function getSettings(): Promise<AppSettings> {
-  const db = await getDB()
-  const settings = await db.get('settings', 'main')
-  return settings ?? {
-    currentLevel: 'A2',
-    streak: 0,
-    lastStudyDate: '',
+  try {
+    const db = await getDB()
+    const settings = await db.get('settings', 'main')
+    return settings ?? { currentLevel: 'A2', streak: 0, lastStudyDate: '' }
+  } catch {
+    return { currentLevel: 'A2', streak: 0, lastStudyDate: '' }
+  }
+}
+
+export async function getAllProgress(): Promise<CardProgress[]> {
+  try {
+    const db = await getDB()
+    return db.getAll('progress')
+  } catch {
+    return []
   }
 }
 
