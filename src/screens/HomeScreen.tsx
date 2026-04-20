@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import type { Word, CardProgress, AppSettings } from '../types'
 import { getAllProgress, getSettings, saveSettings } from '../lib/db'
-import { getSessionCards, shouldUnlockNextLevel, getNextLevel } from '../lib/session'
+import { getSessionCards } from '../lib/session'
 import { getTodayISO } from '../lib/sm2'
 import ProgressBar from '../components/ProgressBar'
 import wordsData from '../data/words.json'
 
 const allWords = wordsData as Word[]
+const LEVELS: Word['level'][] = ['A2', 'B1', 'B2', 'C1']
 
 interface Props {
   onStartSession: (newWords: Word[], dueCards: Array<{ word: Word; card: CardProgress }>) => void
@@ -24,16 +25,7 @@ export default function HomeScreen({ onStartSession }: Props) {
       setSettings(s)
       setProgress(p)
 
-      if (shouldUnlockNextLevel(allWords, p, s.currentLevel)) {
-        const next = getNextLevel(s.currentLevel)
-        if (next) {
-          const updated = { ...s, currentLevel: next }
-          await saveSettings(updated)
-          setSettings(updated)
-        }
-      }
-
-      const { newWords, dueCards } = getSessionCards(allWords, p, s.currentLevel)
+      const { newWords, dueCards } = getSessionCards(allWords, p)
       setNewCount(newWords.length)
       setDueCount(dueCards.length)
     }
@@ -43,7 +35,7 @@ export default function HomeScreen({ onStartSession }: Props) {
   async function handleStart() {
     if (!settings) return
     const all = await getAllProgress()
-    const { newWords, dueCards } = getSessionCards(allWords, all, settings.currentLevel)
+    const { newWords, dueCards } = getSessionCards(allWords, all)
 
     const today = getTodayISO()
     let streak = settings.streak
@@ -60,8 +52,7 @@ export default function HomeScreen({ onStartSession }: Props) {
       }
     }
     await saveSettings({ ...settings, streak, lastStudyDate: today })
-
-    onStartSession(newWords.slice(0, 10), dueCards)
+    onStartSession(newWords, dueCards)
   }
 
   if (!settings) {
@@ -72,14 +63,22 @@ export default function HomeScreen({ onStartSession }: Props) {
     )
   }
 
-  const levelWords = allWords.filter(w => w.level === settings.currentLevel)
   const progressMap = new Map(progress.map(p => [p.wordId, p]))
-  const learnedCount = levelWords.filter(w => {
-    const p = progressMap.get(w.id)
-    return p && p.status === 'learning' && p.interval >= 7
-  }).length
-  const progressPercent = levelWords.length > 0 ? (learnedCount / levelWords.length) * 100 : 0
   const total = dueCount + newCount
+
+  // Per-level progress stats
+  const levelStats = LEVELS.map(level => {
+    const words = allWords.filter(w => w.level === level)
+    const learned = words.filter(w => {
+      const p = progressMap.get(w.id)
+      return p && p.status === 'learning' && p.interval >= 7
+    }).length
+    const introduced = words.filter(w => {
+      const p = progressMap.get(w.id)
+      return p && (p.status === 'learning' || p.status === 'skipped')
+    }).length
+    return { level, learned, introduced, total: words.length }
+  })
 
   return (
     <div className="min-h-screen bg-slate-900 p-5 flex flex-col">
@@ -95,12 +94,16 @@ export default function HomeScreen({ onStartSession }: Props) {
         <p className="text-slate-400 text-sm mt-1">на сегодня</p>
       </div>
 
-      <div className="bg-slate-800 rounded-2xl p-4 mb-4">
-        <div className="flex justify-between items-center mb-3">
-          <span className="font-semibold">Уровень {settings.currentLevel}</span>
-          <span className="text-slate-400 text-sm">{learnedCount}/{levelWords.length} слов</span>
-        </div>
-        <ProgressBar value={progressPercent} label="" />
+      <div className="bg-slate-800 rounded-2xl p-4 mb-4 space-y-3">
+        {levelStats.map(({ level, learned, total: t }) => (
+          <div key={level}>
+            <div className="flex justify-between text-sm mb-1">
+              <span className="font-medium text-slate-300">{level}</span>
+              <span className="text-slate-400">{learned}/{t}</span>
+            </div>
+            <ProgressBar value={t > 0 ? (learned / t) * 100 : 0} label="" />
+          </div>
+        ))}
       </div>
 
       <div className="flex gap-3 mb-6">

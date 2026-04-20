@@ -25,22 +25,53 @@ export function buildQuizOptions(
   return options.sort(() => Math.random() - 0.5)
 }
 
+const LEVELS: Word['level'][] = ['A2', 'B1', 'B2', 'C1']
+
+// Base quotas for new words per session (total = 10)
+const BASE_NEW_QUOTA: Record<Word['level'], number> = {
+  A2: 3,
+  B1: 3,
+  B2: 3,
+  C1: 1,
+}
+
 export function getSessionCards(
   words: Word[],
-  progress: CardProgress[],
-  currentLevel: Word['level']
+  progress: CardProgress[]
 ): { newWords: Word[]; dueCards: Array<{ word: Word; card: CardProgress }> } {
   const progressMap = new Map(progress.map(p => [p.wordId, p]))
   const today = getTodayISO()
 
-  const levelWords = words.filter(w => w.level === currentLevel)
+  // Available new words per level (status new or no progress)
+  const availableNew: Record<Word['level'], Word[]> = {
+    A2: [], B1: [], B2: [], C1: [],
+  }
+  for (const word of words) {
+    const p = progressMap.get(word.id)
+    if (!p || p.status === 'new') {
+      availableNew[word.level].push(word)
+    }
+  }
 
-  const newWords = levelWords.filter(w => {
-    const p = progressMap.get(w.id)
-    return !p || p.status === 'new'
-  })
+  // Calculate quotas: if A2/B1/B2 has fewer words than quota, redistribute to C1
+  const quota = { ...BASE_NEW_QUOTA }
+  for (const level of ['A2', 'B1', 'B2'] as Word['level'][]) {
+    const shortfall = quota[level] - availableNew[level].length
+    if (shortfall > 0) {
+      quota[level] = availableNew[level].length
+      quota['C1'] += shortfall
+    }
+  }
 
-  const dueCards = levelWords
+  // Pick new words according to quota
+  const newWords: Word[] = []
+  for (const level of LEVELS) {
+    const take = Math.min(quota[level], availableNew[level].length)
+    newWords.push(...availableNew[level].slice(0, take))
+  }
+
+  // Due cards from ALL levels
+  const dueCards = words
     .filter(w => {
       const p = progressMap.get(w.id)
       return p && p.status === 'learning' && p.nextReview <= today

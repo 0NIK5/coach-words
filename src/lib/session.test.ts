@@ -28,26 +28,50 @@ describe('buildQuizOptions', () => {
 })
 
 describe('getSessionCards', () => {
-  it('returns new words for learning when no progress exists', () => {
-    const words = [makeWord('w1'), makeWord('w2'), makeWord('w3')]
-    const { newWords, dueCards } = getSessionCards(words, [], 'A2')
-    expect(newWords).toHaveLength(3)
+  it('returns new words across all levels with no progress', () => {
+    const words = [
+      makeWord('a1', 'A2'), makeWord('a2', 'A2'), makeWord('a3', 'A2'),
+      makeWord('b1', 'B1'), makeWord('b2', 'B1'), makeWord('b3', 'B1'),
+      makeWord('c1', 'B2'), makeWord('c2', 'B2'), makeWord('c3', 'B2'),
+      makeWord('d1', 'C1'),
+    ]
+    const { newWords, dueCards } = getSessionCards(words, [])
+    expect(newWords).toHaveLength(10)
     expect(dueCards).toHaveLength(0)
   })
 
-  it('returns due cards for review', () => {
-    const words = [makeWord('w1')]
-    const progress = [makeCard('w1', 'learning', '2026-01-01')]
-    const { dueCards } = getSessionCards(words, progress, 'A2')
-    expect(dueCards).toHaveLength(1)
+  it('returns due cards from all levels', () => {
+    const words = [makeWord('a1', 'A2'), makeWord('b1', 'B1'), makeWord('c1', 'C1')]
+    const progress = [
+      makeCard('a1', 'learning', '2026-01-01'),
+      makeCard('b1', 'learning', '2026-01-01'),
+      makeCard('c1', 'learning', '2026-01-01'),
+    ]
+    const { dueCards } = getSessionCards(words, progress)
+    expect(dueCards).toHaveLength(3)
   })
 
   it('skips words with status skipped', () => {
-    const words = [makeWord('w1')]
+    const words = [makeWord('w1', 'A2')]
     const progress = [makeCard('w1', 'skipped', '2026-01-01')]
-    const { newWords, dueCards } = getSessionCards(words, progress, 'A2')
+    const { newWords, dueCards } = getSessionCards(words, progress)
     expect(newWords).toHaveLength(0)
     expect(dueCards).toHaveLength(0)
+  })
+
+  it('redistributes A2 quota to C1 when A2 runs out', () => {
+    // Only 1 A2 word available (quota is 3), so 2 extra go to C1
+    const words = [
+      makeWord('a1', 'A2'),
+      makeWord('b1', 'B1'), makeWord('b2', 'B1'), makeWord('b3', 'B1'),
+      makeWord('c1', 'B2'), makeWord('c2', 'B2'), makeWord('c3', 'B2'),
+      makeWord('d1', 'C1'), makeWord('d2', 'C1'), makeWord('d3', 'C1'),
+    ]
+    const { newWords } = getSessionCards(words, [])
+    const c1Words = newWords.filter(w => w.level === 'C1')
+    // C1 base quota 1 + 2 redistributed from A2 = 3
+    expect(c1Words).toHaveLength(3)
+    expect(newWords).toHaveLength(10)
   })
 })
 
