@@ -5400,6 +5400,66 @@
     "example2_ru": "Исходя из предпосылки, что это работает, давай попробуем."
   },
   {
+    "id": "b2_081",
+    "word": "pragmatic",
+    "translation": "прагматичный, практичный",
+    "transcription": "/præɡˈmætɪk/",
+    "partOfSpeech": "adjective",
+    "level": "B2",
+    "example1": "A pragmatic approach to business focuses on results.",
+    "example1_ru": "Прагматичный подход к бизнесу сосредоточен на результатах.",
+    "example2": "Despite idealism, she took a pragmatic stance.",
+    "example2_ru": "Несмотря на идеализм, она заняла прагматичную позицию."
+  },
+  {
+    "id": "b2_082",
+    "word": "scrutinize",
+    "translation": "тщательно изучать, проверять",
+    "transcription": "/ˈskruːtɪnaɪz/",
+    "partOfSpeech": "verb",
+    "level": "B2",
+    "example1": "Auditors scrutinize financial records for discrepancies.",
+    "example1_ru": "Аудиторы тщательно проверяют финансовые записи на несоответствия.",
+    "example2": "The committee scrutinized every detail of the proposal.",
+    "example2_ru": "Комитет тщательно проанализировал каждую деталь предложения."
+  },
+  {
+    "id": "b2_083",
+    "word": "mitigate",
+    "translation": "смягчать, ослаблять, снижать",
+    "transcription": "/ˈmɪtɪɡeɪt/",
+    "partOfSpeech": "verb",
+    "level": "B2",
+    "example1": "The company tried to mitigate the damage from the scandal.",
+    "example1_ru": "Компания попыталась смягчить урон от скандала.",
+    "example2": "Proper planning can mitigate project risks significantly.",
+    "example2_ru": "Надлежащее планирование может значительно снизить риски проекта."
+  },
+  {
+    "id": "b2_084",
+    "word": "dichotomy",
+    "translation": "дихотомия, разделение",
+    "transcription": "/daɪˈkɒtəmi/",
+    "partOfSpeech": "noun",
+    "level": "B2",
+    "example1": "There is a sharp dichotomy between theory and practice.",
+    "example1_ru": "Существует резкая дихотомия между теорией и практикой.",
+    "example2": "The dichotomy in policy approach confused stakeholders.",
+    "example2_ru": "Дихотомия в политическом подходе запутала заинтересованные стороны."
+  },
+  {
+    "id": "b2_085",
+    "word": "exponential",
+    "translation": "экспоненциальный, показательный",
+    "transcription": "/ˌekspəˈnenʃəl/",
+    "partOfSpeech": "adjective",
+    "level": "B2",
+    "example1": "The company experienced exponential growth over five years.",
+    "example1_ru": "Компания пережила экспоненциальный рост за пять лет.",
+    "example2": "Technology adoption has seen exponential increase recently.",
+    "example2_ru": "Принятие технологии в последнее время наблюдает экспоненциальный рост."
+  },
+  {
     "id": "c1_031",
     "word": "acquiesce",
     "translation": "молчаливо соглашаться",
@@ -5758,6 +5818,66 @@
     "example1_ru": "Она эрудированный учёный.",
     "example2": "His erudite speech impressed everyone.",
     "example2_ru": "Его эрудированная речь впечатлила всех."
+  },
+  {
+    "id": "c1_061",
+    "word": "acquisitive",
+    "translation": "стяжательный, корыстолюбивый",
+    "transcription": "/əˈkwɪzɪtɪv/",
+    "partOfSpeech": "adjective",
+    "level": "C1",
+    "example1": "His acquisitive nature led him to accumulate wealth obsessively.",
+    "example1_ru": "Его стяжательная натура привела его к одержимому накоплению богатства.",
+    "example2": "The acquisitive society values material possessions above human relationships.",
+    "example2_ru": "Стяжательное общество ценит материальные блага выше человеческих отношений."
+  },
+  {
+    "id": "c1_062",
+    "word": "ameliorate",
+    "translation": "улучшать, смягчать",
+    "transcription": "/əˈmiːlɪəreɪt/",
+    "partOfSpeech": "verb",
+    "level": "C1",
+    "example1": "Education can ameliorate social inequality across generations.",
+    "example1_ru": "Образование может улучшить социальное неравенство поколений.",
+    "example2": "His apology ameliorated the tension between the former colleagues.",
+    "example2_ru": "Его извинение смягчило напряженность между бывшими коллегами."
+  },
+  {
+    "id": "c1_063",
+    "word": "obfuscate",
+    "translation": "затемнять, делать неясным, запутывать",
+    "transcription": "/ɒbˈfʌskeɪt/",
+    "partOfSpeech": "verb",
+    "level": "C1",
+    "example1": "Politicians often obfuscate the truth with complex jargon and statistics.",
+    "example1_ru": "Политики часто затемняют правду сложным жаргоном и статистикой.",
+    "example2": "The legal language was designed to obfuscate rather than clarify.",
+    "example2_ru": "Правовой язык был разработан, чтобы запутать, а не объяснить."
+  },
+  {
+    "id": "c1_064",
+    "word": "perspicacious",
+    "translation": "проницательный, острый, дальновидный",
+    "transcription": "/ˌpɜːspɪˈkeɪʃəs/",
+    "partOfSpeech": "adjective",
+    "level": "C1",
+    "example1": "Her perspicacious analysis of market trends surprised industry analysts.",
+    "example1_ru": "Её проницательный анализ тенденций рынка удивил аналитиков.",
+    "example2": "The perspicacious observer noticed details that others had overlooked entirely.",
+    "example2_ru": "Проницательный наблюдатель заметил детали, которые другие полностью упустили."
+  },
+  {
+    "id": "c1_065",
+    "word": "cogent",
+    "translation": "убедительный, веский",
+    "transcription": "/ˈkoʊdʒənt/",
+    "partOfSpeech": "adjective",
+    "level": "C1",
+    "example1": "His cogent arguments convinced even the most skeptical board members.",
+    "example1_ru": "Его убедительные аргументы убедили даже самых скептических членов совета.",
+    "example2": "The professor presented cogent evidence supporting the controversial hypothesis.",
+    "example2_ru": "Профессор представил веские доказательства, поддерживающие спорную гипотезу."
   },
   {
     "id": "a2_201",
