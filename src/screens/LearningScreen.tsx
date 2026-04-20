@@ -5,17 +5,27 @@ import { getTodayISO, addDays } from '../lib/sm2'
 
 interface Props {
   words: Word[]
+  onGetReplacement: (skippedLevel: Word['level']) => Word | null
   onComplete: () => void
 }
 
-export default function LearningScreen({ words, onComplete }: Props) {
+export default function LearningScreen({ words, onGetReplacement, onComplete }: Props) {
+  const [localWords, setLocalWords] = useState<Word[]>(words)
   const [index, setIndex] = useState(0)
 
-  const word = words[index]
+  const word = localWords[index]
 
   if (!word) {
     onComplete()
     return null
+  }
+
+  function advance(updatedWords: Word[]) {
+    if (index + 1 < updatedWords.length) {
+      setIndex(index + 1)
+    } else {
+      onComplete()
+    }
   }
 
   async function handleRemember() {
@@ -27,11 +37,7 @@ export default function LearningScreen({ words, onComplete }: Props) {
       repetitions: 0,
       nextReview: addDays(getTodayISO(), 1),
     })
-    if (index + 1 < words.length) {
-      setIndex(index + 1)
-    } else {
-      onComplete()
-    }
+    advance(localWords)
   }
 
   async function handleSkip() {
@@ -43,17 +49,16 @@ export default function LearningScreen({ words, onComplete }: Props) {
       repetitions: 0,
       nextReview: getTodayISO(),
     })
-    if (index + 1 < words.length) {
-      setIndex(index + 1)
-    } else {
-      onComplete()
-    }
+    const replacement = onGetReplacement(word.level)
+    const updated = replacement ? [...localWords, replacement] : localWords
+    if (replacement) setLocalWords(updated)
+    advance(updated)
   }
 
   return (
     <div className="min-h-screen bg-slate-900 p-5 flex flex-col">
       <div className="text-slate-400 text-sm mt-4 mb-6">
-        📖 Новое слово ({index + 1}/{words.length})
+        📖 Новое слово ({index + 1}/{localWords.length})
       </div>
 
       <div className="text-center mb-8">

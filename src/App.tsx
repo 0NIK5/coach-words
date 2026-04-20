@@ -14,17 +14,29 @@ export default function App() {
   const [sessionNew, setSessionNew] = useState<Word[]>([])
   const [sessionDue, setSessionDue] = useState<Array<{ word: Word; card: CardProgress }>>([])
   const [sessionResult, setSessionResult] = useState<SessionResult>({ correct: 0, total: 0 })
+  const [reservePool, setReservePool] = useState<Word[]>([])
 
   const showTabs = screen === 'home' || screen === 'wordlist' || screen === 'settings'
+
+  function getReplacement(skippedLevel: Word['level']): Word | null {
+    // Try same level first, then any level
+    let idx = reservePool.findIndex(w => w.level === skippedLevel)
+    if (idx === -1) idx = reservePool.length > 0 ? 0 : -1
+    if (idx === -1) return null
+    const word = reservePool[idx]
+    setReservePool(prev => prev.filter((_, i) => i !== idx))
+    return word
+  }
 
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       <div className={showTabs ? 'pb-16' : ''}>
         {screen === 'home' && (
           <HomeScreen
-            onStartSession={(newWords, dueCards) => {
+            onStartSession={(newWords, dueCards, reserve) => {
               setSessionNew(newWords)
               setSessionDue(dueCards)
+              setReservePool(reserve)
               if (newWords.length > 0) {
                 setScreen('learning')
               } else if (dueCards.length > 0) {
@@ -36,6 +48,7 @@ export default function App() {
         {screen === 'learning' && (
           <LearningScreen
             words={sessionNew}
+            onGetReplacement={getReplacement}
             onComplete={() => {
               if (sessionDue.length > 0) {
                 setScreen('quiz')

@@ -10,7 +10,7 @@ const allWords = wordsData as Word[]
 const LEVELS: Word['level'][] = ['A2', 'B1', 'B2', 'C1']
 
 interface Props {
-  onStartSession: (newWords: Word[], dueCards: Array<{ word: Word; card: CardProgress }>) => void
+  onStartSession: (newWords: Word[], dueCards: Array<{ word: Word; card: CardProgress }>, reservePool: Word[]) => void
 }
 
 export default function HomeScreen({ onStartSession }: Props) {
@@ -28,6 +28,7 @@ export default function HomeScreen({ onStartSession }: Props) {
       const { newWords, dueCards } = getSessionCards(allWords, p)
       setNewCount(newWords.length)
       setDueCount(dueCards.length)
+
     }
     load()
   }, [])
@@ -35,7 +36,7 @@ export default function HomeScreen({ onStartSession }: Props) {
   async function handleStart() {
     if (!settings) return
     const all = await getAllProgress()
-    const { newWords, dueCards } = getSessionCards(allWords, all)
+    const { newWords, dueCards, reservePool } = getSessionCards(allWords, all)
 
     const today = getTodayISO()
     let streak = settings.streak
@@ -52,7 +53,7 @@ export default function HomeScreen({ onStartSession }: Props) {
       }
     }
     await saveSettings({ ...settings, streak, lastStudyDate: today })
-    onStartSession(newWords, dueCards)
+    onStartSession(newWords, dueCards, reservePool)
   }
 
   if (!settings) {

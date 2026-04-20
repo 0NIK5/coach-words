@@ -38,7 +38,7 @@ const BASE_NEW_QUOTA: Record<Word['level'], number> = {
 export function getSessionCards(
   words: Word[],
   progress: CardProgress[]
-): { newWords: Word[]; dueCards: Array<{ word: Word; card: CardProgress }> } {
+): { newWords: Word[]; dueCards: Array<{ word: Word; card: CardProgress }>; reservePool: Word[] } {
   const progressMap = new Map(progress.map(p => [p.wordId, p]))
   const today = getTodayISO()
 
@@ -70,6 +70,13 @@ export function getSessionCards(
     newWords.push(...availableNew[level].slice(0, take))
   }
 
+  // Reserve pool: remaining available new words not included in session
+  const sessionIds = new Set(newWords.map(w => w.id))
+  const reservePool: Word[] = []
+  for (const level of LEVELS) {
+    reservePool.push(...availableNew[level].filter(w => !sessionIds.has(w.id)))
+  }
+
   // Due cards from ALL levels
   const dueCards = words
     .filter(w => {
@@ -78,7 +85,7 @@ export function getSessionCards(
     })
     .map(w => ({ word: w, card: progressMap.get(w.id)! }))
 
-  return { newWords, dueCards }
+  return { newWords, dueCards, reservePool }
 }
 
 export function shouldUnlockNextLevel(
