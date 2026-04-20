@@ -5,11 +5,11 @@ This document describes the process for adding new words to the CoachWords vocab
 
 ## Current Database Status
 As of latest update (2026-04-20):
-- **Total words:** 790
-- **A2 (Elementary):** 300 words (a2_001 → a2_300)
-- **B1 (Intermediate):** 240 words (b1_001 → b1_240)
-- **B2 (Upper-Intermediate):** 135 words (b2_001 → b2_135)
-- **C1 (Advanced):** 115 words (c1_001 → c1_115)
+- **Total words:** 1,390
+- **A2 (Elementary):** 450 words (a2_001 → a2_450)
+- **B1 (Intermediate):** 380 words (b1_001 → b1_380)
+- **B2 (Upper-Intermediate):** 265 words (b2_001 → b2_265)
+- **C1 (Advanced):** 265 words (c1_001 → c1_265)
 
 ## Word Selection Criteria
 
@@ -115,16 +115,26 @@ For adding 50+ words at once:
 
 ## Recent Additions (2026-04-20)
 
-### Added 200 words (50 per level)
+### Added 800 words total
+
+#### First batch: 200 words (50 per level)
 - **A2 (a2_251–a2_300):** ankle, attempt, awake, balance, banner... buffer
 - **B1 (b1_191–b1_240):** absorbed, accommodate, accompany, accomplish, accordingly... angle
 - **B2 (b2_086–b2_135):** subvert, substantive, succinct, suffice, supposition... tangible
 - **C1 (c1_066–c1_115):** ephemeral, epitome, equanimity, esoteric, ethereal... flamboyant
 
+#### Second batch: 600 words (150 per level)
+- **A2 (a2_301–a2_450):** bulk, bumpy, bunch, bundle, burden... carriage
+- **B1 (b1_231–b1_380):** annual, announce, annoy, annoying, anomaly... aptitude
+- **B2 (b2_136–b2_265):** facile, faction, factor, factual, faculty... fearless
+- **C1 (c1_116–c1_265):** flamboyance, flange, flank, flare, flashy... floe
+
 ## Performance Notes
-- Bundle size increased: 449 KB → 522 KB (gzipped: 127 KB → 145 KB)
-- Warning: chunks > 500 KB (consider code splitting if exceeds 600 KB)
-- IndexedDB handles large databases efficiently
+- Bundle size progression: 449 KB → 522 KB → 605 KB (gzipped: 127 KB → 145 KB → 167 KB)
+- Warning: chunks > 500 KB (currently 605 KB, approaching limit)
+- Consider code splitting or lazy loading if exceeds 650 KB
+- IndexedDB efficiently handles 1,390+ words
+- PWA bundle size: 601.5 KiB (optimized)
 
 ## Future Considerations
 - Consider splitting words.json if exceeds 1000+ entries
