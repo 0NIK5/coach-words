@@ -88,3 +88,29 @@ describe('shouldUnlockNextLevel', () => {
     expect(shouldUnlockNextLevel(words, progress, 'A2')).toBe(false)
   })
 })
+
+describe('moveWordToEnd', () => {
+  function moveWordToEnd(words: string[], index: number): string[] {
+    return [...words.slice(0, index), ...words.slice(index + 1), words[index]]
+  }
+
+  it('moves word from middle to end', () => {
+    const result = moveWordToEnd(['a', 'b', 'c', 'd'], 1)
+    expect(result).toEqual(['a', 'c', 'd', 'b'])
+  })
+
+  it('moves last word — array stays the same', () => {
+    const result = moveWordToEnd(['a', 'b', 'c'], 2)
+    expect(result).toEqual(['a', 'b', 'c'])
+  })
+
+  it('moves single word — array stays the same', () => {
+    const result = moveWordToEnd(['a'], 0)
+    expect(result).toEqual(['a'])
+  })
+
+  it('moves first word to end', () => {
+    const result = moveWordToEnd(['a', 'b', 'c'], 0)
+    expect(result).toEqual(['b', 'c', 'a'])
+  })
+})
