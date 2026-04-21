@@ -28,6 +28,15 @@ export default function LearningScreen({ words, onGetReplacement, onComplete }: 
     }
   }
 
+  function handleAgain() {
+    const updatedWords = [
+      ...localWords.slice(0, index),
+      ...localWords.slice(index + 1),
+      word,
+    ]
+    setLocalWords(updatedWords)
+  }
+
   async function handleRemember() {
     await saveProgress({
       wordId: word.id,
@@ -86,7 +95,7 @@ export default function LearningScreen({ words, onGetReplacement, onComplete }: 
 
       <div className="grid grid-cols-3 gap-3 mt-6">
         <button
-          onClick={() => setIndex(index)}
+          onClick={handleAgain}
           className="py-3 rounded-xl bg-slate-700 text-slate-300 text-sm font-medium active:scale-95 transition-transform"
         >
           ↩️ Ещё раз
