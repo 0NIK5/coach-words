@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
-import type { AppSettings, CardProgress, Word } from '../types'
+import type { AppSettings, CardProgress, ThemeName, Word } from '../types'
 import { getSettings, getAllProgress, resetAllProgress, saveAllProgress, saveSettings } from '../lib/db'
+
+const THEMES: { id: ThemeName; label: string; bg: string; accent: string }[] = [
+  { id: 'standard', label: 'Standard', bg: '#0f172a', accent: '#4ade80' },
+  { id: 'obsidian', label: 'Obsidian', bg: '#080b14', accent: '#818cf8' },
+  { id: 'chalk',    label: 'Chalk',    bg: '#faf7f0', accent: '#d97706' },
+  { id: 'terminal', label: 'Terminal', bg: '#000000', accent: '#00ff50' },
+]
 import wordsData from '../data/words.json'
 
 const allWords = wordsData as Word[]
@@ -22,6 +29,14 @@ export default function SettingsScreen() {
   useEffect(() => {
     Promise.all([getSettings(), getAllProgress()]).then(([s, p]) => { setSettings(s); setProgress(p) })
   }, [])
+
+  async function handleThemeChange(theme: ThemeName) {
+    if (!settings) return
+    const updated = { ...settings, theme }
+    await saveSettings(updated)
+    setSettings(updated)
+    document.documentElement.dataset.theme = theme
+  }
 
   async function handleReset() {
     await resetAllProgress()
@@ -96,6 +111,30 @@ export default function SettingsScreen() {
               <span className={`font-bold ${color}`}>{value}</span>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="bg-slate-800 rounded-2xl p-4 mb-4">
+        <h2 className="font-semibold mb-3 text-slate-300">Оформление</h2>
+        <div className="grid grid-cols-2 gap-2">
+          {THEMES.map(({ id, label, bg, accent }) => {
+            const isActive = (settings.theme ?? 'standard') === id
+            return (
+              <button
+                key={id}
+                onClick={() => handleThemeChange(id)}
+                className={`py-2 px-3 rounded-xl text-sm font-medium flex items-center gap-2 border-2 ${
+                  isActive ? 'border-green-400 bg-slate-700' : 'border-transparent bg-slate-700 text-slate-300'
+                }`}
+              >
+                <span className="flex gap-1 shrink-0">
+                  <span className="w-3 h-3 rounded-full" style={{ background: bg, border: '1px solid #ffffff22' }} />
+                  <span className="w-3 h-3 rounded-full" style={{ background: accent }} />
+                </span>
+                <span className={isActive ? 'text-green-400' : ''}>{label}</span>
+              </button>
+            )
+          })}
         </div>
       </div>
 

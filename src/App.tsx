@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { Screen, SessionResult } from './types'
 import type { Word, CardProgress } from './types'
+import { getSettings } from './lib/db'
 import TabBar from './components/TabBar'
 import HomeScreen from './screens/HomeScreen'
 import LearningScreen from './screens/LearningScreen'
@@ -10,6 +11,12 @@ import WordListScreen from './screens/WordListScreen'
 import SettingsScreen from './screens/SettingsScreen'
 
 export default function App() {
+  useEffect(() => {
+    getSettings().then(s => {
+      document.documentElement.dataset.theme = s.theme ?? 'standard'
+    })
+  }, [])
+
   const [screen, setScreen] = useState<Screen>('home')
   const [sessionNew, setSessionNew] = useState<Word[]>([])
   const [sessionDue, setSessionDue] = useState<Array<{ word: Word; card: CardProgress }>>([])

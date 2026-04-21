@@ -20,10 +20,13 @@ export interface CardProgress {
   nextReview: string // ISO date string YYYY-MM-DD
 }
 
+export type ThemeName = 'standard' | 'obsidian' | 'chalk' | 'terminal'
+
 export interface AppSettings {
   currentLevel: 'A2' | 'B1' | 'B2' | 'C1'
   streak: number
   lastStudyDate: string // ISO date YYYY-MM-DD
+  theme?: ThemeName
 }
 
 export type Screen =

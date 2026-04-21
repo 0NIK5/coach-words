@@ -72,7 +72,7 @@ export default function HomeScreen({ onStartSession }: Props) {
     const words = allWords.filter(w => w.level === level)
     const learned = words.filter(w => {
       const p = progressMap.get(w.id)
-      return p && p.status === 'learning' && p.interval >= 7
+      return p && (p.status === 'skipped' || (p.status === 'learning' && p.interval >= 7))
     }).length
     const introduced = words.filter(w => {
       const p = progressMap.get(w.id)
