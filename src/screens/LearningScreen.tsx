@@ -93,25 +93,27 @@ export default function LearningScreen({ words, onGetReplacement, onComplete }: 
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-3 mt-6">
-        <button
-          onClick={handleAgain}
-          className="py-3 rounded-xl bg-slate-700 text-slate-300 text-sm font-medium active:scale-95 transition-transform"
-        >
-          ↩️ Ещё раз
-        </button>
+      <div className="flex flex-col gap-3 mt-6">
         <button
           onClick={handleRemember}
-          className="py-3 rounded-xl bg-green-400 text-slate-900 text-sm font-bold active:scale-95 transition-transform"
+          className="w-full py-[18px] rounded-2xl bg-green-400 text-slate-900 text-base font-bold active:scale-[0.97] transition-transform shadow-[0_4px_24px_rgba(74,222,128,0.25)]"
         >
           ✓ Запомнил
         </button>
-        <button
-          onClick={handleSkip}
-          className="py-3 rounded-xl bg-slate-700 text-yellow-400 text-sm font-medium active:scale-95 transition-transform"
-        >
-          ⚡ Знаю
-        </button>
+        <div className="grid grid-cols-2 gap-3">
+          <button
+            onClick={handleAgain}
+            className="py-[15px] rounded-xl border border-slate-700 bg-transparent text-slate-500 text-[15px] font-medium active:scale-95 transition-transform"
+          >
+            ↩ Ещё раз
+          </button>
+          <button
+            onClick={handleSkip}
+            className="py-[15px] rounded-xl bg-slate-800 text-amber-400 text-[15px] font-medium active:scale-95 transition-transform"
+          >
+            ⚡ Знаю
+          </button>
+        </div>
       </div>
     </div>
   )
