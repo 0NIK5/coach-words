@@ -141,4 +141,50 @@ describe('add-words script — duplicate detection', () => {
     expect(r.words.find(w => w.word === 'new-word')).toBeTruthy();
     expect(r.words.filter(w => w.word.toLowerCase().trim() === 'scrutinize')).toHaveLength(1);
   });
+
+  it('rejects a word that exists at a different level', () => {
+    const existing = [makeWord('a2_001', 'bank', 'A2')];
+    const dir = fixture({
+      existingWords: existing,
+      claudeMd: minimalClaudeMd(),
+      pending: {
+        level: 'B2',
+        requested: 1,
+        attempt: 1,
+        words: [makePendingWord('bank', 'B2')],
+      },
+    });
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(2);
+    const out = parseStdout(r.stdout);
+    expect(out.DUPLICATES_SKIPPED).toBe('1');
+    expect(out.DUPLICATE_WORDS).toBe('bank');
+    expect(r.words.filter(w => w.word === 'bank')).toHaveLength(1);
+  });
+});
+
+describe('add-words script — preservation', () => {
+  it('preserves existing entries unchanged and appends new entries at the end', () => {
+    const existing = [
+      makeWord('a2_001', 'alpha'),
+      makeWord('a2_002', 'bravo'),
+      makeWord('b1_001', 'charlie', 'B1'),
+    ];
+    const dir = fixture({
+      existingWords: existing,
+      claudeMd: minimalClaudeMd(),
+      pending: {
+        level: 'A2',
+        requested: 2,
+        attempt: 1,
+        words: [makePendingWord('delta'), makePendingWord('echo')],
+      },
+    });
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(0);
+    expect(r.words.slice(0, 3)).toEqual(existing);
+    expect(r.words[3].word).toBe('delta');
+    expect(r.words[4].word).toBe('echo');
+    expect(r.words).toHaveLength(5);
+  });
 });
