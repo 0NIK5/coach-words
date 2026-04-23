@@ -189,6 +189,9 @@ function main() {
   const levelTotal = newArray.filter(w => w.level === pending.level).length;
 
   if (remaining > 0) {
+    if (pending.attempt >= MAX_ATTEMPTS) {
+      fail(`exhausted ${MAX_ATTEMPTS} attempts; still need ${remaining} more words`);
+    }
     saveState({ totalAdded, level: pending.level, requested: pending.requested });
     report('NEED_MORE', {
       ADDED: accepted.length,

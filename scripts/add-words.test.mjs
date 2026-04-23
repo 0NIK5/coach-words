@@ -223,4 +223,46 @@ describe('add-words script — retry state', () => {
     expect(r2.words.map(w => w.word)).toEqual(['existing', 'one', 'two', 'three']);
     expect(r2.stateExists).toBe(false);
   });
+
+  it('discards stale state when level or requested changes', () => {
+    const dir = fixture({
+      existingWords: [],
+      claudeMd: minimalClaudeMd(),
+      pending: {
+        level: 'A2',
+        requested: 2,
+        attempt: 1,
+        words: [makePendingWord('alpha')],
+      },
+    });
+    writeFileSync(
+      join(dir, 'scripts/.add-words-state.json'),
+      JSON.stringify({ totalAdded: 99, level: 'B2', requested: 50 })
+    );
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(2);
+    expect(r.state).toEqual({ totalAdded: 1, level: 'A2', requested: 2 });
+  });
+
+  it('exits 1 when remaining > 0 on the 5th attempt', () => {
+    const existing = [makeWord('a2_001', 'dup1'), makeWord('a2_002', 'dup2')];
+    const dir = fixture({
+      existingWords: existing,
+      claudeMd: minimalClaudeMd(),
+      pending: {
+        level: 'A2',
+        requested: 3,
+        attempt: 5,
+        words: [makePendingWord('dup1'), makePendingWord('dup2')],
+      },
+    });
+    writeFileSync(
+      join(dir, 'scripts/.add-words-state.json'),
+      JSON.stringify({ totalAdded: 0, level: 'A2', requested: 3 })
+    );
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(1);
+    expect(r.stdout).toMatch(/STATUS: ERROR/);
+    expect(r.stdout).toMatch(/5 attempts/i);
+  });
 });
