@@ -39,3 +39,47 @@ describe('add-words script — smoke', () => {
     expect(r.stdout).toContain('STATUS: ERROR');
   });
 });
+
+describe('add-words script — schema validation', () => {
+  it('exits 1 when level is missing', () => {
+    const dir = fixture({
+      existingWords: [],
+      pending: { requested: 1, attempt: 1, words: [makePendingWord('hello')] },
+    });
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(1);
+    expect(r.stdout).toMatch(/STATUS: ERROR/);
+    expect(r.stdout).toMatch(/level/i);
+  });
+
+  it('exits 1 when a word has an empty field', () => {
+    const bad = makePendingWord('hello');
+    bad.translation = '';
+    const dir = fixture({
+      existingWords: [],
+      pending: { level: 'A2', requested: 1, attempt: 1, words: [bad] },
+    });
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(1);
+    expect(r.stdout).toMatch(/translation/);
+  });
+
+  it('exits 1 when a word level does not match top-level level', () => {
+    const dir = fixture({
+      existingWords: [],
+      pending: { level: 'A2', requested: 1, attempt: 1, words: [makePendingWord('hello', 'B1')] },
+    });
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(1);
+    expect(r.stdout).toMatch(/level mismatch/i);
+  });
+
+  it('exits 1 when attempt exceeds 5', () => {
+    const dir = fixture({
+      existingWords: [],
+      pending: { level: 'A2', requested: 1, attempt: 6, words: [makePendingWord('hello')] },
+    });
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(1);
+  });
+});
