@@ -142,6 +142,23 @@ function buildExistingSet(existing) {
   return s;
 }
 
+function loadState(level, requested) {
+  if (!existsSync(STATE)) return { totalAdded: 0, level, requested };
+  try {
+    const s = JSON.parse(readFileSync(STATE, 'utf8'));
+    if (s.level !== level || s.requested !== requested) {
+      return { totalAdded: 0, level, requested };
+    }
+    return s;
+  } catch {
+    return { totalAdded: 0, level, requested };
+  }
+}
+
+function saveState(state) {
+  writeFileSync(STATE, JSON.stringify(state, null, 2));
+}
+
 function main() {
   const pending = readPending();
   validatePending(pending);
@@ -166,11 +183,13 @@ function main() {
   const newArray = existing.concat(accepted);
   writeWordsAtomic(newArray);
 
-  const totalAdded = accepted.length;
+  const priorState = loadState(pending.level, pending.requested);
+  const totalAdded = priorState.totalAdded + accepted.length;
   const remaining = pending.requested - totalAdded;
   const levelTotal = newArray.filter(w => w.level === pending.level).length;
 
   if (remaining > 0) {
+    saveState({ totalAdded, level: pending.level, requested: pending.requested });
     report('NEED_MORE', {
       ADDED: accepted.length,
       DUPLICATES_SKIPPED: duplicates.length,

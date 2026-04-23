@@ -188,3 +188,39 @@ describe('add-words script — preservation', () => {
     expect(r.words).toHaveLength(5);
   });
 });
+
+describe('add-words script — retry state', () => {
+  it('accumulates totalAdded across retry attempts via state file', () => {
+    const existing = [makeWord('a2_001', 'existing')];
+    const dir = fixture({
+      existingWords: existing,
+      claudeMd: minimalClaudeMd(),
+      pending: {
+        level: 'A2',
+        requested: 3,
+        attempt: 1,
+        words: [makePendingWord('one'), makePendingWord('existing')],
+      },
+    });
+    const r1 = runScript(dir);
+    expect(r1.exitCode).toBe(2);
+    expect(r1.state).toEqual({ totalAdded: 1, level: 'A2', requested: 3 });
+    expect(r1.stateExists).toBe(true);
+
+    writeFileSync(
+      join(dir, 'scripts/pending-words.json'),
+      JSON.stringify({
+        level: 'A2',
+        requested: 3,
+        attempt: 2,
+        words: [makePendingWord('two'), makePendingWord('three')],
+      })
+    );
+    const r2 = runScript(dir);
+    expect(r2.exitCode).toBe(0);
+    const out = parseStdout(r2.stdout);
+    expect(out.ADDED).toBe('2');
+    expect(r2.words.map(w => w.word)).toEqual(['existing', 'one', 'two', 'three']);
+    expect(r2.stateExists).toBe(false);
+  });
+});
