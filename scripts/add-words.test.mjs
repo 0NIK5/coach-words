@@ -310,3 +310,43 @@ describe('add-words script — CLAUDE.md update', () => {
     expect(r.stderr).toMatch(/WARNING.*CLAUDE\.md.*A2/);
   });
 });
+
+describe('add-words script — cleanup', () => {
+  it('deletes pending-words.json and .add-words-state.json on exit 0', () => {
+    const dir = fixture({
+      existingWords: [],
+      claudeMd: minimalClaudeMd(),
+      pending: {
+        level: 'A2',
+        requested: 1,
+        attempt: 1,
+        words: [makePendingWord('alpha')],
+      },
+    });
+    writeFileSync(
+      join(dir, 'scripts/.add-words-state.json'),
+      JSON.stringify({ totalAdded: 0, level: 'A2', requested: 1 })
+    );
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(0);
+    expect(r.pendingExists).toBe(false);
+    expect(r.stateExists).toBe(false);
+  });
+
+  it('keeps state file on exit 2 (NEED_MORE)', () => {
+    const existing = [makeWord('a2_001', 'dup')];
+    const dir = fixture({
+      existingWords: existing,
+      claudeMd: minimalClaudeMd(),
+      pending: {
+        level: 'A2',
+        requested: 2,
+        attempt: 1,
+        words: [makePendingWord('dup')],
+      },
+    });
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(2);
+    expect(r.stateExists).toBe(true);
+  });
+});
