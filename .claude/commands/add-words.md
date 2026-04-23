@@ -7,33 +7,37 @@
 Examples:
 - `/add-words A2 20` — add 20 new A2 words
 - `/add-words B1 30` — add 30 new B1 words
-- `/add-words B2 15` — add 15 new B2 words
+- `/add-words B2 50` — add 50 new B2 words
 - `/add-words C1 10` — add 10 new C1 words
 
 ---
 
-## Steps to execute
+## Protocol
 
-1. **Read `src/data/words.json`** to find the last ID for the requested level and check existing words (avoid duplicates).
+**Do NOT read `src/data/words.json`.** All file mechanics (reading the database, assigning IDs, deduplication, appending, updating CLAUDE.md) are handled by `scripts/add-words.mjs`. Your job is only to generate high-quality vocabulary entries.
 
-2. **Generate words** following all rules below.
+1. **Generate** `<count>` words for the requested level following the rules in "Word selection rules by level" and "Quality rules" below. Do NOT include an `id` field — the script assigns IDs.
 
-3. **Append** new words to `src/data/words.json` (do not overwrite existing words).
+2. **Write** the generated words to `scripts/pending-words.json` with this shape:
+   ```json
+   {
+     "level": "<LEVEL>",
+     "requested": <count>,
+     "attempt": 1,
+     "words": [
+       { "word": "...", "translation": "...", "transcription": "...", "partOfSpeech": "...", "level": "<LEVEL>", "example1": "...", "example1_ru": "...", "example2": "...", "example2_ru": "..." }
+     ]
+   }
+   ```
 
-4. **Run `npm run build`** to verify no errors.
+3. **Run** `node scripts/add-words.mjs`.
 
-5. **Report** how many words were added and the new totals per level.
+4. **Handle the exit code:**
+   - **Exit 0 (STATUS: OK):** Run `npm run build` to verify TypeScript. Report `LEVEL_TOTAL` and `LAST_ID_ASSIGNED` to the user.
+   - **Exit 2 (STATUS: NEED_MORE):** Parse `REMAINING_NEEDED` and `DUPLICATE_WORDS` from stdout. Generate exactly `REMAINING_NEEDED` new words, excluding every word listed in `DUPLICATE_WORDS`. Write them back to `scripts/pending-words.json` with `attempt` incremented by 1 (keep same `level` and `requested`). Re-run `node scripts/add-words.mjs`. Repeat until exit 0 or until the script exits 1.
+   - **Exit 1 (STATUS: ERROR):** Report the `MESSAGE` verbatim to the user. Do not retry.
 
----
-
-## ID format
-Continue from the last existing ID for the level:
-- A2: `a2_201`, `a2_202`, ...
-- B1: `b1_141`, `b1_142`, ...
-- B2: `b2_081`, `b2_082`, ...
-- C1: `c1_061`, `c1_062`, ...
-
-Always check the actual last ID in the file before starting — the table in CLAUDE.md may be outdated.
+5. **Never update `CLAUDE.md` manually** — the script handles it.
 
 ---
 
@@ -69,27 +73,6 @@ Always check the actual last ID in the file before starting — the table in CLA
 
 ---
 
-## JSON format (strict)
-
-Each word must have ALL 10 fields. No field may be empty or null.
-
-```json
-{
-  "id": "a2_201",
-  "word": "example",
-  "translation": "пример",
-  "transcription": "/ɪɡˈzɑːmpəl/",
-  "partOfSpeech": "noun",
-  "level": "A2",
-  "example1": "This is a good example.",
-  "example1_ru": "Это хороший пример.",
-  "example2": "Can you give me an example?",
-  "example2_ru": "Можешь привести мне пример?"
-}
-```
-
----
-
 ## Quality rules
 
 ### Transcription (IPA)
@@ -115,17 +98,4 @@ Each word must have ALL 10 fields. No field may be empty or null.
 Use one of: `noun`, `verb`, `adjective`, `adverb`, `conjunction`, `preposition`, `determiner`, `pronoun`, `noun/verb`, `verb/noun`, `adjective/verb`, `adjective/noun`, `verb/adjective`
 
 ### No duplicates
-Before adding a word, check that `word` field doesn't already exist in the file. If a word exists at a different level, skip it.
-
----
-
-## After adding words — update CLAUDE.md
-
-Update the word count table in `CLAUDE.md`:
-
-```markdown
-| Level | Count | Next ID |
-|-------|-------|---------|
-| A2    | 220   | a2_221  |
-...
-```
+The script handles duplicate detection (case-insensitive, across all levels). When the script returns a `DUPLICATE_WORDS` list, exclude those words from your next generation and try different vocabulary.
