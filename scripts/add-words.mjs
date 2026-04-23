@@ -128,6 +128,35 @@ function cleanupOnSuccess() {
   if (existsSync(STATE)) unlinkSync(STATE);
 }
 
+function detectEol(path) {
+  const buf = readFileSync(path, 'utf8');
+  return buf.includes('\r\n') ? '\r\n' : '\n';
+}
+
+function updateClaudeMd(level, newCount, nextId) {
+  if (!existsSync(CLAUDE_MD)) {
+    console.error(`WARNING: CLAUDE.md not found at ${CLAUDE_MD}`);
+    return;
+  }
+  const eol = detectEol(CLAUDE_MD);
+  const original = readFileSync(CLAUDE_MD, 'utf8');
+  const prefix = level.toLowerCase();
+  const rowRe = new RegExp(
+    `^(\\|\\s*)${level}(\\s*\\|\\s*)\\d+(\\s*\\|\\s*)${prefix}_\\d+(\\s*\\|\\s*)$`,
+    'm'
+  );
+  const m = original.match(rowRe);
+  if (!m) {
+    console.error(`WARNING: CLAUDE.md table row for ${level} not found. Manual update required.`);
+    return;
+  }
+  const replacement = `${m[1]}${level}${m[2]}${newCount}${m[3]}${nextId}${m[4]}`;
+  const updated = original.replace(rowRe, replacement);
+  const tmp = `${CLAUDE_MD}.tmp`;
+  writeFileSync(tmp, eol === '\r\n' ? updated.replace(/\r?\n/g, '\r\n') : updated);
+  renameSync(tmp, CLAUDE_MD);
+}
+
 function report(status, fields) {
   console.log('=== add-words result ===');
   console.log(`STATUS: ${status}`);
@@ -205,6 +234,8 @@ function main() {
     process.exit(2);
   }
 
+  const nextId = formatId(pending.level, lastId + 1);
+  updateClaudeMd(pending.level, levelTotal, nextId);
   cleanupOnSuccess();
   report('OK', {
     ADDED: accepted.length,

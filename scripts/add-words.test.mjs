@@ -266,3 +266,47 @@ describe('add-words script — retry state', () => {
     expect(r.stdout).toMatch(/5 attempts/i);
   });
 });
+
+describe('add-words script — CLAUDE.md update', () => {
+  it('updates CLAUDE.md count and Next ID for the added level', () => {
+    const existing = [
+      makeWord('a2_001', 'alpha'),
+      makeWord('a2_002', 'bravo'),
+      makeWord('a2_003', 'charlie'),
+    ];
+    const dir = fixture({
+      existingWords: existing,
+      claudeMd: minimalClaudeMd(),
+      pending: {
+        level: 'A2',
+        requested: 2,
+        attempt: 1,
+        words: [makePendingWord('delta'), makePendingWord('echo')],
+      },
+    });
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(0);
+    expect(r.claudeMd).toMatch(/\|\s*A2\s*\|\s*5\s*\|\s*a2_006\s*\|/);
+    expect(r.claudeMd).toMatch(/\|\s*B1\s*\|\s*1\s*\|\s*b1_011\s*\|/);
+    expect(r.claudeMd).toMatch(/\|\s*B2\s*\|\s*0\s*\|\s*b2_001\s*\|/);
+    expect(r.claudeMd).toMatch(/\|\s*C1\s*\|\s*0\s*\|\s*c1_001\s*\|/);
+  });
+
+  it('preserves CLAUDE.md and warns when table row for level is missing', () => {
+    const claudeMd = '# CoachWords\n\nNo table here.\n';
+    const dir = fixture({
+      existingWords: [],
+      claudeMd,
+      pending: {
+        level: 'A2',
+        requested: 1,
+        attempt: 1,
+        words: [makePendingWord('alpha')],
+      },
+    });
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(0);
+    expect(r.claudeMd).toBe(claudeMd);
+    expect(r.stderr).toMatch(/WARNING.*CLAUDE\.md.*A2/);
+  });
+});
