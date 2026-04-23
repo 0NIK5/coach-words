@@ -136,28 +136,58 @@ function report(status, fields) {
   }
 }
 
+function buildExistingSet(existing) {
+  const s = new Set();
+  for (const w of existing) s.add(w.word.toLowerCase().trim());
+  return s;
+}
+
 function main() {
   const pending = readPending();
   validatePending(pending);
 
   const existing = readExistingWords();
+  const existingSet = buildExistingSet(existing);
   let lastId = computeLastId(existing, pending.level);
 
   const accepted = [];
+  const duplicates = [];
   for (const w of pending.words) {
-    lastId += 1;
-    accepted.push(buildEntry(formatId(pending.level, lastId), w));
+    const key = w.word.toLowerCase().trim();
+    if (existingSet.has(key)) {
+      duplicates.push(w.word);
+    } else {
+      lastId += 1;
+      accepted.push(buildEntry(formatId(pending.level, lastId), w));
+      existingSet.add(key);
+    }
   }
 
   const newArray = existing.concat(accepted);
   writeWordsAtomic(newArray);
 
+  const totalAdded = accepted.length;
+  const remaining = pending.requested - totalAdded;
   const levelTotal = newArray.filter(w => w.level === pending.level).length;
+
+  if (remaining > 0) {
+    report('NEED_MORE', {
+      ADDED: accepted.length,
+      DUPLICATES_SKIPPED: duplicates.length,
+      DUPLICATE_WORDS: duplicates.join(', '),
+      REMAINING_NEEDED: remaining,
+      LAST_ID_ASSIGNED: formatId(pending.level, lastId),
+      LEVEL_TOTAL: levelTotal,
+      ATTEMPT: `${pending.attempt}/${MAX_ATTEMPTS}`,
+    });
+    process.exit(2);
+  }
+
   cleanupOnSuccess();
   report('OK', {
     ADDED: accepted.length,
-    DUPLICATES_SKIPPED: 0,
-    DUPLICATE_WORDS: '',
+    DUPLICATES_SKIPPED: duplicates.length,
+    DUPLICATE_WORDS: duplicates.join(', '),
     REMAINING_NEEDED: 0,
     LAST_ID_ASSIGNED: formatId(pending.level, lastId),
     LEVEL_TOTAL: levelTotal,

@@ -110,3 +110,35 @@ describe('add-words script — ID assignment', () => {
     expect(r.words.find(w => w.word === 'banana').id).toBe('a2_007');
   });
 });
+
+describe('add-words script — duplicate detection', () => {
+  it('detects duplicates case-insensitively and with trim', () => {
+    const existing = [
+      makeWord('a2_001', 'scrutinize'),
+      makeWord('a2_002', 'adventure'),
+    ];
+    const dir = fixture({
+      existingWords: existing,
+      claudeMd: minimalClaudeMd(),
+      pending: {
+        level: 'A2',
+        requested: 3,
+        attempt: 1,
+        words: [
+          makePendingWord('Scrutinize'),
+          makePendingWord('  adventure  '),
+          makePendingWord('new-word'),
+        ],
+      },
+    });
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(2);
+    const out = parseStdout(r.stdout);
+    expect(out.ADDED).toBe('1');
+    expect(out.DUPLICATES_SKIPPED).toBe('2');
+    expect(out.REMAINING_NEEDED).toBe('2');
+    expect(out.DUPLICATE_WORDS.split(', ').sort()).toEqual(['  adventure  ', 'Scrutinize'].sort());
+    expect(r.words.find(w => w.word === 'new-word')).toBeTruthy();
+    expect(r.words.filter(w => w.word.toLowerCase().trim() === 'scrutinize')).toHaveLength(1);
+  });
+});
