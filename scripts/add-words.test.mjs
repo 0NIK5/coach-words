@@ -83,3 +83,30 @@ describe('add-words script — schema validation', () => {
     expect(r.exitCode).toBe(1);
   });
 });
+
+describe('add-words script — ID assignment', () => {
+  it('assigns sequential IDs starting from max existing + 1', () => {
+    const existing = [
+      makeWord('a2_001', 'advice'),
+      makeWord('a2_002', 'adventure'),
+      makeWord('a2_005', 'airport'), // gap — should start from 5, not 3
+      makeWord('b1_010', 'achieve', 'B1'),
+    ];
+    const dir = fixture({
+      existingWords: existing,
+      claudeMd: minimalClaudeMd(),
+      pending: {
+        level: 'A2',
+        requested: 2,
+        attempt: 1,
+        words: [makePendingWord('apple'), makePendingWord('banana')],
+      },
+    });
+    const r = runScript(dir);
+    expect(r.exitCode).toBe(0);
+    const out = parseStdout(r.stdout);
+    expect(out.LAST_ID_ASSIGNED).toBe('a2_007');
+    expect(r.words.find(w => w.word === 'apple').id).toBe('a2_006');
+    expect(r.words.find(w => w.word === 'banana').id).toBe('a2_007');
+  });
+});

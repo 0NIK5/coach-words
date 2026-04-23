@@ -68,10 +68,102 @@ function validatePending(data) {
   });
 }
 
+function readExistingWords() {
+  let raw;
+  try {
+    raw = readFileSync(WORDS, 'utf8');
+  } catch (e) {
+    fail(`cannot read words.json: ${e.message}`);
+  }
+  try {
+    const arr = JSON.parse(raw);
+    if (!Array.isArray(arr)) fail('words.json must be an array');
+    return arr;
+  } catch (e) {
+    fail(`words.json is not valid JSON: ${e.message}`);
+  }
+}
+
+function computeLastId(existing, level) {
+  const re = new RegExp(`^${level.toLowerCase()}_(\\d+)$`);
+  let max = 0;
+  for (const w of existing) {
+    const m = w.id && w.id.match(re);
+    if (m) {
+      const n = parseInt(m[1], 10);
+      if (n > max) max = n;
+    }
+  }
+  return max;
+}
+
+function formatId(level, n) {
+  return `${level.toLowerCase()}_${String(n).padStart(3, '0')}`;
+}
+
+function buildEntry(id, w) {
+  return {
+    id,
+    word: w.word,
+    translation: w.translation,
+    transcription: w.transcription,
+    partOfSpeech: w.partOfSpeech,
+    level: w.level,
+    example1: w.example1,
+    example1_ru: w.example1_ru,
+    example2: w.example2,
+    example2_ru: w.example2_ru,
+  };
+}
+
+function writeWordsAtomic(newArray) {
+  const json = JSON.stringify(newArray, null, 2);
+  const tmp = `${WORDS}.tmp`;
+  writeFileSync(tmp, json);
+  renameSync(tmp, WORDS);
+}
+
+function cleanupOnSuccess() {
+  if (existsSync(PENDING)) unlinkSync(PENDING);
+  if (existsSync(STATE)) unlinkSync(STATE);
+}
+
+function report(status, fields) {
+  console.log('=== add-words result ===');
+  console.log(`STATUS: ${status}`);
+  for (const [k, v] of Object.entries(fields)) {
+    console.log(`${k}: ${v}`);
+  }
+}
+
 function main() {
   const pending = readPending();
   validatePending(pending);
-  fail('validation-only stub — remaining logic not implemented');
+
+  const existing = readExistingWords();
+  let lastId = computeLastId(existing, pending.level);
+
+  const accepted = [];
+  for (const w of pending.words) {
+    lastId += 1;
+    accepted.push(buildEntry(formatId(pending.level, lastId), w));
+  }
+
+  const newArray = existing.concat(accepted);
+  writeWordsAtomic(newArray);
+
+  const levelTotal = newArray.filter(w => w.level === pending.level).length;
+  cleanupOnSuccess();
+  report('OK', {
+    ADDED: accepted.length,
+    DUPLICATES_SKIPPED: 0,
+    DUPLICATE_WORDS: '',
+    REMAINING_NEEDED: 0,
+    LAST_ID_ASSIGNED: formatId(pending.level, lastId),
+    LEVEL_TOTAL: levelTotal,
+    ATTEMPT: `${pending.attempt}/${MAX_ATTEMPTS}`,
+  });
+  process.exit(0);
 }
 
 main();
