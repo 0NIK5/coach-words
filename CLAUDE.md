@@ -24,9 +24,9 @@ A PWA (Progressive Web App) for memorizing English vocabulary using the SM-2 spa
 ## Word database current state
 | Level | Count | Next ID |
 |-------|-------|---------|
-| A2    | 483   | a2_519  |
-| B1    | 469   | b1_509  |
-| B2    | 497   | b2_536  |
+| A2    | 519   | a2_555  |
+| B1    | 532   | b1_572  |
+| B2    | 508   | b2_547  |
 | C1    | 280   | c1_296  |
 
 ---
