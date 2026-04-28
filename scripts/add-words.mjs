@@ -133,7 +133,7 @@ function detectEol(path) {
   return buf.includes('\r\n') ? '\r\n' : '\n';
 }
 
-function updateClaudeMd(level, newCount, nextId) {
+function updateClaudeMd(level, newCount, nextId, totalWords) {
   if (!existsSync(CLAUDE_MD)) {
     console.error(`WARNING: CLAUDE.md not found at ${CLAUDE_MD}`);
     return;
@@ -146,12 +146,15 @@ function updateClaudeMd(level, newCount, nextId) {
     'm'
   );
   const m = original.match(rowRe);
-  if (!m) {
+  let updated = original;
+  if (m) {
+    const replacement = `${m[1]}${level}${m[2]}${newCount}${m[3]}${nextId}${m[4]}`;
+    updated = original.replace(rowRe, replacement);
+  } else {
     console.error(`WARNING: CLAUDE.md table row for ${level} not found. Manual update required.`);
-    return;
   }
-  const replacement = `${m[1]}${level}${m[2]}${newCount}${m[3]}${nextId}${m[4]}`;
-  const updated = original.replace(rowRe, replacement);
+  const totalRe = /\(currently \d+ unique words\)/;
+  updated = updated.replace(totalRe, `(currently ${totalWords} unique words)`);
   const tmp = `${CLAUDE_MD}.tmp`;
   writeFileSync(tmp, eol === '\r\n' ? updated.replace(/\r?\n/g, '\r\n') : updated);
   renameSync(tmp, CLAUDE_MD);
@@ -235,7 +238,7 @@ function main() {
   }
 
   const nextId = formatId(pending.level, lastId + 1);
-  updateClaudeMd(pending.level, levelTotal, nextId);
+  updateClaudeMd(pending.level, levelTotal, nextId, newArray.length);
   cleanupOnSuccess();
   report('OK', {
     ADDED: accepted.length,
