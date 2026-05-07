@@ -326,6 +326,19 @@ function commitPhase() {
     LEVEL_TOTAL: levelTotal,
     LAST_ID_ASSIGNED: formatId(pending.level, lastId),
   });
+
+  const oxfordEntries = Object.values(oxford);
+  console.log('\n=== Oxford progress ===');
+  console.log('Level | Total | Added | Skipped | Free');
+  for (const lvl of ['A2', 'B1', 'B2', 'C1']) {
+    const all  = oxfordEntries.filter(e => e.cefr === lvl.toLowerCase());
+    const done = all.filter(e => e.status === 'added').length;
+    const skip = all.filter(e => e.status === 'existing').length;
+    const free = all.filter(e => !e.status).length;
+    const marker = lvl === pending.level ? ' <' : '';
+    console.log(`${lvl}    | ${String(all.length).padStart(5)} | ${String(done).padStart(5)} | ${String(skip).padStart(7)} | ${String(free).padStart(4)}${marker}`);
+  }
+
   process.exit(0);
 }
 
