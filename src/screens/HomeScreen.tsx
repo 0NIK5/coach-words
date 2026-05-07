@@ -10,10 +10,11 @@ const allWords = wordsData as Word[]
 const LEVELS: Word['level'][] = ['A2', 'B1', 'B2', 'C1']
 
 interface Props {
-  onStartSession: (newWords: Word[], dueCards: Array<{ word: Word; card: CardProgress }>, reservePool: Word[]) => void
+  onStartNew: (newWords: Word[], reservePool: Word[]) => void
+  onStartReview: (dueCards: Array<{ word: Word; card: CardProgress }>) => void
 }
 
-export default function HomeScreen({ onStartSession }: Props) {
+export default function HomeScreen({ onStartNew, onStartReview }: Props) {
   const [settings, setSettings] = useState<AppSettings | null>(null)
   const [progress, setProgress] = useState<CardProgress[]>([])
   const [dueCount, setDueCount] = useState(0)
@@ -33,7 +34,7 @@ export default function HomeScreen({ onStartSession }: Props) {
     load()
   }, [])
 
-  async function handleStart() {
+  async function startSession(mode: 'new' | 'review') {
     if (!settings) return
     const all = await getAllProgress()
     const { newWords, dueCards, reservePool } = getSessionCards(allWords, all)
@@ -53,7 +54,12 @@ export default function HomeScreen({ onStartSession }: Props) {
       }
     }
     await saveSettings({ ...settings, streak, lastStudyDate: today })
-    onStartSession(newWords, dueCards, reservePool)
+
+    if (mode === 'new') {
+      onStartNew(newWords, reservePool)
+    } else {
+      onStartReview(dueCards)
+    }
   }
 
   if (!settings) {
@@ -122,13 +128,33 @@ export default function HomeScreen({ onStartSession }: Props) {
         </div>
       </div>
 
-      <button
-        onClick={handleStart}
-        disabled={total === 0}
-        className="w-full py-4 rounded-2xl font-bold text-lg bg-green-400 text-slate-900 disabled:opacity-40 disabled:cursor-not-allowed active:scale-95 transition-transform"
-      >
-        {total > 0 ? '▶ Начать повторение' : '✓ На сегодня готово'}
-      </button>
+      {newCount === 0 && dueCount === 0 ? (
+        <button
+          disabled
+          className="w-full py-4 rounded-2xl font-bold text-lg bg-green-400 text-slate-900 opacity-40 cursor-not-allowed"
+        >
+          ✓ На сегодня готово
+        </button>
+      ) : (
+        <div className="flex flex-col gap-3">
+          {newCount > 0 && (
+            <button
+              onClick={() => startSession('new')}
+              className="w-full py-4 rounded-2xl font-bold text-lg bg-green-400 text-slate-900 active:scale-95 transition-transform"
+            >
+              📖 Новые слова ({newCount})
+            </button>
+          )}
+          {dueCount > 0 && (
+            <button
+              onClick={() => startSession('review')}
+              className="w-full py-4 rounded-2xl font-bold text-lg bg-blue-500 text-white active:scale-95 transition-transform"
+            >
+              🔁 Повторение ({dueCount})
+            </button>
+          )}
+        </div>
+      )}
     </div>
   )
 }
