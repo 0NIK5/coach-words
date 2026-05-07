@@ -342,17 +342,34 @@ function commitPhase() {
   process.exit(0);
 }
 
+function statsPhase() {
+  const oxford = JSON.parse(readFileSync(OXFORD, 'utf8'));
+  const oxfordEntries = Object.values(oxford);
+  console.log('=== Oxford progress ===');
+  console.log('Level | Total | Added | Skipped | Free');
+  for (const lvl of ['A2', 'B1', 'B2', 'C1']) {
+    const all  = oxfordEntries.filter(e => e.cefr === lvl.toLowerCase());
+    const done = all.filter(e => e.status === 'added').length;
+    const skip = all.filter(e => e.status === 'existing').length;
+    const free = all.filter(e => !e.status).length;
+    console.log(`${lvl}    | ${String(all.length).padStart(5)} | ${String(done).padStart(5)} | ${String(skip).padStart(7)} | ${String(free).padStart(4)}`);
+  }
+  process.exit(0);
+}
+
 function main() {
   const args = process.argv.slice(2);
   if (args.length === 0) {
     commitPhase();
+  } else if (args.length === 1 && args[0] === 'stats') {
+    statsPhase();
   } else if (args.length === 2) {
     const level = args[0].toUpperCase();
     const count = parseInt(args[1], 10);
     if (isNaN(count)) fail(`count must be a number, got: ${args[1]}`);
     selectPhase(level, count);
   } else {
-    fail('Usage: add-words.mjs [LEVEL COUNT]');
+    fail('Usage: add-words.mjs [LEVEL COUNT | stats]');
   }
 }
 
