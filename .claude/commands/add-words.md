@@ -14,30 +14,23 @@ Examples:
 
 ## Protocol
 
-**Do NOT read `src/data/words.json`.** All file mechanics (reading the database, assigning IDs, deduplication, appending, updating CLAUDE.md) are handled by `scripts/add-words.mjs`. Your job is only to generate high-quality vocabulary entries.
+**Do NOT read `src/data/words.json` or `src/data/Oxford5000.json` directly.** All word selection, deduplication, and Oxford tracking is handled by `scripts/add-words.mjs`.
 
-1. **Generate** `<count>` words for the requested level following the rules in "Word selection rules by level" and "Quality rules" below. Do NOT include an `id` field — the script assigns IDs.
+1. **Run** `node scripts/add-words.mjs <LEVEL> <COUNT>`
 
-2. **Write** the generated words to `scripts/pending-words.json` with this shape:
-   ```json
-   {
-     "level": "<LEVEL>",
-     "requested": <count>,
-     "attempt": 1,
-     "words": [
-       { "word": "...", "translation": "...", "transcription": "...", "partOfSpeech": "...", "level": "<LEVEL>", "example1": "...", "example1_ru": "...", "example2": "...", "example2_ru": "..." }
-     ]
-   }
-   ```
+2. **Handle exit code:**
+   - **Exit 3 (STATUS: NEED_ENRICHMENT):** Read `scripts/pending-words.json`. For each word, fill in these 4 fields:
+     - `translation` — natural Russian, max 5 words; use `definition` field as context
+     - `example1_ru` — accurate Russian translation of `example1` (not a paraphrase)
+     - `example2` — new English example using the word in a different context from `example1`
+     - `example2_ru` — Russian translation of `example2`
 
-3. **Run** `node scripts/add-words.mjs`.
+     Rules: transcription is already set — do NOT change it. Do NOT copy `definition` into output. Follow "Quality rules" below for translation and example style. Change `phase` from `"enrichment"` to `"commit"`. Write the file back to `scripts/pending-words.json`. Then run `node scripts/add-words.mjs` (no arguments).
 
-4. **Handle the exit code:**
    - **Exit 0 (STATUS: OK):** Run `npm run build` to verify TypeScript. Report `LEVEL_TOTAL` and `LAST_ID_ASSIGNED` to the user.
-   - **Exit 2 (STATUS: NEED_MORE):** Parse `REMAINING_NEEDED` and `DUPLICATE_WORDS` from stdout. Generate exactly `REMAINING_NEEDED` new words, excluding every word listed in `DUPLICATE_WORDS`. Write them back to `scripts/pending-words.json` with `attempt` incremented by 1 (keep same `level` and `requested`). Re-run `node scripts/add-words.mjs`. Repeat until exit 0 or until the script exits 1.
    - **Exit 1 (STATUS: ERROR):** Report the `MESSAGE` verbatim to the user. Do not retry.
 
-5. **Never update `CLAUDE.md` manually** — the script handles it.
+3. **Never update `CLAUDE.md` manually** — the script handles it.
 
 ---
 
@@ -97,5 +90,3 @@ Examples:
 ### partOfSpeech values
 Use one of: `noun`, `verb`, `adjective`, `adverb`, `conjunction`, `preposition`, `determiner`, `pronoun`, `noun/verb`, `verb/noun`, `adjective/verb`, `adjective/noun`, `verb/adjective`
 
-### No duplicates
-The script handles duplicate detection (case-insensitive, across all levels). When the script returns a `DUPLICATE_WORDS` list, exclude those words from your next generation and try different vocabulary.
