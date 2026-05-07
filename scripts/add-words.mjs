@@ -240,14 +240,21 @@ function selectPhase(level, count) {
       continue;
     }
 
+    const transcription = entry.phon_br || entry.phon_n_am || '';
+    if (!transcription) {
+      toMarkExisting.push(idx);
+      continue;
+    }
+    const rawExample = entry.example || '';
+    const example1 = rawExample.replace(/^[\w\s]+,\s*/, '').trim() || rawExample;
     pool.push({
       oxfordIndex: idx,
       word: entry.word,
-      transcription: entry.phon_br || '',
+      transcription,
       partOfSpeech,
       level,
       definition: entry.definition || '',
-      example1: entry.example || '',
+      example1,
       translation: '',
       example1_ru: '',
       example2: '',
