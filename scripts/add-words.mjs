@@ -9,16 +9,42 @@ import { resolve } from 'node:path';
 
 const ROOT = process.cwd();
 const PENDING = resolve(ROOT, 'scripts/pending-words.json');
-const STATE = resolve(ROOT, 'scripts/.add-words-state.json');
 const WORDS = resolve(ROOT, 'src/data/words.json');
 const CLAUDE_MD = resolve(ROOT, 'CLAUDE.md');
-const MAX_ATTEMPTS = 5;
+const OXFORD = resolve(ROOT, 'src/data/Oxford5000.json');
 
 const REQUIRED_WORD_FIELDS = [
   'word', 'translation', 'transcription', 'partOfSpeech',
   'level', 'example1', 'example1_ru', 'example2', 'example2_ru',
 ];
 const VALID_LEVELS = new Set(['A2', 'B1', 'B2', 'C1']);
+
+const TYPE_MAP = {
+  'noun': 'noun',
+  'verb': 'verb',
+  'auxiliary verb': 'verb',
+  'modal verb': 'verb',
+  'linking verb': 'verb',
+  'adjective': 'adjective',
+  'adverb': 'adverb',
+  'conjunction': 'conjunction',
+  'preposition': 'preposition',
+  'determiner': 'determiner',
+  'pronoun': 'pronoun',
+};
+
+export function mapOxfordType(type) {
+  return TYPE_MAP[type] ?? null;
+}
+
+export function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 function fail(msg) {
   console.log('=== add-words result ===');
@@ -44,14 +70,12 @@ function readPending() {
   return data;
 }
 
-function validatePending(data) {
+function validateCommitPending(data) {
   if (!data || typeof data !== 'object') fail('pending-words.json must be an object');
+  if (data.phase !== 'commit') fail(`expected phase "commit", got "${data.phase}"`);
   if (!VALID_LEVELS.has(data.level)) fail(`invalid or missing level: ${data.level}`);
   if (!Number.isInteger(data.requested) || data.requested <= 0) {
     fail(`requested must be a positive integer, got: ${data.requested}`);
-  }
-  if (!Number.isInteger(data.attempt) || data.attempt < 1 || data.attempt > MAX_ATTEMPTS) {
-    fail(`attempt must be an integer 1..${MAX_ATTEMPTS}, got: ${data.attempt}`);
   }
   if (!Array.isArray(data.words) || data.words.length === 0) {
     fail('words must be a non-empty array');
@@ -84,6 +108,20 @@ function readExistingWords() {
   }
 }
 
+function readOxford() {
+  try {
+    return JSON.parse(readFileSync(OXFORD, 'utf8'));
+  } catch (e) {
+    fail(`cannot read Oxford5000.json: ${e.message}`);
+  }
+}
+
+function writeOxford(data) {
+  const tmp = `${OXFORD}.tmp`;
+  writeFileSync(tmp, JSON.stringify(data, null, 2));
+  renameSync(tmp, OXFORD);
+}
+
 function computeLastId(existing, level) {
   const re = new RegExp(`^${level.toLowerCase()}_(\\d+)$`);
   let max = 0;
@@ -97,7 +135,7 @@ function computeLastId(existing, level) {
   return max;
 }
 
-function formatId(level, n) {
+export function formatId(level, n) {
   return `${level.toLowerCase()}_${String(n).padStart(3, '0')}`;
 }
 
@@ -125,7 +163,6 @@ function writeWordsAtomic(newArray) {
 
 function cleanupOnSuccess() {
   if (existsSync(PENDING)) unlinkSync(PENDING);
-  if (existsSync(STATE)) unlinkSync(STATE);
 }
 
 function detectEol(path) {
@@ -174,33 +211,79 @@ function buildExistingSet(existing) {
   return s;
 }
 
-function loadState(level, requested) {
-  if (!existsSync(STATE)) return { totalAdded: 0, level, requested };
-  try {
-    const s = JSON.parse(readFileSync(STATE, 'utf8'));
-    if (s.level !== level || s.requested !== requested) {
-      return { totalAdded: 0, level, requested };
+function selectPhase(level, count) {
+  if (!VALID_LEVELS.has(level)) fail(`Invalid level: ${level}. Must be one of A2, B1, B2, C1`);
+  if (!Number.isInteger(count) || count <= 0) fail(`count must be a positive integer, got: ${count}`);
+
+  const oxford = readOxford();
+  const existing = readExistingWords();
+  const existingSet = buildExistingSet(existing);
+
+  const candidates = shuffleArray(
+    Object.entries(oxford).filter(([, e]) => e.cefr === level.toLowerCase() && !e.status)
+  );
+
+  const pool = [];
+  const toMarkExisting = [];
+
+  for (const [idx, entry] of candidates) {
+    if (pool.length >= count) break;
+
+    const partOfSpeech = mapOxfordType(entry.type);
+    if (!partOfSpeech) {
+      toMarkExisting.push(idx);
+      continue;
     }
-    return s;
-  } catch {
-    return { totalAdded: 0, level, requested };
+    if (existingSet.has(entry.word.toLowerCase().trim())) {
+      toMarkExisting.push(idx);
+      continue;
+    }
+
+    pool.push({
+      oxfordIndex: idx,
+      word: entry.word,
+      transcription: entry.phon_br || '',
+      partOfSpeech,
+      level,
+      definition: entry.definition || '',
+      example1: entry.example || '',
+      translation: '',
+      example1_ru: '',
+      example2: '',
+      example2_ru: '',
+    });
   }
+
+  if (pool.length === 0) {
+    fail(`No unprocessed words available for level ${level}`);
+  }
+
+  for (const idx of toMarkExisting) {
+    oxford[idx].status = 'existing';
+  }
+  writeOxford(oxford);
+
+  writeFileSync(PENDING, JSON.stringify(
+    { level, requested: count, phase: 'enrichment', words: pool },
+    null, 2
+  ));
+
+  report('NEED_ENRICHMENT', { SELECTED: pool.length });
+  process.exit(3);
 }
 
-function saveState(state) {
-  writeFileSync(STATE, JSON.stringify(state, null, 2));
-}
-
-function main() {
+function commitPhase() {
   const pending = readPending();
-  validatePending(pending);
+  validateCommitPending(pending);
 
   const existing = readExistingWords();
   const existingSet = buildExistingSet(existing);
   let lastId = computeLastId(existing, pending.level);
 
   const accepted = [];
+  const acceptedIndices = [];
   const duplicates = [];
+
   for (const w of pending.words) {
     const key = w.word.toLowerCase().trim();
     if (existingSet.has(key)) {
@@ -208,6 +291,7 @@ function main() {
     } else {
       lastId += 1;
       accepted.push(buildEntry(formatId(pending.level, lastId), w));
+      acceptedIndices.push(w.oxfordIndex);
       existingSet.add(key);
     }
   }
@@ -215,41 +299,45 @@ function main() {
   const newArray = existing.concat(accepted);
   writeWordsAtomic(newArray);
 
-  const priorState = loadState(pending.level, pending.requested);
-  const totalAdded = priorState.totalAdded + accepted.length;
-  const remaining = pending.requested - totalAdded;
-  const levelTotal = newArray.filter(w => w.level === pending.level).length;
-
-  if (remaining > 0) {
-    if (pending.attempt >= MAX_ATTEMPTS) {
-      fail(`exhausted ${MAX_ATTEMPTS} attempts; still need ${remaining} more words`);
-    }
-    saveState({ totalAdded, level: pending.level, requested: pending.requested });
-    report('NEED_MORE', {
-      ADDED: accepted.length,
-      DUPLICATES_SKIPPED: duplicates.length,
-      DUPLICATE_WORDS: duplicates.join(', '),
-      REMAINING_NEEDED: remaining,
-      LAST_ID_ASSIGNED: formatId(pending.level, lastId),
-      LEVEL_TOTAL: levelTotal,
-      ATTEMPT: `${pending.attempt}/${MAX_ATTEMPTS}`,
-    });
-    process.exit(2);
+  const oxford = readOxford();
+  for (const idx of acceptedIndices) {
+    if (idx != null && oxford[idx]) oxford[idx].status = 'added';
   }
+  writeOxford(oxford);
 
+  const levelTotal = newArray.filter(w => w.level === pending.level).length;
   const nextId = formatId(pending.level, lastId + 1);
   updateClaudeMd(pending.level, levelTotal, nextId, newArray.length);
   cleanupOnSuccess();
+
   report('OK', {
     ADDED: accepted.length,
-    DUPLICATES_SKIPPED: duplicates.length,
-    DUPLICATE_WORDS: duplicates.join(', '),
-    REMAINING_NEEDED: 0,
-    LAST_ID_ASSIGNED: formatId(pending.level, lastId),
     LEVEL_TOTAL: levelTotal,
-    ATTEMPT: `${pending.attempt}/${MAX_ATTEMPTS}`,
+    LAST_ID_ASSIGNED: formatId(pending.level, lastId),
   });
   process.exit(0);
 }
 
-main();
+function main() {
+  const args = process.argv.slice(2);
+  if (args.length === 0) {
+    commitPhase();
+  } else if (args.length === 2) {
+    const level = args[0].toUpperCase();
+    const count = parseInt(args[1], 10);
+    if (isNaN(count)) fail(`count must be a number, got: ${args[1]}`);
+    selectPhase(level, count);
+  } else {
+    fail('Usage: add-words.mjs [LEVEL COUNT]');
+  }
+}
+
+function isMain() {
+  const resolvedPath = new URL(import.meta.url).pathname;
+  const argPath = process.argv[1]?.replace(/\\/g, '/');
+  return argPath && (resolvedPath.endsWith(argPath) || resolvedPath.endsWith(argPath.replace(/:/g, '%3a').toLowerCase()));
+}
+
+if (isMain()) {
+  main();
+}

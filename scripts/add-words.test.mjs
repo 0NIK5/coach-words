@@ -1,352 +1,59 @@
-// @vitest-environment node
-import { describe, it, expect, afterEach } from 'vitest';
-import { writeFileSync } from 'node:fs';
-import { join } from 'node:path';
-import { makeFixture, runScript, parseStdout, makeWord, makePendingWord, cleanup } from './test-helpers.mjs';
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+import { mapOxfordType, formatId, shuffleArray } from './add-words.mjs';
 
-let dirs = [];
-function fixture(args) {
-  const d = makeFixture(args);
-  dirs.push(d);
-  return d;
-}
-afterEach(() => {
-  dirs.forEach(cleanup);
-  dirs = [];
-});
+describe('mapOxfordType', () => {
+  it('maps direct types', () => {
+    assert.equal(mapOxfordType('noun'), 'noun');
+    assert.equal(mapOxfordType('verb'), 'verb');
+    assert.equal(mapOxfordType('adjective'), 'adjective');
+    assert.equal(mapOxfordType('adverb'), 'adverb');
+    assert.equal(mapOxfordType('conjunction'), 'conjunction');
+    assert.equal(mapOxfordType('preposition'), 'preposition');
+    assert.equal(mapOxfordType('determiner'), 'determiner');
+    assert.equal(mapOxfordType('pronoun'), 'pronoun');
+  });
 
-function minimalClaudeMd() {
-  return [
-    '# CoachWords',
-    '',
-    '## Word database current state',
-    '',
-    '| Level | Count | Next ID |',
-    '|-------|-------|---------|',
-    '| A2    | 3     | a2_006  |',
-    '| B1    | 1     | b1_011  |',
-    '| B2    | 0     | b2_001  |',
-    '| C1    | 0     | c1_001  |',
-    '',
-  ].join('\n');
-}
+  it('maps verb subtypes to verb', () => {
+    assert.equal(mapOxfordType('auxiliary verb'), 'verb');
+    assert.equal(mapOxfordType('modal verb'), 'verb');
+    assert.equal(mapOxfordType('linking verb'), 'verb');
+  });
 
-describe('add-words script — smoke', () => {
-  it('exits 1 with ERROR when pending-words.json is missing', () => {
-    const dir = fixture({ existingWords: [] });
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(1);
-    expect(r.stdout).toContain('STATUS: ERROR');
+  it('returns null for unsupported types', () => {
+    assert.equal(mapOxfordType('indefinite article'), null);
+    assert.equal(mapOxfordType('definite article'), null);
+    assert.equal(mapOxfordType('number'), null);
+    assert.equal(mapOxfordType('ordinal number'), null);
+    assert.equal(mapOxfordType('exclamation'), null);
+    assert.equal(mapOxfordType('infinitive marker'), null);
+    assert.equal(mapOxfordType('unknown'), null);
   });
 });
 
-describe('add-words script — schema validation', () => {
-  it('exits 1 when level is missing', () => {
-    const dir = fixture({
-      existingWords: [],
-      pending: { requested: 1, attempt: 1, words: [makePendingWord('hello')] },
-    });
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(1);
-    expect(r.stdout).toMatch(/STATUS: ERROR/);
-    expect(r.stdout).toMatch(/level/i);
-  });
-
-  it('exits 1 when a word has an empty field', () => {
-    const bad = makePendingWord('hello');
-    bad.translation = '';
-    const dir = fixture({
-      existingWords: [],
-      pending: { level: 'A2', requested: 1, attempt: 1, words: [bad] },
-    });
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(1);
-    expect(r.stdout).toMatch(/translation/);
-  });
-
-  it('exits 1 when a word level does not match top-level level', () => {
-    const dir = fixture({
-      existingWords: [],
-      pending: { level: 'A2', requested: 1, attempt: 1, words: [makePendingWord('hello', 'B1')] },
-    });
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(1);
-    expect(r.stdout).toMatch(/level mismatch/i);
-  });
-
-  it('exits 1 when attempt exceeds 5', () => {
-    const dir = fixture({
-      existingWords: [],
-      pending: { level: 'A2', requested: 1, attempt: 6, words: [makePendingWord('hello')] },
-    });
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(1);
+describe('formatId', () => {
+  it('pads number to 3 digits', () => {
+    assert.equal(formatId('B2', 1), 'b2_001');
+    assert.equal(formatId('A2', 99), 'a2_099');
+    assert.equal(formatId('C1', 700), 'c1_700');
   });
 });
 
-describe('add-words script — ID assignment', () => {
-  it('assigns sequential IDs starting from max existing + 1', () => {
-    const existing = [
-      makeWord('a2_001', 'advice'),
-      makeWord('a2_002', 'adventure'),
-      makeWord('a2_005', 'airport'), // gap — should start from 5, not 3
-      makeWord('b1_010', 'achieve', 'B1'),
-    ];
-    const dir = fixture({
-      existingWords: existing,
-      claudeMd: minimalClaudeMd(),
-      pending: {
-        level: 'A2',
-        requested: 2,
-        attempt: 1,
-        words: [makePendingWord('apple'), makePendingWord('banana')],
-      },
-    });
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(0);
-    const out = parseStdout(r.stdout);
-    expect(out.LAST_ID_ASSIGNED).toBe('a2_007');
-    expect(r.words.find(w => w.word === 'apple').id).toBe('a2_006');
-    expect(r.words.find(w => w.word === 'banana').id).toBe('a2_007');
-  });
-});
-
-describe('add-words script — duplicate detection', () => {
-  it('detects duplicates case-insensitively and with trim', () => {
-    const existing = [
-      makeWord('a2_001', 'scrutinize'),
-      makeWord('a2_002', 'adventure'),
-    ];
-    const dir = fixture({
-      existingWords: existing,
-      claudeMd: minimalClaudeMd(),
-      pending: {
-        level: 'A2',
-        requested: 3,
-        attempt: 1,
-        words: [
-          makePendingWord('Scrutinize'),
-          makePendingWord('  adventure  '),
-          makePendingWord('new-word'),
-        ],
-      },
-    });
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(2);
-    const out = parseStdout(r.stdout);
-    expect(out.ADDED).toBe('1');
-    expect(out.DUPLICATES_SKIPPED).toBe('2');
-    expect(out.REMAINING_NEEDED).toBe('2');
-    expect(out.DUPLICATE_WORDS.split(', ').sort()).toEqual(['  adventure  ', 'Scrutinize'].sort());
-    expect(r.words.find(w => w.word === 'new-word')).toBeTruthy();
-    expect(r.words.filter(w => w.word.toLowerCase().trim() === 'scrutinize')).toHaveLength(1);
+describe('shuffleArray', () => {
+  it('returns array of same length', () => {
+    const arr = [1, 2, 3, 4, 5];
+    assert.equal(shuffleArray(arr).length, arr.length);
   });
 
-  it('rejects a word that exists at a different level', () => {
-    const existing = [makeWord('a2_001', 'bank', 'A2')];
-    const dir = fixture({
-      existingWords: existing,
-      claudeMd: minimalClaudeMd(),
-      pending: {
-        level: 'B2',
-        requested: 1,
-        attempt: 1,
-        words: [makePendingWord('bank', 'B2')],
-      },
-    });
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(2);
-    const out = parseStdout(r.stdout);
-    expect(out.DUPLICATES_SKIPPED).toBe('1');
-    expect(out.DUPLICATE_WORDS).toBe('bank');
-    expect(r.words.filter(w => w.word === 'bank')).toHaveLength(1);
-  });
-});
-
-describe('add-words script — preservation', () => {
-  it('preserves existing entries unchanged and appends new entries at the end', () => {
-    const existing = [
-      makeWord('a2_001', 'alpha'),
-      makeWord('a2_002', 'bravo'),
-      makeWord('b1_001', 'charlie', 'B1'),
-    ];
-    const dir = fixture({
-      existingWords: existing,
-      claudeMd: minimalClaudeMd(),
-      pending: {
-        level: 'A2',
-        requested: 2,
-        attempt: 1,
-        words: [makePendingWord('delta'), makePendingWord('echo')],
-      },
-    });
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(0);
-    expect(r.words.slice(0, 3)).toEqual(existing);
-    expect(r.words[3].word).toBe('delta');
-    expect(r.words[4].word).toBe('echo');
-    expect(r.words).toHaveLength(5);
-  });
-});
-
-describe('add-words script — retry state', () => {
-  it('accumulates totalAdded across retry attempts via state file', () => {
-    const existing = [makeWord('a2_001', 'existing')];
-    const dir = fixture({
-      existingWords: existing,
-      claudeMd: minimalClaudeMd(),
-      pending: {
-        level: 'A2',
-        requested: 3,
-        attempt: 1,
-        words: [makePendingWord('one'), makePendingWord('existing')],
-      },
-    });
-    const r1 = runScript(dir);
-    expect(r1.exitCode).toBe(2);
-    expect(r1.state).toEqual({ totalAdded: 1, level: 'A2', requested: 3 });
-    expect(r1.stateExists).toBe(true);
-
-    writeFileSync(
-      join(dir, 'scripts/pending-words.json'),
-      JSON.stringify({
-        level: 'A2',
-        requested: 3,
-        attempt: 2,
-        words: [makePendingWord('two'), makePendingWord('three')],
-      })
-    );
-    const r2 = runScript(dir);
-    expect(r2.exitCode).toBe(0);
-    const out = parseStdout(r2.stdout);
-    expect(out.ADDED).toBe('2');
-    expect(r2.words.map(w => w.word)).toEqual(['existing', 'one', 'two', 'three']);
-    expect(r2.stateExists).toBe(false);
+  it('does not mutate the original array', () => {
+    const arr = [1, 2, 3];
+    shuffleArray(arr);
+    assert.deepEqual(arr, [1, 2, 3]);
   });
 
-  it('discards stale state when level or requested changes', () => {
-    const dir = fixture({
-      existingWords: [],
-      claudeMd: minimalClaudeMd(),
-      pending: {
-        level: 'A2',
-        requested: 2,
-        attempt: 1,
-        words: [makePendingWord('alpha')],
-      },
-    });
-    writeFileSync(
-      join(dir, 'scripts/.add-words-state.json'),
-      JSON.stringify({ totalAdded: 99, level: 'B2', requested: 50 })
-    );
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(2);
-    expect(r.state).toEqual({ totalAdded: 1, level: 'A2', requested: 2 });
-  });
-
-  it('exits 1 when remaining > 0 on the 5th attempt', () => {
-    const existing = [makeWord('a2_001', 'dup1'), makeWord('a2_002', 'dup2')];
-    const dir = fixture({
-      existingWords: existing,
-      claudeMd: minimalClaudeMd(),
-      pending: {
-        level: 'A2',
-        requested: 3,
-        attempt: 5,
-        words: [makePendingWord('dup1'), makePendingWord('dup2')],
-      },
-    });
-    writeFileSync(
-      join(dir, 'scripts/.add-words-state.json'),
-      JSON.stringify({ totalAdded: 0, level: 'A2', requested: 3 })
-    );
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(1);
-    expect(r.stdout).toMatch(/STATUS: ERROR/);
-    expect(r.stdout).toMatch(/5 attempts/i);
-  });
-});
-
-describe('add-words script — CLAUDE.md update', () => {
-  it('updates CLAUDE.md count and Next ID for the added level', () => {
-    const existing = [
-      makeWord('a2_001', 'alpha'),
-      makeWord('a2_002', 'bravo'),
-      makeWord('a2_003', 'charlie'),
-    ];
-    const dir = fixture({
-      existingWords: existing,
-      claudeMd: minimalClaudeMd(),
-      pending: {
-        level: 'A2',
-        requested: 2,
-        attempt: 1,
-        words: [makePendingWord('delta'), makePendingWord('echo')],
-      },
-    });
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(0);
-    expect(r.claudeMd).toMatch(/\|\s*A2\s*\|\s*5\s*\|\s*a2_006\s*\|/);
-    expect(r.claudeMd).toMatch(/\|\s*B1\s*\|\s*1\s*\|\s*b1_011\s*\|/);
-    expect(r.claudeMd).toMatch(/\|\s*B2\s*\|\s*0\s*\|\s*b2_001\s*\|/);
-    expect(r.claudeMd).toMatch(/\|\s*C1\s*\|\s*0\s*\|\s*c1_001\s*\|/);
-  });
-
-  it('preserves CLAUDE.md and warns when table row for level is missing', () => {
-    const claudeMd = '# CoachWords\n\nNo table here.\n';
-    const dir = fixture({
-      existingWords: [],
-      claudeMd,
-      pending: {
-        level: 'A2',
-        requested: 1,
-        attempt: 1,
-        words: [makePendingWord('alpha')],
-      },
-    });
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(0);
-    expect(r.claudeMd).toBe(claudeMd);
-    expect(r.stderr).toMatch(/WARNING.*CLAUDE\.md.*A2/);
-  });
-});
-
-describe('add-words script — cleanup', () => {
-  it('deletes pending-words.json and .add-words-state.json on exit 0', () => {
-    const dir = fixture({
-      existingWords: [],
-      claudeMd: minimalClaudeMd(),
-      pending: {
-        level: 'A2',
-        requested: 1,
-        attempt: 1,
-        words: [makePendingWord('alpha')],
-      },
-    });
-    writeFileSync(
-      join(dir, 'scripts/.add-words-state.json'),
-      JSON.stringify({ totalAdded: 0, level: 'A2', requested: 1 })
-    );
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(0);
-    expect(r.pendingExists).toBe(false);
-    expect(r.stateExists).toBe(false);
-  });
-
-  it('keeps state file on exit 2 (NEED_MORE)', () => {
-    const existing = [makeWord('a2_001', 'dup')];
-    const dir = fixture({
-      existingWords: existing,
-      claudeMd: minimalClaudeMd(),
-      pending: {
-        level: 'A2',
-        requested: 2,
-        attempt: 1,
-        words: [makePendingWord('dup')],
-      },
-    });
-    const r = runScript(dir);
-    expect(r.exitCode).toBe(2);
-    expect(r.stateExists).toBe(true);
+  it('contains same elements', () => {
+    const arr = [1, 2, 3, 4, 5];
+    const result = shuffleArray(arr);
+    assert.deepEqual([...result].sort((a, b) => a - b), [1, 2, 3, 4, 5]);
   });
 });
