@@ -7,9 +7,10 @@ interface Props {
   words: Word[]
   onGetReplacement: (skippedLevel: Word['level']) => Word | null
   onComplete: () => void
+  onExit: () => void
 }
 
-export default function LearningScreen({ words, onGetReplacement, onComplete }: Props) {
+export default function LearningScreen({ words, onGetReplacement, onComplete, onExit }: Props) {
   const [localWords, setLocalWords] = useState<Word[]>(words)
   const [index, setIndex] = useState(0)
 
@@ -66,8 +67,17 @@ export default function LearningScreen({ words, onGetReplacement, onComplete }: 
 
   return (
     <div className="min-h-screen bg-slate-900 p-5 flex flex-col">
-      <div className="text-slate-400 text-sm mt-4 mb-6">
-        📖 Новое слово ({index + 1}/{localWords.length})
+      <div className="flex items-center justify-between mt-4 mb-6">
+        <button
+          onClick={onExit}
+          className="text-slate-500 text-sm active:text-slate-300 transition-colors px-1"
+        >
+          ← Выйти
+        </button>
+        <span className="text-slate-400 text-sm">
+          📖 {index + 1}/{localWords.length}
+        </span>
+        <div className="w-12" />
       </div>
 
       <div className="text-center mb-8">
