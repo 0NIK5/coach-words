@@ -12,7 +12,7 @@ A PWA (Progressive Web App) for memorizing English vocabulary using the SM-2 spa
 - GitHub Actions → GitHub Pages deployment
 
 ## Key architecture
-- `src/data/words.json` — bundled word database (currently 2716 unique words)
+- `src/data/words.json` — bundled word database (currently 2825 unique words)
 - `src/lib/sm2.ts` — SM-2 algorithm (pure functions)
 - `src/lib/db.ts` — IndexedDB CRUD
 - `src/lib/session.ts` — session logic (due cards, quiz options, level unlock, reserve pool)
@@ -25,7 +25,7 @@ A PWA (Progressive Web App) for memorizing English vocabulary using the SM-2 spa
 | Level | Count | Next ID |
 |-------|-------|---------|
 | A2    | 670   | a2_706  |
-| B1    | 733   | b1_773  |
+| B1    | 842   | b1_882  |
 | B2    | 860   | b2_899  |
 | C1    | 453   | c1_469  |
 
