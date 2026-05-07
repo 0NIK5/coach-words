@@ -40,15 +40,14 @@ export default function App() {
       <div className={showTabs ? 'pb-16' : ''}>
         {screen === 'home' && (
           <HomeScreen
-            onStartSession={(newWords, dueCards, reserve) => {
+            onStartNew={(newWords, reserve) => {
               setSessionNew(newWords)
-              setSessionDue(dueCards)
               setReservePool(reserve)
-              if (newWords.length > 0) {
-                setScreen('learning')
-              } else if (dueCards.length > 0) {
-                setScreen('quiz')
-              }
+              setScreen('learning')
+            }}
+            onStartReview={(dueCards) => {
+              setSessionDue(dueCards)
+              setScreen('quiz')
             }}
           />
         )}
@@ -56,13 +55,8 @@ export default function App() {
           <LearningScreen
             words={sessionNew}
             onGetReplacement={getReplacement}
-            onComplete={() => {
-              if (sessionDue.length > 0) {
-                setScreen('quiz')
-              } else {
-                setScreen('home')
-              }
-            }}
+            onComplete={() => setScreen('home')}
+            onExit={() => setScreen('home')}
           />
         )}
         {screen === 'quiz' && (
