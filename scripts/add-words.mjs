@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 // scripts/add-words.mjs
-// Appends generated vocabulary entries to src/data/words.json.
-// Contract: reads scripts/pending-words.json, writes back to words.json,
-// updates CLAUDE.md, signals retry via exit code 2.
+// Two-phase word addition from Oxford5000.json to src/data/words.json.
+// SELECT phase (with args): picks random Oxford words, exits 3.
+// COMMIT phase (no args): validates enriched pending-words.json, writes to DB, exits 0.
 
 import { readFileSync, writeFileSync, renameSync, existsSync, unlinkSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const ROOT = process.cwd();
 const PENDING = resolve(ROOT, 'scripts/pending-words.json');
@@ -258,6 +259,10 @@ function selectPhase(level, count) {
     fail(`No unprocessed words available for level ${level}`);
   }
 
+  if (pool.length < count) {
+    console.warn(`WARNING: only ${pool.length} unprocessed words available for level ${level} (requested ${count})`);
+  }
+
   for (const idx of toMarkExisting) {
     oxford[idx].status = 'existing';
   }
@@ -282,12 +287,11 @@ function commitPhase() {
 
   const accepted = [];
   const acceptedIndices = [];
-  const duplicates = [];
 
   for (const w of pending.words) {
     const key = w.word.toLowerCase().trim();
     if (existingSet.has(key)) {
-      duplicates.push(w.word);
+      continue;
     } else {
       lastId += 1;
       accepted.push(buildEntry(formatId(pending.level, lastId), w));
@@ -332,12 +336,5 @@ function main() {
   }
 }
 
-function isMain() {
-  const resolvedPath = new URL(import.meta.url).pathname;
-  const argPath = process.argv[1]?.replace(/\\/g, '/');
-  return argPath && (resolvedPath.endsWith(argPath) || resolvedPath.endsWith(argPath.replace(/:/g, '%3a').toLowerCase()));
-}
-
-if (isMain()) {
-  main();
-}
+const isMain = process.argv[1] === fileURLToPath(import.meta.url);
+if (isMain) main();
