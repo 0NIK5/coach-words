@@ -8534,7 +8534,8 @@
     "definition": "money in the form of coins or notes",
     "example": "How much cash do you have on you?",
     "uk": "cash_uk.mp3",
-    "us": "cash_us.mp3"
+    "us": "cash_us.mp3",
+    "status": "added"
   },
   "756": {
     "word": "casino",
@@ -9690,7 +9691,8 @@
     "definition": "a completely round flat shape",
     "example": "the centre/circumference/radius/diameter of a circle",
     "uk": "circle_uk.mp3",
-    "us": "circle_us.mp3"
+    "us": "circle_us.mp3",
+    "status": "existing"
   },
   "858": {
     "word": "circle",
@@ -13276,7 +13278,8 @@
     "definition": "a thing that is made to be the same as something else, especially a document or a work of art",
     "example": "The thieves replaced the original painting with a copy.",
     "uk": "copy_uk.mp3",
-    "us": "copy_us.mp3"
+    "us": "copy_us.mp3",
+    "status": "existing"
   },
   "1176": {
     "word": "copy",
@@ -14393,7 +14396,8 @@
     "definition": "to produce tears from your eyes because you are unhappy or hurt",
     "example": "It's all right. Don't cry.",
     "uk": "cry_uk.mp3",
-    "us": "cry_us.mp3"
+    "us": "cry_us.mp3",
+    "status": "added"
   },
   "1275": {
     "word": "crystal",
@@ -18436,7 +18440,8 @@
     "definition": "a picture made using a pencil or pen rather than paint",
     "example": "a pencil/pen-and-ink/charcoal drawing",
     "uk": "drawing_uk.mp3",
-    "us": "drawing_us.mp3"
+    "us": "drawing_us.mp3",
+    "status": "existing"
   },
   "1634": {
     "word": "dream",
@@ -20898,7 +20903,8 @@
     "definition": "a short piece of writing by a student as part of a course of study",
     "example": " I have to write an essay this weekend.",
     "uk": "essay_uk.mp3",
-    "us": "essay_us.mp3"
+    "us": "essay_us.mp3",
+    "status": "added"
   },
   "1852": {
     "word": "essence",
@@ -21179,7 +21185,8 @@
     "definition": "used or happening every day or regularly; ordinary",
     "example": "Change is a part of everyday life in business.",
     "uk": "everyday_uk.mp3",
-    "us": "everyday_us.mp3"
+    "us": "everyday_us.mp3",
+    "status": "added"
   },
   "1877": {
     "word": "everyone",
@@ -23466,7 +23473,8 @@
     "definition": "a number representing a particular amount, especially one given in official information",
     "example": "the latest sales/crime/unemployment figures",
     "uk": "figure_uk.mp3",
-    "us": "figure_us.mp3"
+    "us": "figure_us.mp3",
+    "status": "added"
   },
   "2080": {
     "word": "figure",
@@ -24620,7 +24628,8 @@
     "definition": "in or from a country that is not your own",
     "example": "What foreign languages do you speak?",
     "uk": "foreign_uk.mp3",
-    "us": "foreign_us.mp3"
+    "us": "foreign_us.mp3",
+    "status": "added"
   },
   "2182": {
     "word": "foreigner",
@@ -26434,7 +26443,8 @@
     "definition": "a chemical element. Gold is a yellow precious metal used for making coins, jewellery, beautiful objects, etc.",
     "example": "gold coins/jewellery",
     "uk": "gold_uk.mp3",
-    "us": "gold_us.mp3"
+    "us": "gold_us.mp3",
+    "status": "existing"
   },
   "2343": {
     "word": "golden",
@@ -29323,7 +29333,8 @@
     "definition": "to cause physical pain to somebody/yourself; to injure somebody/yourself",
     "example": "hurt something, He hurt his back playing squash.",
     "uk": "hurt_uk.mp3",
-    "us": "hurt_us.mp3"
+    "us": "hurt_us.mp3",
+    "status": "existing"
   },
   "2599": {
     "word": "husband",
@@ -29568,7 +29579,8 @@
     "definition": "suffering from an illness or disease; not feeling well",
     "example": "Her father is seriously ill in St Luke's hospital.",
     "uk": "ill_uk.mp3",
-    "us": "ill_us.mp3"
+    "us": "ill_us.mp3",
+    "status": "added"
   },
   "2621": {
     "word": "illegal",
@@ -32446,7 +32458,8 @@
     "definition": "a person whose job is to collect and write news stories for newspapers, magazines, radio, television or online news sites",
     "example": "a freelance journalist",
     "uk": "journalist_uk.mp3",
-    "us": "journalist_us.mp3"
+    "us": "journalist_us.mp3",
+    "status": "added"
   },
   "2876": {
     "word": "journey",
@@ -33998,7 +34011,8 @@
     "definition": "a yellow citrus fruit with juice that has a bitter, sharp taste. Slices of lemon and lemon juice are used in cooking and drinks.",
     "example": "Add a squeeze of lemon juice.",
     "uk": "lemon_uk.mp3",
-    "us": "lemon_us.mp3"
+    "us": "lemon_us.mp3",
+    "status": "added"
   },
   "3013": {
     "word": "lend",
@@ -35347,7 +35361,8 @@
     "definition": "making a lot of noise",
     "example": "loud laughter",
     "uk": "loud_uk.mp3",
-    "us": "loud_us.mp3"
+    "us": "loud_us.mp3",
+    "status": "existing"
   },
   "3133": {
     "word": "loud",
@@ -35496,7 +35511,8 @@
     "definition": "having good luck",
     "example": "lucky to do something, His friend was killed and he knows he is lucky to be alive.",
     "uk": "lucky_uk.mp3",
-    "us": "lucky_us.mp3"
+    "us": "lucky_us.mp3",
+    "status": "existing"
   },
   "3146": {
     "word": "lunch",
@@ -36981,7 +36997,8 @@
     "definition": "your ability to remember things",
     "example": "memory for something, I have a bad memory for names.",
     "uk": "memory_uk.mp3",
-    "us": "memory_us.mp3"
+    "us": "memory_us.mp3",
+    "status": "added"
   },
   "3278": {
     "word": "mental",
@@ -38568,7 +38585,8 @@
     "definition": "connected with music; containing music",
     "example": "musical styles/tastes",
     "uk": "musical_uk.mp3",
-    "us": "musical_us.mp3"
+    "us": "musical_us.mp3",
+    "status": "added"
   },
   "3419": {
     "word": "musical",
@@ -40054,7 +40072,8 @@
     "definition": "to give a number to something as part of a series or list",
     "example": "number something, All the seats in the stadium are numbered.",
     "uk": "number_uk.mp3",
-    "us": "number_us.mp3"
+    "us": "number_us.mp3",
+    "status": "added"
   },
   "3551": {
     "word": "numerous",
@@ -41266,7 +41285,8 @@
     "definition": "a group of people who form a business, club, etc. together in order to achieve a particular aim",
     "example": "He's the president of a large international organization.",
     "uk": "organization_uk.mp3",
-    "us": "organization_us.mp3"
+    "us": "organization_us.mp3",
+    "status": "added"
   },
   "3659": {
     "word": "organizational",
@@ -42566,7 +42586,8 @@
     "definition": "a person who is travelling in a car, bus, train, plane or ship and who is not driving it or working on it",
     "example": "airline/cruise/rail/bus passengers",
     "uk": "passenger_uk.mp3",
-    "us": "passenger_us.mp3"
+    "us": "passenger_us.mp3",
+    "status": "added"
   },
   "3774": {
     "word": "passing",
@@ -43152,7 +43173,8 @@
     "definition": "possibly",
     "example": "‘Are you going to come?’ ‘Perhaps. I'll see how I feel.’",
     "uk": "perhaps_uk.mp3",
-    "us": "perhaps_us.mp3"
+    "us": "perhaps_us.mp3",
+    "status": "existing"
   },
   "3826": {
     "word": "period",
@@ -43884,7 +43906,8 @@
     "definition": "a large round object in space that moves around a star (such as the sun) and receives light from it",
     "example": "the planets of our solar system",
     "uk": "planet_uk.mp3",
-    "us": "planet_us.mp3"
+    "us": "planet_us.mp3",
+    "status": "added"
   },
   "3891": {
     "word": "planning",
@@ -44054,7 +44077,8 @@
     "definition": "to make somebody happy",
     "example": "please somebody, You can't please everybody.",
     "uk": "please_uk.mp3",
-    "us": "please_us.mp3"
+    "us": "please_us.mp3",
+    "status": "added"
   },
   "3906": {
     "word": "pleased",
@@ -44757,7 +44781,8 @@
     "definition": "a large notice, often with a picture on it, that is put in a public place to advertise something",
     "example": "campaign/election posters",
     "uk": "poster_uk.mp3",
-    "us": "poster_us.mp3"
+    "us": "poster_us.mp3",
+    "status": "added"
   },
   "3968": {
     "word": "postpone",
@@ -51774,7 +51799,8 @@
     "definition": "a thick liquid that is eaten with food to add taste to it",
     "example": "tomato/cranberry/chilli sauce",
     "uk": "sauce_uk.mp3",
-    "us": "sauce_us.mp3"
+    "us": "sauce_us.mp3",
+    "status": "added"
   },
   "4589": {
     "word": "save",
@@ -52273,7 +52299,8 @@
     "definition": "to look carefully for something/somebody; to examine a particular place when looking for something/somebody",
     "example": "search for something/somebody, She searched in vain for her passport.",
     "uk": "search_uk.mp3",
-    "us": "search_us.mp3"
+    "us": "search_us.mp3",
+    "status": "existing"
   },
   "4633": {
     "word": "season",
@@ -52296,7 +52323,8 @@
     "definition": "a place where you can sit, for example a chair",
     "example": "She sat back in her seat.",
     "uk": "seat_uk.mp3",
-    "us": "seat_us.mp3"
+    "us": "seat_us.mp3",
+    "status": "added"
   },
   "4635": {
     "word": "seat",
@@ -52318,7 +52346,8 @@
     "definition": "after one other person or thing in order or importance",
     "example": "She came second in the marathon.",
     "uk": "second_uk.mp3",
-    "us": "second_us.mp3"
+    "us": "second_us.mp3",
+    "status": "added"
   },
   "4637": {
     "word": "second",
@@ -52373,7 +52402,8 @@
     "definition": "used to introduce the second of a list of points you want to make in a speech or piece of writing",
     "example": "Firstly, it's expensive, and secondly, it's too slow.",
     "uk": "secondly_uk.mp3",
-    "us": "secondly_us.mp3"
+    "us": "secondly_us.mp3",
+    "status": "added"
   },
   "4642": {
     "word": "secret",
@@ -53705,7 +53735,8 @@
     "definition": "either of the two parts of the body between the top of each arm and the neck",
     "example": "your left/right shoulder",
     "uk": "shoulder_uk.mp3",
-    "us": "shoulder_us.mp3"
+    "us": "shoulder_us.mp3",
+    "status": "added"
   },
   "4760": {
     "word": "shout",
@@ -54036,7 +54067,8 @@
     "definition": "shiny grey-white in colour",
     "example": "a silver car",
     "uk": "silver_uk.mp3",
-    "us": "silver_us.mp3"
+    "us": "silver_us.mp3",
+    "status": "existing"
   },
   "4789": {
     "word": "silver",
@@ -54376,7 +54408,8 @@
     "definition": "how large or small a person or thing is",
     "example": "population/sample/group/class size",
     "uk": "size_uk.mp3",
-    "us": "size_us.mp3"
+    "us": "size_us.mp3",
+    "status": "existing"
   },
   "4819": {
     "word": "sketch",
@@ -54868,7 +54901,8 @@
     "definition": "to take smoke from a cigarette, pipe, etc. into your mouth and let it out again",
     "example": "Do you mind if I smoke?",
     "uk": "smoke_uk.mp3",
-    "us": "smoke_us.mp3"
+    "us": "smoke_us.mp3",
+    "status": "existing"
   },
   "4862": {
     "word": "smoking",
@@ -55870,7 +55904,8 @@
     "definition": "a formal talk that a person gives to an audience",
     "example": "Several people made speeches at the wedding.",
     "uk": "speech_uk.mp3",
-    "us": "speech_us.mp3"
+    "us": "speech_us.mp3",
+    "status": "added"
   },
   "4951": {
     "word": "speed",
@@ -57951,7 +57986,8 @@
     "definition": "used to emphasize the great degree of something",
     "example": "This issue was of such importance that we could not afford to ignore it.",
     "uk": "such_uk.mp3",
-    "us": "such_us.mp3"
+    "us": "such_us.mp3",
+    "status": "existing"
   },
   "5135": {
     "word": "suck",
@@ -59341,7 +59377,8 @@
     "definition": "to have a particular taste",
     "example": "+ adj., to taste good/delicious/sweet",
     "uk": "taste_uk.mp3",
-    "us": "taste_us.mp3"
+    "us": "taste_us.mp3",
+    "status": "existing"
   },
   "5258": {
     "word": "tax",
@@ -60753,7 +60790,8 @@
     "definition": "to send something from your hand through the air by moving your hand or arm quickly",
     "example": "Practise throwing and catching. ",
     "uk": "throw_uk.mp3",
-    "us": "throw_us.mp3"
+    "us": "throw_us.mp3",
+    "status": "added"
   },
   "5384": {
     "word": "thumb",
@@ -61316,7 +61354,8 @@
     "definition": "highest in position",
     "example": "He lives on the top floor.",
     "uk": "top_uk.mp3",
-    "us": "top_us.mp3"
+    "us": "top_us.mp3",
+    "status": "existing"
   },
   "5434": {
     "word": "top",
@@ -61589,7 +61628,8 @@
     "definition": "made as a copy of a particular thing and used for playing with",
     "example": "a toy car",
     "uk": "toy_uk.mp3",
-    "us": "toy_us.mp3"
+    "us": "toy_us.mp3",
+    "status": "existing"
   },
   "5458": {
     "word": "toy",
@@ -63687,7 +63727,8 @@
     "definition": "a person or thing that uses something",
     "example": "road users",
     "uk": "user_uk.mp3",
-    "us": "user_us.mp3"
+    "us": "user_us.mp3",
+    "status": "added"
   },
   "5644": {
     "word": "usual",
@@ -65516,7 +65557,8 @@
     "definition": "one of the round objects under a car, bicycle, bus, etc. that turns when it moves",
     "example": "He braked suddenly, causing the front wheels to skid.",
     "uk": "wheel_uk.mp3",
-    "us": "wheel_us.mp3"
+    "us": "wheel_us.mp3",
+    "status": "added"
   },
   "5807": {
     "word": "when",
