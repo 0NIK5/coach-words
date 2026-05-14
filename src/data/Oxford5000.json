@@ -293,7 +293,8 @@
     "definition": "a way of pronouncing the words of a language that shows which country, area or social class a person comes from; how well somebody pronounces a particular language",
     "example": "a northern/Dublin/Scottish accent",
     "uk": "accent_uk.mp3",
-    "us": "accent_us.mp3"
+    "us": "accent_us.mp3",
+    "status": "existing"
   },
   "26": {
     "word": "accept",
@@ -537,7 +538,8 @@
     "definition": "a person whose job is to keep or check financial accounts",
     "example": "We talked to the company’s chief accountant.",
     "uk": "accountant_uk.mp3",
-    "us": "accountant_us.mp3"
+    "us": "accountant_us.mp3",
+    "status": "added"
   },
   "47": {
     "word": "accumulate",
@@ -687,7 +689,8 @@
     "definition": "to accept that something is true",
     "example": "acknowledge something, She refuses to acknowledge the need for reform.",
     "uk": "acknowledge_uk.mp3",
-    "us": "acknowledge_us.mp3"
+    "us": "acknowledge_us.mp3",
+    "status": "existing"
   },
   "60": {
     "word": "acquire",
@@ -698,7 +701,8 @@
     "definition": "to gain something by your own efforts, ability or behaviour",
     "example": "She has acquired a good knowledge of English.",
     "uk": "acquire_uk.mp3",
-    "us": "acquire_us.mp3"
+    "us": "acquire_us.mp3",
+    "status": "existing"
   },
   "61": {
     "word": "acquisition",
@@ -1099,7 +1103,8 @@
     "definition": "the activities that are done in order to plan, organize and run a business, school or other institution",
     "example": "Administration costs are passed on to the customer.",
     "uk": "administration_uk.mp3",
-    "us": "administration_us.mp3"
+    "us": "administration_us.mp3",
+    "status": "existing"
   },
   "96": {
     "word": "administrative",
@@ -1224,7 +1229,8 @@
     "definition": "done or given before something is going to happen",
     "example": "Please give us advance warning of any changes.",
     "uk": "advance_uk.mp3",
-    "us": "advance_us.mp3"
+    "us": "advance_us.mp3",
+    "status": "existing"
   },
   "107": {
     "word": "advance",
@@ -1247,7 +1253,8 @@
     "definition": "if knowledge, technology, etc. advances, it develops and improves",
     "example": "Technology is advancing at an incredibly rapid pace.",
     "uk": "advance_uk.mp3",
-    "us": "advance_us.mp3"
+    "us": "advance_us.mp3",
+    "status": "existing"
   },
   "109": {
     "word": "advanced",
@@ -1746,7 +1753,8 @@
     "definition": "to help somebody/something to do something, especially by making it easier",
     "example": "aid in something, The test is designed to aid in the diagnosis of various diseases.",
     "uk": "aid_uk.mp3",
-    "us": "aid_us.mp3"
+    "us": "aid_us.mp3",
+    "status": "existing"
   },
   "152": {
     "word": "aide",
@@ -2460,7 +2468,8 @@
     "definition": "a vehicle with special equipment, used for taking sick or injured people to a hospital",
     "example": "Call an ambulance!",
     "uk": "ambulance_uk.mp3",
-    "us": "ambulance_us.mp3"
+    "us": "ambulance_us.mp3",
+    "status": "added"
   },
   "214": {
     "word": "amend",
@@ -3344,7 +3353,8 @@
     "definition": "in a way that is suitable, acceptable or correct for the particular circumstances",
     "example": "The government has been accused of not responding appropriately to the needs of the homeless.",
     "uk": "appropriately_uk.mp3",
-    "us": "appropriately_us.mp3"
+    "us": "appropriately_us.mp3",
+    "status": "added"
   },
   "290": {
     "word": "approval",
@@ -3516,7 +3526,8 @@
     "definition": "to happen; to start to exist",
     "example": "An opportunity arose to work in the United States.",
     "uk": "arise_uk.mp3",
-    "us": "arise_us.mp3"
+    "us": "arise_us.mp3",
+    "status": "existing"
   },
   "305": {
     "word": "arm",
@@ -3757,7 +3768,8 @@
     "definition": "connected with art or artists",
     "example": "the artistic works of the period",
     "uk": "artistic_uk.mp3",
-    "us": "artistic_us.mp3"
+    "us": "artistic_us.mp3",
+    "status": "existing"
   },
   "326": {
     "word": "artwork",
@@ -3768,7 +3780,8 @@
     "definition": "pictures and photographs prepared for books, magazines, etc.",
     "example": "Can you let me have the finished artwork for the poster by Friday?",
     "uk": "artwork_uk.mp3",
-    "us": "artwork_us.mp3"
+    "us": "artwork_us.mp3",
+    "status": "added"
   },
   "327": {
     "word": "as",
@@ -3995,7 +4008,8 @@
     "definition": "an opinion or a judgement about somebody/something that has been thought about very carefully",
     "example": "a detailed assessment of the risks involved",
     "uk": "assessment_uk.mp3",
-    "us": "assessment_us.mp3"
+    "us": "assessment_us.mp3",
+    "status": "existing"
   },
   "347": {
     "word": "asset",
@@ -4090,7 +4104,8 @@
     "definition": "to make a connection between people or things in your mind",
     "example": "associate somebody/something with somebody/something, I always associate the smell of baking with my childhood.",
     "uk": "associate_uk.mp3",
-    "us": "associate_us.mp3"
+    "us": "associate_us.mp3",
+    "status": "existing"
   },
   "355": {
     "word": "associated",
@@ -4125,7 +4140,8 @@
     "definition": "to think or accept that something is true but without having proof of it",
     "example": "assume (that)…, It is reasonable to assume (that) the economy will continue to improve.",
     "uk": "assume_uk.mp3",
-    "us": "assume_us.mp3"
+    "us": "assume_us.mp3",
+    "status": "existing"
   },
   "358": {
     "word": "assumption",
@@ -4136,7 +4152,8 @@
     "definition": "a belief or feeling that something is true or that something will happen, although there is no proof",
     "example": "an underlying/implicit assumption",
     "uk": "assumption_uk.mp3",
-    "us": "assumption_us.mp3"
+    "us": "assumption_us.mp3",
+    "status": "existing"
   },
   "359": {
     "word": "assurance",
@@ -4158,7 +4175,8 @@
     "definition": "to tell somebody that something is definitely true or is definitely going to happen, especially when they have doubts about it",
     "example": "assure somebody (that)…, You think I did it deliberately, but I assure you (that) I did not.",
     "uk": "assure_uk.mp3",
-    "us": "assure_us.mp3"
+    "us": "assure_us.mp3",
+    "status": "added"
   },
   "361": {
     "word": "astonishing",
@@ -5201,7 +5219,8 @@
     "definition": "an object like a fence that prevents people from moving forward from one place to another",
     "example": "The crowd had to stand behind barriers.",
     "uk": "barrier_uk.mp3",
-    "us": "barrier_us.mp3"
+    "us": "barrier_us.mp3",
+    "status": "existing"
   },
   "451": {
     "word": "base",
@@ -5284,7 +5303,8 @@
     "definition": "in the most important ways, without considering things that are less important",
     "example": "I think we are basically saying the same thing. ",
     "uk": "basically_uk.mp3",
-    "us": "basically_us.mp3"
+    "us": "basically_us.mp3",
+    "status": "added"
   },
   "458": {
     "word": "basis",
@@ -5342,7 +5362,8 @@
     "definition": "a piece of wood with a handle, made in various shapes and sizes, and used for hitting the ball in games such as baseball, cricket and table tennis",
     "example": "a baseball/cricket bat",
     "uk": "bat_uk.mp3",
-    "us": "bat_us.mp3"
+    "us": "bat_us.mp3",
+    "status": "added"
   },
   "463": {
     "word": "bat",
@@ -5512,7 +5533,8 @@
     "definition": "to be able to accept and deal with something unpleasant",
     "example": "bear something, The pain was almost more than he could bear.",
     "uk": "bear_uk.mp3",
-    "us": "bear_us.mp3"
+    "us": "bear_us.mp3",
+    "status": "existing"
   },
   "478": {
     "word": "beast",
@@ -5786,7 +5808,8 @@
     "definition": "existence",
     "example": "The Irish Free State came into being in 1922.",
     "uk": "being_uk.mp3",
-    "us": "being_us.mp3"
+    "us": "being_us.mp3",
+    "status": "added"
   },
   "502": {
     "word": "belief",
@@ -6228,7 +6251,8 @@
     "definition": "to offer to pay a particular price for something, especially at an auction",
     "example": "bid (something) (for something), I bid £2 000 for the painting.",
     "uk": "bid_uk.mp3",
-    "us": "bid_us.mp3"
+    "us": "bid_us.mp3",
+    "status": "existing"
   },
   "540": {
     "word": "big",
@@ -6551,7 +6575,8 @@
     "definition": "a large cover, often made of wool, used especially on beds to keep people warm",
     "example": "It’s cold tonight—can I have another blanket?",
     "uk": "blanket_uk.mp3",
-    "us": "blanket_us.mp3"
+    "us": "blanket_us.mp3",
+    "status": "existing"
   },
   "568": {
     "word": "blast",
@@ -6639,7 +6664,8 @@
     "definition": "not able to see",
     "example": "Doctors think he will go blind.",
     "uk": "blind_uk.mp3",
-    "us": "blind_us.mp3"
+    "us": "blind_us.mp3",
+    "status": "existing"
   },
   "576": {
     "word": "block",
@@ -6708,7 +6734,8 @@
     "definition": "a hard hit with the hand, a weapon, etc.",
     "example": "She received a severe blow on the head.",
     "uk": "blow_uk.mp3",
-    "us": "blow_us.mp3"
+    "us": "blow_us.mp3",
+    "status": "existing"
   },
   "582": {
     "word": "blow",
@@ -6928,7 +6955,8 @@
     "definition": "an arrangement that you make in advance to buy a ticket to travel somewhere, go to the theatre, etc.",
     "example": "a booking form/hall/clerk",
     "uk": "booking_uk.mp3",
-    "us": "booking_us.mp3"
+    "us": "booking_us.mp3",
+    "status": "added"
   },
   "601": {
     "word": "boom",
@@ -7384,7 +7412,8 @@
     "definition": "either of the two round soft parts at the front of a woman’s body that produce milk when she has had a baby",
     "example": "She put the baby to her breast.",
     "uk": "breast_uk.mp3",
-    "us": "breast_us.mp3"
+    "us": "breast_us.mp3",
+    "status": "existing"
   },
   "641": {
     "word": "breath",
@@ -7453,7 +7482,8 @@
     "definition": "baked clay used for building walls, houses and other buildings; an individual block of this",
     "example": "The school is built of brick.",
     "uk": "brick_uk.mp3",
-    "us": "brick_us.mp3"
+    "us": "brick_us.mp3",
+    "status": "existing"
   },
   "647": {
     "word": "bride",
@@ -7500,7 +7530,8 @@
     "definition": "for a short time",
     "example": "He had spoken to Emma only briefly.",
     "uk": "briefly_uk.mp3",
-    "us": "briefly_us.mp3"
+    "us": "briefly_us.mp3",
+    "status": "added"
   },
   "651": {
     "word": "bright",
@@ -7569,7 +7600,8 @@
     "definition": "a radio or television programme",
     "example": "(British English), a party political broadcast (= for example, before an election)",
     "uk": "broadcast_uk.mp3",
-    "us": "broadcast_us.mp3"
+    "us": "broadcast_us.mp3",
+    "status": "existing"
   },
   "657": {
     "word": "broadcast",
@@ -7741,7 +7773,8 @@
     "definition": "the money that is available to a person or an organization and a plan of how it will be spent over a period of time",
     "example": "an annual budget of £10 million ",
     "uk": "budget_uk.mp3",
-    "us": "budget_us.mp3"
+    "us": "budget_us.mp3",
+    "status": "existing"
   },
   "672": {
     "word": "buffer",
@@ -8316,7 +8349,8 @@
     "definition": "to decide that something that has been arranged will not now take place",
     "example": "All flights have been cancelled because of bad weather.",
     "uk": "cancel_uk.mp3",
-    "us": "cancel_us.mp3"
+    "us": "cancel_us.mp3",
+    "status": "existing"
   },
   "722": {
     "word": "cancer",
@@ -8488,7 +8522,8 @@
     "definition": "the act of capturing somebody/something or of being captured",
     "example": "He evaded capture for three days.",
     "uk": "capture_uk.mp3",
-    "us": "capture_us.mp3"
+    "us": "capture_us.mp3",
+    "status": "existing"
   },
   "737": {
     "word": "capture",
@@ -9208,7 +9243,8 @@
     "definition": "to question whether a statement or an action is right, legal, etc.; to refuse to accept something",
     "example": "challenge something, His legal team immediately sought to challenge the decision. ",
     "uk": "challenge_uk.mp3",
-    "us": "challenge_us.mp3"
+    "us": "challenge_us.mp3",
+    "status": "existing"
   },
   "799": {
     "word": "challenging",
@@ -9429,7 +9465,8 @@
     "definition": "very pleasant or attractive",
     "example": "The cottage is tiny, but it's charming.",
     "uk": "charming_uk.mp3",
-    "us": "charming_us.mp3"
+    "us": "charming_us.mp3",
+    "status": "added"
   },
   "818": {
     "word": "chart",
@@ -9474,7 +9511,8 @@
     "definition": "an act of running or driving after somebody/something in order to catch them or it",
     "example": "The thieves were caught by police after a short chase.",
     "uk": "chase_uk.mp3",
-    "us": "chase_us.mp3"
+    "us": "chase_us.mp3",
+    "status": "existing"
   },
   "822": {
     "word": "chase",
@@ -9803,7 +9841,8 @@
     "definition": "a group of people who sing together, for example in church services or public performances",
     "example": "She sings in the school choir.",
     "uk": "choir_uk.mp3",
-    "us": "choir_us.mp3"
+    "us": "choir_us.mp3",
+    "status": "added"
   },
   "850": {
     "word": "choose",
@@ -9918,7 +9957,8 @@
     "definition": "a line, route or journey around a place",
     "example": "The race ended with eight laps of a city centre circuit.",
     "uk": "circuit_uk.mp3",
-    "us": "circuit_us.mp3"
+    "us": "circuit_us.mp3",
+    "status": "added"
   },
   "860": {
     "word": "circulate",
@@ -10054,7 +10094,8 @@
     "definition": "a state of human society that is very developed and organized",
     "example": "the technology of modern civilization",
     "uk": "civilization_uk.mp3",
-    "us": "civilization_us.mp3"
+    "us": "civilization_us.mp3",
+    "status": "added"
   },
   "872": {
     "word": "claim",
@@ -10146,7 +10187,8 @@
     "definition": "a book, film or song which is well known and considered to be of very high quality, setting standards for other books, etc.",
     "example": "The film is now a cult classic.",
     "uk": "classic_uk.mp3",
-    "us": "classic_us.mp3"
+    "us": "classic_us.mp3",
+    "status": "existing"
   },
   "880": {
     "word": "classical",
@@ -10391,7 +10433,8 @@
     "definition": "a building or part of a hospital where people can go for special medical treatment or advice",
     "example": "Your local family planning clinic can give you advice about birth control.",
     "uk": "clinic_uk.mp3",
-    "us": "clinic_us.mp3"
+    "us": "clinic_us.mp3",
+    "status": "added"
   },
   "901": {
     "word": "clinical",
@@ -10413,7 +10456,8 @@
     "definition": "a short part of a film that is shown separately",
     "example": "Here is a clip from her latest movie.",
     "uk": "clip_uk.mp3",
-    "us": "clip_us.mp3"
+    "us": "clip_us.mp3",
+    "status": "existing"
   },
   "903": {
     "word": "clock",
@@ -10747,7 +10791,8 @@
     "definition": "the fact of two things happening at the same time by chance, in a surprising way",
     "example": "a strange/an extraordinary/a remarkable coincidence",
     "uk": "coincidence_uk.mp3",
-    "us": "coincidence_us.mp3"
+    "us": "coincidence_us.mp3",
+    "status": "added"
   },
   "932": {
     "word": "cold",
@@ -11129,7 +11174,8 @@
     "definition": "to tell somebody to do something",
     "example": "command somebody to do something, He commanded his men to retreat.",
     "uk": "command_uk.mp3",
-    "us": "command_us.mp3"
+    "us": "command_us.mp3",
+    "status": "existing"
   },
   "965": {
     "word": "commander",
@@ -11303,7 +11349,8 @@
     "definition": "a group of people who are chosen, usually by a larger group, to make decisions or to deal with a particular subject",
     "example": "an executive/advisory/organizing committee",
     "uk": "committee_uk.mp3",
-    "us": "committee_us.mp3"
+    "us": "committee_us.mp3",
+    "status": "added"
   },
   "980": {
     "word": "commodity",
@@ -11772,7 +11819,8 @@
     "definition": "to write music",
     "example": "Mozart composed his last opera shortly before he died.",
     "uk": "compose_uk.mp3",
-    "us": "compose_us.mp3"
+    "us": "compose_us.mp3",
+    "status": "added"
   },
   "1021": {
     "word": "composer",
@@ -11978,7 +12026,8 @@
     "definition": "a feeling of worry, especially one that is shared by many people",
     "example": "concern about something/somebody, Villagers expressed concern about the level of traffic.",
     "uk": "concern_uk.mp3",
-    "us": "concern_us.mp3"
+    "us": "concern_us.mp3",
+    "status": "existing"
   },
   "1039": {
     "word": "concern",
@@ -12071,7 +12120,8 @@
     "definition": "building material that is made by mixing together cement, sand, small stones and water",
     "example": "a slab of concrete",
     "uk": "concrete_uk.mp3",
-    "us": "concrete_us.mp3"
+    "us": "concrete_us.mp3",
+    "status": "existing"
   },
   "1047": {
     "word": "condemn",
@@ -12314,7 +12364,8 @@
     "definition": "difficult to understand; not clear",
     "example": "The instructions on the box are very confusing.",
     "uk": "confusing_uk.mp3",
-    "us": "confusing_us.mp3"
+    "us": "confusing_us.mp3",
+    "status": "added"
   },
   "1068": {
     "word": "confusion",
@@ -12602,7 +12653,8 @@
     "definition": "the act of thinking carefully about something",
     "example": "An employer is legally bound to give due consideration to the request.",
     "uk": "consideration_uk.mp3",
-    "us": "consideration_us.mp3"
+    "us": "consideration_us.mp3",
+    "status": "added"
   },
   "1093": {
     "word": "consist",
@@ -12636,7 +12688,8 @@
     "definition": "always behaving in the same way, or having the same opinions, standards, etc.",
     "example": "a consistent approach to the problem",
     "uk": "consistent_uk.mp3",
-    "us": "consistent_us.mp3"
+    "us": "consistent_us.mp3",
+    "status": "added"
   },
   "1096": {
     "word": "consistently",
@@ -12647,7 +12700,8 @@
     "definition": "always the same",
     "example": "Her work has been of a consistently high standard.",
     "uk": "consistently_uk.mp3",
-    "us": "consistently_us.mp3"
+    "us": "consistently_us.mp3",
+    "status": "added"
   },
   "1097": {
     "word": "consolidate",
@@ -12669,7 +12723,8 @@
     "definition": "a secret plan by a group of people to do something harmful or illegal",
     "example": "conspiracy (to do something), a conspiracy to overthrow the government",
     "uk": "conspiracy_uk.mp3",
-    "us": "conspiracy_us.mp3"
+    "us": "conspiracy_us.mp3",
+    "status": "added"
   },
   "1099": {
     "word": "constant",
@@ -12759,7 +12814,8 @@
     "definition": "to build or make something such as a road, building or machine",
     "example": "construct something, The building was constructed in 1993.",
     "uk": "construct_uk.mp3",
-    "us": "construct_us.mp3"
+    "us": "construct_us.mp3",
+    "status": "existing"
   },
   "1107": {
     "word": "construction",
@@ -12782,7 +12838,8 @@
     "definition": "to go to somebody for information or advice",
     "example": "consult somebody, If the pain continues, consult your doctor.",
     "uk": "consult_uk.mp3",
-    "us": "consult_us.mp3"
+    "us": "consult_us.mp3",
+    "status": "existing"
   },
   "1109": {
     "word": "consultant",
@@ -12793,7 +12850,8 @@
     "definition": "a person who knows a lot about a particular subject and is employed to give advice about it to other people",
     "example": "a technology/design consultant",
     "uk": "consultant_uk.mp3",
-    "us": "consultant_us.mp3"
+    "us": "consultant_us.mp3",
+    "status": "added"
   },
   "1110": {
     "word": "consultation",
@@ -12910,7 +12968,8 @@
     "definition": "belonging to the same time",
     "example": "We have no contemporary account of the battle (= written near the time that it happened).",
     "uk": "contemporary_uk.mp3",
-    "us": "contemporary_us.mp3"
+    "us": "contemporary_us.mp3",
+    "status": "added"
   },
   "1120": {
     "word": "contempt",
@@ -13000,7 +13059,8 @@
     "definition": "to take part in a competition, election, etc. and try to win it",
     "example": "Three candidates contested the leadership.",
     "uk": "contest_uk.mp3",
-    "us": "contest_us.mp3"
+    "us": "contest_us.mp3",
+    "status": "existing"
   },
   "1128": {
     "word": "context",
@@ -13221,7 +13281,8 @@
     "definition": "causing a lot of angry public discussion and disagreement",
     "example": "a highly controversial topic",
     "uk": "controversial_uk.mp3",
-    "us": "controversial_us.mp3"
+    "us": "controversial_us.mp3",
+    "status": "existing"
   },
   "1147": {
     "word": "controversy",
@@ -13280,7 +13341,8 @@
     "definition": "tending to follow what is done or considered acceptable by society in general; normal and ordinary, and perhaps not very interesting",
     "example": "conventional behaviour/morality",
     "uk": "conventional_uk.mp3",
-    "us": "conventional_us.mp3"
+    "us": "conventional_us.mp3",
+    "status": "added"
   },
   "1152": {
     "word": "conversation",
@@ -13600,7 +13662,8 @@
     "definition": "the most important or central part of something",
     "example": "This report goes to the core of the argument.",
     "uk": "core_uk.mp3",
-    "us": "core_us.mp3"
+    "us": "core_us.mp3",
+    "status": "existing"
   },
   "1180": {
     "word": "corner",
@@ -13635,7 +13698,8 @@
     "definition": "a large business company",
     "example": "multinational corporations",
     "uk": "corporation_uk.mp3",
-    "us": "corporation_us.mp3"
+    "us": "corporation_us.mp3",
+    "status": "added"
   },
   "1183": {
     "word": "correct",
@@ -13871,7 +13935,8 @@
     "definition": "a group of people who are elected to govern an area such as a city or county",
     "example": "a town council",
     "uk": "council_uk.mp3",
-    "us": "council_us.mp3"
+    "us": "council_us.mp3",
+    "status": "added"
   },
   "1204": {
     "word": "councillor",
@@ -13939,7 +14004,8 @@
     "definition": "a long flat surface over which goods are sold or business is done in a shop, bank, etc.",
     "example": "behind the counter, I asked the woman behind the counter if they had any postcards.",
     "uk": "counter_uk.mp3",
-    "us": "counter_us.mp3"
+    "us": "counter_us.mp3",
+    "status": "existing"
   },
   "1210": {
     "word": "counter",
@@ -14449,7 +14515,8 @@
     "definition": "a time of great danger, difficulty or doubt when problems must be solved or important decisions must be made",
     "example": "an economic/a financial crisis",
     "uk": "crisis_uk.mp3",
-    "us": "crisis_us.mp3"
+    "us": "crisis_us.mp3",
+    "status": "existing"
   },
   "1254": {
     "word": "criterion",
@@ -14460,7 +14527,8 @@
     "definition": "a standard or principle by which something is judged, or with the help of which a decision is made",
     "example": "The main criterion is value for money.",
     "uk": "criterion_uk.mp3",
-    "us": "criterion_us.mp3"
+    "us": "criterion_us.mp3",
+    "status": "existing"
   },
   "1255": {
     "word": "critic",
@@ -14542,7 +14610,8 @@
     "definition": "a plant that is grown in large quantities, especially as food",
     "example": "Sugar is an important crop on the island.",
     "uk": "crop_uk.mp3",
-    "us": "crop_us.mp3"
+    "us": "crop_us.mp3",
+    "status": "added"
   },
   "1262": {
     "word": "cross",
@@ -14612,7 +14681,8 @@
     "definition": "extremely important, because it will affect other things",
     "example": "The next few weeks are going to be crucial.",
     "uk": "crucial_uk.mp3",
-    "us": "crucial_us.mp3"
+    "us": "crucial_us.mp3",
+    "status": "existing"
   },
   "1268": {
     "word": "crude",
@@ -14807,7 +14877,8 @@
     "definition": "a medicine or medical treatment that cures an illness",
     "example": "cure for something, the search for a cure for cancer",
     "uk": "cure_uk.mp3",
-    "us": "cure_us.mp3"
+    "us": "cure_us.mp3",
+    "status": "added"
   },
   "1285": {
     "word": "cure",
@@ -14818,7 +14889,8 @@
     "definition": "to make a person or an animal healthy again after an illness",
     "example": "cure somebody, Will you be able to cure him, Doctor?",
     "uk": "cure_uk.mp3",
-    "us": "cure_us.mp3"
+    "us": "cure_us.mp3",
+    "status": "existing"
   },
   "1286": {
     "word": "curiosity",
@@ -14840,7 +14912,8 @@
     "definition": "having a strong desire to know about something",
     "example": "He is such a curious boy, always asking questions.",
     "uk": "curious_uk.mp3",
-    "us": "curious_us.mp3"
+    "us": "curious_us.mp3",
+    "status": "existing"
   },
   "1288": {
     "word": "curly",
@@ -14887,7 +14960,8 @@
     "definition": "the movement of water in the sea or a river; the movement of air in a particular direction",
     "example": "with the current, It's easier to go with the current.",
     "uk": "current_uk.mp3",
-    "us": "current_us.mp3"
+    "us": "current_us.mp3",
+    "status": "existing"
   },
   "1292": {
     "word": "currently",
@@ -14946,7 +15020,8 @@
     "definition": "to move or make something move in the shape of a curve; to be in the shape of a curve",
     "example": "a curving staircase",
     "uk": "curve_uk.mp3",
-    "us": "curve_us.mp3"
+    "us": "curve_us.mp3",
+    "status": "existing"
   },
   "1297": {
     "word": "curved",
@@ -15026,7 +15101,8 @@
     "definition": "pretty and attractive",
     "example": "a cute little baby",
     "uk": "cute_uk.mp3",
-    "us": "cute_us.mp3"
+    "us": "cute_us.mp3",
+    "status": "added"
   },
   "1304": {
     "word": "cutting",
@@ -15118,7 +15194,8 @@
     "definition": "made from milk",
     "example": "dairy products/produce",
     "uk": "dairy_uk.mp3",
-    "us": "dairy_us.mp3"
+    "us": "dairy_us.mp3",
+    "status": "existing"
   },
   "1312": {
     "word": "dairy",
@@ -15254,7 +15331,8 @@
     "definition": "to be brave enough to do something",
     "example": "She said it as loudly as she dared.",
     "uk": "dare_uk.mp3",
-    "us": "dare_us.mp3"
+    "us": "dare_us.mp3",
+    "status": "added"
   },
   "1324": {
     "word": "dark",
@@ -15568,7 +15646,8 @@
     "definition": "of a good enough standard or quality",
     "example": "a decent meal/place to live ",
     "uk": "decent_uk.mp3",
-    "us": "decent_us.mp3"
+    "us": "decent_us.mp3",
+    "status": "added"
   },
   "1351": {
     "word": "decide",
@@ -15624,7 +15703,8 @@
     "definition": "the top outside floor of a ship or boat",
     "example": "on deck, I was the only person on deck at that time of night.",
     "uk": "deck_uk.mp3",
-    "us": "deck_us.mp3"
+    "us": "deck_us.mp3",
+    "status": "added"
   },
   "1356": {
     "word": "declaration",
@@ -15646,7 +15726,8 @@
     "definition": "to say something officially or publicly",
     "example": "declare something, The government has declared a state of emergency.",
     "uk": "declare_uk.mp3",
-    "us": "declare_us.mp3"
+    "us": "declare_us.mp3",
+    "status": "added"
   },
   "1358": {
     "word": "decline",
@@ -15797,7 +15878,8 @@
     "definition": "very; very much",
     "example": "She is deeply religious.",
     "uk": "deeply_uk.mp3",
-    "us": "deeply_us.mp3"
+    "us": "deeply_us.mp3",
+    "status": "added"
   },
   "1371": {
     "word": "default",
@@ -16194,7 +16276,8 @@
     "definition": "controlled by representatives who are elected by the people of a country; connected with this system",
     "example": "a democratic country",
     "uk": "democratic_uk.mp3",
-    "us": "democratic_us.mp3"
+    "us": "democratic_us.mp3",
+    "status": "added"
   },
   "1405": {
     "word": "demon",
@@ -16308,7 +16391,8 @@
     "definition": "to leave a place, especially to start a trip",
     "example": "depart (for…) (from…), Flights for Rome depart from Terminal 3.",
     "uk": "depart_uk.mp3",
-    "us": "depart_us.mp3"
+    "us": "depart_us.mp3",
+    "status": "added"
   },
   "1415": {
     "word": "department",
@@ -16411,7 +16495,8 @@
     "definition": "a sum of money that is given as the first part of a larger payment",
     "example": "They normally ask you to pay $100 (as a) deposit.",
     "uk": "deposit_uk.mp3",
-    "us": "deposit_us.mp3"
+    "us": "deposit_us.mp3",
+    "status": "added"
   },
   "1424": {
     "word": "deposit",
@@ -16457,7 +16542,8 @@
     "definition": "a medical condition in which a person feels very sad, anxious and without hope and often has physical symptoms such as being unable to sleep, etc.",
     "example": "She was diagnosed as having clinical depression.",
     "uk": "depression_uk.mp3",
-    "us": "depression_us.mp3"
+    "us": "depression_us.mp3",
+    "status": "added"
   },
   "1428": {
     "word": "deprive",
@@ -16502,7 +16588,8 @@
     "definition": "",
     "example": "",
     "uk": "derive_uk.mp3",
-    "us": "derive_us.mp3"
+    "us": "derive_us.mp3",
+    "status": "existing"
   },
   "1432": {
     "word": "descend",
@@ -16581,7 +16668,8 @@
     "definition": "to do something or show qualities that mean a particular reaction, reward or punishment is appropriate",
     "example": "deserve something, You deserve a rest after all that hard work.",
     "uk": "deserve_uk.mp3",
-    "us": "deserve_us.mp3"
+    "us": "deserve_us.mp3",
+    "status": "existing"
   },
   "1439": {
     "word": "design",
@@ -16648,7 +16736,8 @@
     "definition": "a strong wish to have or do something",
     "example": "He now had enough money to satisfy all his desires.",
     "uk": "desire_uk.mp3",
-    "us": "desire_us.mp3"
+    "us": "desire_us.mp3",
+    "status": "existing"
   },
   "1445": {
     "word": "desire",
@@ -16693,7 +16782,8 @@
     "definition": "feeling or showing that you have little hope and are ready to do anything without worrying about danger to yourself or others",
     "example": "The prisoners grew increasingly desperate.",
     "uk": "desperate_uk.mp3",
-    "us": "desperate_us.mp3"
+    "us": "desperate_us.mp3",
+    "status": "existing"
   },
   "1449": {
     "word": "desperately",
@@ -16752,7 +16842,8 @@
     "definition": "the act of destroying something; the process of being destroyed",
     "example": "the destruction of the rainforests",
     "uk": "destruction_uk.mp3",
-    "us": "destruction_us.mp3"
+    "us": "destruction_us.mp3",
+    "status": "added"
   },
   "1454": {
     "word": "destructive",
@@ -17118,7 +17209,8 @@
     "definition": "to be different from somebody/something",
     "example": "They hold differing views.",
     "uk": "differ_uk.mp3",
-    "us": "differ_us.mp3"
+    "us": "differ_us.mp3",
+    "status": "added"
   },
   "1486": {
     "word": "difference",
@@ -17463,7 +17555,8 @@
     "definition": "a situation where people have different opinions about something and often argue",
     "example": "disagreement (about/on/over/as to something), Disagreement arose about exactly how to plan the show.",
     "uk": "disagreement_uk.mp3",
-    "us": "disagreement_us.mp3"
+    "us": "disagreement_us.mp3",
+    "status": "added"
   },
   "1516": {
     "word": "disappear",
@@ -17591,7 +17684,8 @@
     "definition": "the practice of training people to obey rules and orders and punishing them if they do not; the controlled behaviour or situation that is the result of this training ",
     "example": "The school has a reputation for high standards of discipline.",
     "uk": "discipline_uk.mp3",
-    "us": "discipline_us.mp3"
+    "us": "discipline_us.mp3",
+    "status": "existing"
   },
   "1527": {
     "word": "disclose",
@@ -17857,7 +17951,8 @@
     "definition": "an arrangement of things in a public place to inform or entertain people or advertise something for sale",
     "example": "a beautiful floral display ",
     "uk": "display_uk.mp3",
-    "us": "display_us.mp3"
+    "us": "display_us.mp3",
+    "status": "existing"
   },
   "1550": {
     "word": "display",
@@ -18038,7 +18133,8 @@
     "definition": "to take somebody’s attention away from what they are trying to do",
     "example": "You're distracting me from my work.",
     "uk": "distract_uk.mp3",
-    "us": "distract_us.mp3"
+    "us": "distract_us.mp3",
+    "status": "added"
   },
   "1566": {
     "word": "distress",
@@ -18130,7 +18226,8 @@
     "definition": "a jump into deep water with your head first and your arms in front of you",
     "example": "a spectacular high dive (= from high above the water)",
     "uk": "dive_uk.mp3",
-    "us": "dive_us.mp3"
+    "us": "dive_us.mp3",
+    "status": "existing"
   },
   "1574": {
     "word": "dive",
@@ -18153,7 +18250,8 @@
     "definition": "very different from each other and of various kinds",
     "example": "People from diverse cultures were invited to the event.",
     "uk": "diverse_uk.mp3",
-    "us": "diverse_us.mp3"
+    "us": "diverse_us.mp3",
+    "status": "existing"
   },
   "1576": {
     "word": "diversity",
@@ -18246,7 +18344,8 @@
     "definition": "to end your marriage to somebody legally",
     "example": "They're getting divorced.",
     "uk": "divorce_uk.mp3",
-    "us": "divorce_us.mp3"
+    "us": "divorce_us.mp3",
+    "status": "existing"
   },
   "1584": {
     "word": "divorced",
@@ -19610,7 +19709,8 @@
     "definition": "connected with the task of preparing something such as a newspaper, a book or a television or radio programme, to be published or broadcast",
     "example": "the magazine’s editorial staff",
     "uk": "editorial_uk.mp3",
-    "us": "editorial_us.mp3"
+    "us": "editorial_us.mp3",
+    "status": "added"
   },
   "1702": {
     "word": "educate",
@@ -19983,7 +20083,8 @@
     "definition": "the branch of science and technology that studies electric currents in electronic equipment",
     "example": "the electronics industry",
     "uk": "electronics_uk.mp3",
-    "us": "electronics_us.mp3"
+    "us": "electronics_us.mp3",
+    "status": "added"
   },
   "1734": {
     "word": "elegant",
@@ -20233,7 +20334,8 @@
     "definition": "to move out of or away from something and become possible to see ",
     "example": "The crabs emerge at low tide to look for food.",
     "uk": "emerge_uk.mp3",
-    "us": "emerge_us.mp3"
+    "us": "emerge_us.mp3",
+    "status": "existing"
   },
   "1756": {
     "word": "emergence",
@@ -20890,7 +20992,8 @@
     "definition": "to make sure that something happens or is definite",
     "example": "ensure something, We are working to ensure the safety of people in the city. ",
     "uk": "ensure_uk.mp3",
-    "us": "ensure_us.mp3"
+    "us": "ensure_us.mp3",
+    "status": "existing"
   },
   "1813": {
     "word": "enter",
@@ -21007,7 +21110,8 @@
     "definition": "in every way possible; completely",
     "example": "The experience was entirely new to me.",
     "uk": "entirely_uk.mp3",
-    "us": "entirely_us.mp3"
+    "us": "entirely_us.mp3",
+    "status": "added"
   },
   "1823": {
     "word": "entitle",
@@ -21205,7 +21309,8 @@
     "definition": "to provide yourself/somebody/something with the things that are needed for a particular purpose or activity",
     "example": "equip something, to be fully/poorly equipped",
     "uk": "equip_uk.mp3",
-    "us": "equip_us.mp3"
+    "us": "equip_us.mp3",
+    "status": "added"
   },
   "1840": {
     "word": "equipment",
@@ -21287,7 +21392,8 @@
     "definition": "when a volcano erupts or burning rocks, smoke, etc. erupt or are erupted, the burning rocks, etc. are thrown out from the volcano",
     "example": "The volcano could erupt at any time.",
     "uk": "erupt_uk.mp3",
-    "us": "erupt_us.mp3"
+    "us": "erupt_us.mp3",
+    "status": "added"
   },
   "1847": {
     "word": "escalate",
@@ -21439,7 +21545,8 @@
     "definition": "to form an idea of the cost, size, value etc. of something, but without calculating it exactly",
     "example": "estimate something, to estimate the cost/value/number of something",
     "uk": "estimate_uk.mp3",
-    "us": "estimate_us.mp3"
+    "us": "estimate_us.mp3",
+    "status": "existing"
   },
   "1860": {
     "word": "eternal",
@@ -21531,7 +21638,8 @@
     "definition": "the act of forming an opinion of the amount, value or quality of something after thinking about it carefully",
     "example": "an evaluation of the healthcare system",
     "uk": "evaluation_uk.mp3",
-    "us": "evaluation_us.mp3"
+    "us": "evaluation_us.mp3",
+    "status": "existing"
   },
   "1868": {
     "word": "even",
@@ -21690,7 +21798,8 @@
     "definition": "clear; easily seen",
     "example": "The orchestra played with evident enjoyment.",
     "uk": "evident_uk.mp3",
-    "us": "evident_us.mp3"
+    "us": "evident_us.mp3",
+    "status": "added"
   },
   "1882": {
     "word": "evil",
@@ -21701,7 +21810,8 @@
     "definition": "enjoying harming others; morally bad and cruel",
     "example": "Police described the killer as ‘a desperate and evil man’.",
     "uk": "evil_uk.mp3",
-    "us": "evil_us.mp3"
+    "us": "evil_us.mp3",
+    "status": "existing"
   },
   "1883": {
     "word": "evil",
@@ -21712,7 +21822,8 @@
     "definition": "a force that causes bad things to happen; morally bad behaviour",
     "example": "the eternal struggle between good and evil",
     "uk": "evil_uk.mp3",
-    "us": "evil_us.mp3"
+    "us": "evil_us.mp3",
+    "status": "added"
   },
   "1884": {
     "word": "evoke",
@@ -21734,7 +21845,8 @@
     "definition": "the slow steady development of plants, animals, etc. during the history of the earth, as they adapt to changes in their environment",
     "example": "the evolution of the human species",
     "uk": "evolution_uk.mp3",
-    "us": "evolution_us.mp3"
+    "us": "evolution_us.mp3",
+    "status": "added"
   },
   "1886": {
     "word": "evolutionary",
@@ -21756,7 +21868,8 @@
     "definition": "to develop gradually, especially from a simple to a more complicated form; to develop something in this way",
     "example": "evolve (from something) (into something), The idea evolved from a drawing I discovered in the attic.",
     "uk": "evolve_uk.mp3",
-    "us": "evolve_us.mp3"
+    "us": "evolve_us.mp3",
+    "status": "existing"
   },
   "1888": {
     "word": "exact",
@@ -21848,7 +21961,8 @@
     "definition": "to be greater than a particular number or amount",
     "example": "The price will not exceed £100.",
     "uk": "exceed_uk.mp3",
-    "us": "exceed_us.mp3"
+    "us": "exceed_us.mp3",
+    "status": "added"
   },
   "1896": {
     "word": "excellence",
@@ -21951,7 +22065,8 @@
     "definition": "greater than what seems reasonable or appropriate",
     "example": "They complained about the excessive noise coming from the upstairs flat.",
     "uk": "excessive_uk.mp3",
-    "us": "excessive_us.mp3"
+    "us": "excessive_us.mp3",
+    "status": "existing"
   },
   "1905": {
     "word": "exchange",
@@ -22020,7 +22135,8 @@
     "definition": "to deliberately not include something in what you are doing or considering",
     "example": "The cost of borrowing has been excluded from the inflation figures.",
     "uk": "exclude_uk.mp3",
-    "us": "exclude_us.mp3"
+    "us": "exclude_us.mp3",
+    "status": "existing"
   },
   "1911": {
     "word": "exclusion",
@@ -22554,7 +22670,8 @@
     "definition": "to treat a person or situation as an opportunity to gain an advantage for yourself",
     "example": "He exploited his father's name to get himself a job.",
     "uk": "exploit_uk.mp3",
-    "us": "exploit_us.mp3"
+    "us": "exploit_us.mp3",
+    "status": "existing"
   },
   "1957": {
     "word": "exploitation",
@@ -22670,7 +22787,8 @@
     "definition": "the state of being in a place or situation where there is no protection from something harmful or unpleasant",
     "example": "prolonged exposure to harmful radiation",
     "uk": "exposure_uk.mp3",
-    "us": "exposure_us.mp3"
+    "us": "exposure_us.mp3",
+    "status": "existing"
   },
   "1967": {
     "word": "express",
@@ -22705,7 +22823,8 @@
     "definition": "to make something longer or larger",
     "example": "to extend a fence/road/house",
     "uk": "extend_uk.mp3",
-    "us": "extend_us.mp3"
+    "us": "extend_us.mp3",
+    "status": "existing"
   },
   "1970": {
     "word": "extension",
@@ -22834,7 +22953,8 @@
     "definition": "unexpected, surprising or strange",
     "example": "What an extraordinary thing to say!",
     "uk": "extraordinary_uk.mp3",
-    "us": "extraordinary_us.mp3"
+    "us": "extraordinary_us.mp3",
+    "status": "added"
   },
   "1981": {
     "word": "extreme",
@@ -22903,7 +23023,8 @@
     "definition": "material made by weaving wool, cotton, silk, etc., used for making clothes, curtains, etc. and for covering furniture",
     "example": "They sell a wide variety of printed cotton fabric.",
     "uk": "fabric_uk.mp3",
-    "us": "fabric_us.mp3"
+    "us": "fabric_us.mp3",
+    "status": "added"
   },
   "1987": {
     "word": "fabulous",
@@ -23052,7 +23173,8 @@
     "definition": "not successful",
     "example": "a failed writer",
     "uk": "failed_uk.mp3",
-    "us": "failed_us.mp3"
+    "us": "failed_us.mp3",
+    "status": "added"
   },
   "2000": {
     "word": "failure",
@@ -23110,7 +23232,8 @@
     "definition": "trust in somebody’s ability or knowledge; trust that somebody/something will do what has been promised",
     "example": "If the company can retain its customers' faith, it could become the market leader.",
     "uk": "faith_uk.mp3",
-    "us": "faith_us.mp3"
+    "us": "faith_us.mp3",
+    "status": "existing"
   },
   "2005": {
     "word": "fake",
@@ -23514,7 +23637,8 @@
     "definition": "to prefer one system, plan, way of doing something, etc. to another",
     "example": "favour something, Many countries favour a presidential system of government.",
     "uk": "favour_uk.mp3",
-    "us": "favour_us.mp3"
+    "us": "favour_us.mp3",
+    "status": "existing"
   },
   "2040": {
     "word": "favourable",
@@ -23987,7 +24111,8 @@
     "definition": "to be part of a process, situation, etc. especially an important part",
     "example": "My feelings about the matter didn't seem to figure at all.",
     "uk": "figure_uk.mp3",
-    "us": "figure_us.mp3"
+    "us": "figure_us.mp3",
+    "status": "existing"
   },
   "2081": {
     "word": "file",
@@ -24578,7 +24703,8 @@
     "definition": "to shine very brightly for a short time; to make something shine in this way",
     "example": "Lightning flashed in the distance.",
     "uk": "flash_uk.mp3",
-    "us": "flash_us.mp3"
+    "us": "flash_us.mp3",
+    "status": "existing"
   },
   "2132": {
     "word": "flat",
@@ -25309,7 +25435,8 @@
     "definition": "that existed in earlier times",
     "example": "This fine ruin was, in former times, a royal castle.",
     "uk": "former_uk.mp3",
-    "us": "former_us.mp3"
+    "us": "former_us.mp3",
+    "status": "added"
   },
   "2195": {
     "word": "formerly",
@@ -25376,7 +25503,8 @@
     "definition": "having or bringing an advantage, an opportunity, a piece of good luck, etc.",
     "example": "Remember those less fortunate than yourselves.",
     "uk": "fortunate_uk.mp3",
-    "us": "fortunate_us.mp3"
+    "us": "fortunate_us.mp3",
+    "status": "added"
   },
   "2201": {
     "word": "fortunately",
@@ -25458,7 +25586,8 @@
     "definition": "the parts of a dead animal or a plant that have become hard and turned into rock",
     "example": "fossils over two million years old",
     "uk": "fossil_uk.mp3",
-    "us": "fossil_us.mp3"
+    "us": "fossil_us.mp3",
+    "status": "added"
   },
   "2208": {
     "word": "foster",
@@ -26003,7 +26132,8 @@
     "definition": "to do or achieve what was hoped for or expected",
     "example": "to fulfil your dream/ambition/potential",
     "uk": "fulfil_uk.mp3",
-    "us": "fulfil_us.mp3"
+    "us": "fulfil_us.mp3",
+    "status": "added"
   },
   "2255": {
     "word": "full",
@@ -26049,7 +26179,8 @@
     "definition": "completely",
     "example": "I fully understand your motives.",
     "uk": "fully_uk.mp3",
-    "us": "fully_us.mp3"
+    "us": "fully_us.mp3",
+    "status": "added"
   },
   "2259": {
     "word": "fun",
@@ -26095,7 +26226,8 @@
     "definition": "to work in the correct way",
     "example": "We now have a functioning shower.",
     "uk": "function_uk.mp3",
-    "us": "function_us.mp3"
+    "us": "function_us.mp3",
+    "status": "existing"
   },
   "2263": {
     "word": "functional",
@@ -26141,7 +26273,8 @@
     "definition": "serious and very important; affecting the most central and important parts of something",
     "example": "the fundamental principles of scientific method",
     "uk": "fundamental_uk.mp3",
-    "us": "fundamental_us.mp3"
+    "us": "fundamental_us.mp3",
+    "status": "existing"
   },
   "2267": {
     "word": "fundamentally",
@@ -26152,7 +26285,8 @@
     "definition": "in every way that is important; completely",
     "example": "The two approaches are fundamentally different.",
     "uk": "fundamentally_uk.mp3",
-    "us": "fundamentally_us.mp3"
+    "us": "fundamentally_us.mp3",
+    "status": "added"
   },
   "2268": {
     "word": "funding",
@@ -26268,7 +26402,8 @@
     "definition": "in addition to what has just been stated. Furthermore is used especially to add a point to an argument.",
     "example": "He said he had not discussed the matter with her. Furthermore, he had not even contacted her.",
     "uk": "furthermore_uk.mp3",
-    "us": "furthermore_us.mp3"
+    "us": "furthermore_us.mp3",
+    "status": "added"
   },
   "2278": {
     "word": "future",
@@ -26302,7 +26437,8 @@
     "definition": "an increase in the amount of something, especially in wealth or weight",
     "example": "The opposition made unexpected gains in the last election.",
     "uk": "gain_uk.mp3",
-    "us": "gain_us.mp3"
+    "us": "gain_us.mp3",
+    "status": "existing"
   },
   "2281": {
     "word": "gain",
@@ -26533,7 +26669,8 @@
     "definition": "a unit inside a cell that controls a particular quality in a living thing that has been passed on from its parents",
     "example": "a dominant/recessive gene",
     "uk": "gene_uk.mp3",
-    "us": "gene_us.mp3"
+    "us": "gene_us.mp3",
+    "status": "added"
   },
   "2301": {
     "word": "general",
@@ -26686,7 +26823,8 @@
     "definition": "real; exactly what it appears to be; not artificial",
     "example": "Is the painting a genuine Picasso?",
     "uk": "genuine_uk.mp3",
-    "us": "genuine_us.mp3"
+    "us": "genuine_us.mp3",
+    "status": "existing"
   },
   "2314": {
     "word": "genuinely",
@@ -26720,7 +26858,8 @@
     "definition": "a movement that you make with your hands, your head or your face to show a particular meaning",
     "example": "He made a rude gesture at the driver of the other car.",
     "uk": "gesture_uk.mp3",
-    "us": "gesture_us.mp3"
+    "us": "gesture_us.mp3",
+    "status": "existing"
   },
   "2317": {
     "word": "get",
@@ -26903,7 +27042,8 @@
     "definition": "",
     "example": "",
     "uk": "globalization_uk.mp3",
-    "us": "globalization_us.mp3"
+    "us": "globalization_us.mp3",
+    "status": "added"
   },
   "2333": {
     "word": "globe",
@@ -26914,7 +27054,8 @@
     "definition": "the world (used especially to emphasize its size)",
     "example": "tourists from every corner of the globe",
     "uk": "globe_uk.mp3",
-    "us": "globe_us.mp3"
+    "us": "globe_us.mp3",
+    "status": "added"
   },
   "2334": {
     "word": "glorious",
@@ -27099,7 +27240,8 @@
     "definition": "the quality of being good",
     "example": "the essential goodness of human nature",
     "uk": "goodness_uk.mp3",
-    "us": "goodness_us.mp3"
+    "us": "goodness_us.mp3",
+    "status": "added"
   },
   "2350": {
     "word": "goods",
@@ -27122,7 +27264,8 @@
     "definition": "very beautiful and attractive; giving great pleasure ",
     "example": "a gorgeous girl/man",
     "uk": "gorgeous_uk.mp3",
-    "us": "gorgeous_us.mp3"
+    "us": "gorgeous_us.mp3",
+    "status": "added"
   },
   "2352": {
     "word": "govern",
@@ -27180,7 +27323,8 @@
     "definition": "to take or hold somebody/something with your hand suddenly or roughly",
     "example": "grab somebody/something, She grabbed his arm as he got up to leave.",
     "uk": "grab_uk.mp3",
-    "us": "grab_us.mp3"
+    "us": "grab_us.mp3",
+    "status": "added"
   },
   "2357": {
     "word": "grace",
@@ -27355,7 +27499,8 @@
     "definition": "designs, drawings or pictures that are used especially in the production of books, magazines, websites, etc.",
     "example": "Text and graphics are prepared separately and then combined.",
     "uk": "graphics_uk.mp3",
-    "us": "graphics_us.mp3"
+    "us": "graphics_us.mp3",
+    "status": "added"
   },
   "2372": {
     "word": "grasp",
@@ -27456,7 +27601,8 @@
     "definition": "very much",
     "example": "People's reaction to the film has varied greatly.",
     "uk": "greatly_uk.mp3",
-    "us": "greatly_us.mp3"
+    "us": "greatly_us.mp3",
+    "status": "added"
   },
   "2381": {
     "word": "green",
@@ -27612,7 +27758,8 @@
     "definition": "a shop that sells food and other things used in the home. In American English ‘grocery store’ is often used to mean ‘supermarket’.",
     "example": "the corner grocery store",
     "uk": "grocery_uk.mp3",
-    "us": "grocery_us.mp3"
+    "us": "grocery_us.mp3",
+    "status": "added"
   },
   "2395": {
     "word": "gross",
@@ -28070,7 +28217,8 @@
     "definition": "the part of a door, window, etc. that you use to open it",
     "example": "She turned the handle and opened the door.",
     "uk": "handle_uk.mp3",
-    "us": "handle_us.mp3"
+    "us": "handle_us.mp3",
+    "status": "existing"
   },
   "2435": {
     "word": "handle",
@@ -28492,7 +28640,8 @@
     "definition": "to become healthy again; to make something healthy again",
     "example": "It took a long time for the wounds to heal.",
     "uk": "heal_uk.mp3",
-    "us": "heal_us.mp3"
+    "us": "heal_us.mp3",
+    "status": "added"
   },
   "2472": {
     "word": "health",
@@ -28548,7 +28697,8 @@
     "definition": "the ability to hear",
     "example": "Her hearing is poor.",
     "uk": "hearing_uk.mp3",
-    "us": "hearing_us.mp3"
+    "us": "hearing_us.mp3",
+    "status": "added"
   },
   "2477": {
     "word": "heart",
@@ -28607,7 +28757,8 @@
     "definition": "the place believed to be the home of God where good people go when they die, sometimes imagined to be in the sky",
     "example": "the kingdom of heaven",
     "uk": "heaven_uk.mp3",
-    "us": "heaven_us.mp3"
+    "us": "heaven_us.mp3",
+    "status": "added"
   },
   "2482": {
     "word": "heavily",
@@ -28642,7 +28793,8 @@
     "definition": "the back part of the foot below the ankle",
     "example": "Apply the cream to dry, cracked heels before bed.",
     "uk": "heel_uk.mp3",
-    "us": "heel_us.mp3"
+    "us": "heel_us.mp3",
+    "status": "added"
   },
   "2485": {
     "word": "height",
@@ -28768,7 +28920,8 @@
     "definition": "for this reason",
     "example": "We suspect they are trying to hide something, hence the need for an independent inquiry.",
     "uk": "hence_uk.mp3",
-    "us": "hence_us.mp3"
+    "us": "hence_us.mp3",
+    "status": "added"
   },
   "2496": {
     "word": "her",
@@ -28801,7 +28954,8 @@
     "definition": "a plant whose leaves, flowers or seeds are used to add taste to food, in medicines or for their pleasant smell. parsley, mint and oregano are all herbs.",
     "example": "a herb garden",
     "uk": "herb_uk.mp3",
-    "us": "herb_us.mp3"
+    "us": "herb_us.mp3",
+    "status": "existing"
   },
   "2499": {
     "word": "here",
@@ -29021,7 +29175,8 @@
     "definition": "a main road for travelling long distances, especially one connecting and going through cities and towns",
     "example": "Plans were being made for the construction of a new interstate highway system.",
     "uk": "highway_uk.mp3",
-    "us": "highway_us.mp3"
+    "us": "highway_us.mp3",
+    "status": "added"
   },
   "2518": {
     "word": "hilarious",
@@ -29032,7 +29187,8 @@
     "definition": "extremely funny",
     "example": "a hilarious joke/story",
     "uk": "hilarious_uk.mp3",
-    "us": "hilarious_us.mp3"
+    "us": "hilarious_us.mp3",
+    "status": "added"
   },
   "2519": {
     "word": "hill",
@@ -29312,7 +29468,8 @@
     "definition": "connected with God or a particular religion",
     "example": "the Holy Bible",
     "uk": "holy_uk.mp3",
-    "us": "holy_us.mp3"
+    "us": "holy_us.mp3",
+    "status": "added"
   },
   "2543": {
     "word": "home",
@@ -29427,7 +29584,8 @@
     "definition": "to do something that shows great respect for somebody/something",
     "example": "honour somebody/something, our honoured guests",
     "uk": "honour_uk.mp3",
-    "us": "honour_us.mp3"
+    "us": "honour_us.mp3",
+    "status": "existing"
   },
   "2553": {
     "word": "hook",
@@ -29438,7 +29596,8 @@
     "definition": "a curved piece of metal, plastic or wire for hanging things on, catching fish with, etc.",
     "example": "a picture/curtain/coat hook",
     "uk": "hook_uk.mp3",
-    "us": "hook_us.mp3"
+    "us": "hook_us.mp3",
+    "status": "existing"
   },
   "2554": {
     "word": "hook",
@@ -29814,7 +29973,8 @@
     "definition": "the quality in something that makes it funny; the ability to laugh at things that are funny",
     "example": "It was a story full of gentle humour.",
     "uk": "humour_uk.mp3",
-    "us": "humour_us.mp3"
+    "us": "humour_us.mp3",
+    "status": "existing"
   },
   "2587": {
     "word": "hundred",
@@ -29943,7 +30103,8 @@
     "definition": "a feeling of unhappiness because somebody has been unkind or unfair to you",
     "example": "There was hurt and real anger in her voice.",
     "uk": "hurt_uk.mp3",
-    "us": "hurt_us.mp3"
+    "us": "hurt_us.mp3",
+    "status": "existing"
   },
   "2598": {
     "word": "hurt",
@@ -29988,7 +30149,8 @@
     "definition": "an idea or explanation of something that is based on a few known facts but that has not yet been proved to be true or correct",
     "example": "to formulate/confirm a hypothesis",
     "uk": "hypothesis_uk.mp3",
-    "us": "hypothesis_us.mp3"
+    "us": "hypothesis_us.mp3",
+    "status": "existing"
   },
   "2602": {
     "word": "I",
@@ -30032,7 +30194,8 @@
     "definition": "a small symbol on a computer or smartphone screen that represents a program or a file",
     "example": "Click on the printer icon with the mouse.",
     "uk": "icon_uk.mp3",
-    "us": "icon_us.mp3"
+    "us": "icon_us.mp3",
+    "status": "added"
   },
   "2606": {
     "word": "ID",
@@ -30090,7 +30253,8 @@
     "definition": "similar in every detail",
     "example": "a row of identical houses",
     "uk": "identical_uk.mp3",
-    "us": "identical_us.mp3"
+    "us": "identical_us.mp3",
+    "status": "added"
   },
   "2611": {
     "word": "identification",
@@ -30717,7 +30881,8 @@
     "definition": "something that encourages you to do something",
     "example": "There is no incentive for people to save fuel.",
     "uk": "incentive_uk.mp3",
-    "us": "incentive_us.mp3"
+    "us": "incentive_us.mp3",
+    "status": "existing"
   },
   "2665": {
     "word": "inch",
@@ -30751,7 +30916,8 @@
     "definition": "something that happens, especially something unusual or unpleasant",
     "example": "His bad behaviour was just an isolated incident.",
     "uk": "incident_uk.mp3",
-    "us": "incident_us.mp3"
+    "us": "incident_us.mp3",
+    "status": "added"
   },
   "2668": {
     "word": "inclined",
@@ -30819,7 +30985,8 @@
     "definition": "the money that a person, a region, a country, etc. earns from work, from investing money, from business, etc.",
     "example": "Average household income fell slightly.",
     "uk": "income_uk.mp3",
-    "us": "income_us.mp3"
+    "us": "income_us.mp3",
+    "status": "existing"
   },
   "2674": {
     "word": "incorporate",
@@ -31112,7 +31279,8 @@
     "definition": "connected with industry",
     "example": "an industrial dispute",
     "uk": "industrial_uk.mp3",
-    "us": "industrial_us.mp3"
+    "us": "industrial_us.mp3",
+    "status": "added"
   },
   "2699": {
     "word": "industry",
@@ -31146,7 +31314,8 @@
     "definition": "that you cannot avoid or prevent",
     "example": "It was an inevitable consequence of the decision.",
     "uk": "inevitable_uk.mp3",
-    "us": "inevitable_us.mp3"
+    "us": "inevitable_us.mp3",
+    "status": "existing"
   },
   "2702": {
     "word": "inevitably",
@@ -31413,7 +31582,8 @@
     "definition": "at the beginning",
     "example": "Initially, the system worked well.",
     "uk": "initially_uk.mp3",
-    "us": "initially_us.mp3"
+    "us": "initially_us.mp3",
+    "status": "added"
   },
   "2725": {
     "word": "initiate",
@@ -31717,7 +31887,8 @@
     "definition": "to demand that something happen or that somebody agree to do something",
     "example": "I didn't really want to go but he insisted.",
     "uk": "insist_uk.mp3",
-    "us": "insist_us.mp3"
+    "us": "insist_us.mp3",
+    "status": "added"
   },
   "2751": {
     "word": "inspect",
@@ -31868,7 +32039,8 @@
     "definition": "an organization that has a particular purpose, especially one that is connected with education or a particular profession; the building used by this organization",
     "example": "The report was compiled by Germany's five leading economic research institutes.",
     "uk": "institute_uk.mp3",
-    "us": "institute_us.mp3"
+    "us": "institute_us.mp3",
+    "status": "added"
   },
   "2764": {
     "word": "institution",
@@ -31993,7 +32165,8 @@
     "definition": "an arrangement with a company in which you pay them regular amounts of money and they agree to pay the costs, for example, if you die or are ill, or if you lose or damage something",
     "example": "health/medical insurance",
     "uk": "insurance_uk.mp3",
-    "us": "insurance_us.mp3"
+    "us": "insurance_us.mp3",
+    "status": "added"
   },
   "2775": {
     "word": "intact",
@@ -32037,7 +32210,8 @@
     "definition": "to combine two or more things so that they work together; to combine with something else in this way",
     "example": "integrate into/with something, These programs will integrate with your existing software.",
     "uk": "integrate_uk.mp3",
-    "us": "integrate_us.mp3"
+    "us": "integrate_us.mp3",
+    "status": "existing"
   },
   "2779": {
     "word": "integrated",
@@ -32140,7 +32314,8 @@
     "definition": "that you are trying to achieve or reach",
     "example": "the intended purpose ",
     "uk": "intended_uk.mp3",
-    "us": "intended_us.mp3"
+    "us": "intended_us.mp3",
+    "status": "added"
   },
   "2788": {
     "word": "intense",
@@ -32849,7 +33024,8 @@
     "definition": "far away from any others",
     "example": "isolated rural areas",
     "uk": "isolated_uk.mp3",
-    "us": "isolated_us.mp3"
+    "us": "isolated_us.mp3",
+    "status": "added"
   },
   "2850": {
     "word": "isolation",
@@ -33034,7 +33210,8 @@
     "definition": "a plane driven by jet engines",
     "example": "a jet aircraft/fighter/airliner",
     "uk": "jet_uk.mp3",
-    "us": "jet_us.mp3"
+    "us": "jet_us.mp3",
+    "status": "added"
   },
   "2866": {
     "word": "jewellery",
@@ -33381,7 +33558,8 @@
     "definition": "to show that somebody/something is right or reasonable",
     "example": "justify doing something, How can they justify paying such huge salaries?",
     "uk": "justify_uk.mp3",
-    "us": "justify_us.mp3"
+    "us": "justify_us.mp3",
+    "status": "existing"
   },
   "2896": {
     "word": "keen",
@@ -33884,7 +34062,8 @@
     "definition": "an act of bringing an aircraft or a spacecraft down to the ground after a journey",
     "example": "a perfect/smooth/safe landing",
     "uk": "landing_uk.mp3",
-    "us": "landing_us.mp3"
+    "us": "landing_us.mp3",
+    "status": "added"
   },
   "2939": {
     "word": "landlord",
@@ -34216,7 +34395,8 @@
     "definition": "to start an activity, especially an organized one",
     "example": "The government recently launched a national road safety campaign.",
     "uk": "launch_uk.mp3",
-    "us": "launch_us.mp3"
+    "us": "launch_us.mp3",
+    "status": "existing"
   },
   "2968": {
     "word": "law",
@@ -35289,7 +35469,8 @@
     "definition": "not very great in amount or extent",
     "example": "We are doing our best with the limited resources available.",
     "uk": "limited_uk.mp3",
-    "us": "limited_us.mp3"
+    "us": "limited_us.mp3",
+    "status": "added"
   },
   "3061": {
     "word": "line",
@@ -35494,7 +35675,8 @@
     "definition": "in a literal way",
     "example": "The word ‘planet’ literally means ‘wandering body’.",
     "uk": "literally_uk.mp3",
-    "us": "literally_us.mp3"
+    "us": "literally_us.mp3",
+    "status": "added"
   },
   "3079": {
     "word": "literary",
@@ -35505,7 +35687,8 @@
     "definition": "connected with literature",
     "example": "literary criticism/theory",
     "uk": "literary_uk.mp3",
-    "us": "literary_us.mp3"
+    "us": "literary_us.mp3",
+    "status": "added"
   },
   "3080": {
     "word": "literature",
@@ -35934,7 +36117,8 @@
     "definition": "over a long period of time",
     "example": "to benefit/affect somebody long-term",
     "uk": "long-term_uk.mp3",
-    "us": "long-term_us.mp3"
+    "us": "long-term_us.mp3",
+    "status": "existing"
   },
   "3117": {
     "word": "long-time",
@@ -36001,7 +36185,8 @@
     "definition": "not securely fixed where it should be; able to become separated from something",
     "example": "a loose button/tooth",
     "uk": "loose_uk.mp3",
-    "us": "loose_us.mp3"
+    "us": "loose_us.mp3",
+    "status": "added"
   },
   "3123": {
     "word": "lord",
@@ -36104,7 +36289,8 @@
     "definition": "a way of raising money for a government, charity, etc. by selling tickets that have different numbers on them that people have chosen. Numbers are then chosen by chance and the people who have those numbers on their tickets win prizes.",
     "example": "the national/state lottery",
     "uk": "lottery_uk.mp3",
-    "us": "lottery_us.mp3"
+    "us": "lottery_us.mp3",
+    "status": "added"
   },
   "3132": {
     "word": "loud",
@@ -36209,7 +36395,8 @@
     "definition": "a low level or point; a low figure",
     "example": "The temperature reached a record low in London last night.",
     "uk": "low_uk.mp3",
-    "us": "low_us.mp3"
+    "us": "low_us.mp3",
+    "status": "existing"
   },
   "3141": {
     "word": "lower",
@@ -36220,7 +36407,8 @@
     "definition": "to reduce something or to become less in value, quality, etc.",
     "example": "lower something, He lowered his voice to a whisper.",
     "uk": "lower_uk.mp3",
-    "us": "lower_us.mp3"
+    "us": "lower_us.mp3",
+    "status": "added"
   },
   "3142": {
     "word": "loyal",
@@ -36325,7 +36513,8 @@
     "definition": "the words of a popular song",
     "example": "music and lyrics by Rodgers and Hart",
     "uk": "lyric_uk.mp3",
-    "us": "lyric_us.mp3"
+    "us": "lyric_us.mp3",
+    "status": "added"
   },
   "3151": {
     "word": "machine",
@@ -36541,7 +36730,8 @@
     "definition": "to make something continue at the same level, standard, etc.",
     "example": "to maintain law and order/standards/a balance/control ",
     "uk": "maintain_uk.mp3",
-    "us": "maintain_us.mp3"
+    "us": "maintain_us.mp3",
+    "status": "existing"
   },
   "3170": {
     "word": "maintenance",
@@ -36622,7 +36812,8 @@
     "definition": "the act or process of making or producing something",
     "example": "strategic decision-making",
     "uk": "making_uk.mp3",
-    "us": "making_us.mp3"
+    "us": "making_us.mp3",
+    "status": "added"
   },
   "3177": {
     "word": "male",
@@ -37059,7 +37250,8 @@
     "definition": "",
     "example": "",
     "uk": "martial_uk.mp3",
-    "us": "martial_us.mp3"
+    "us": "martial_us.mp3",
+    "status": "added"
   },
   "3215": {
     "word": "mask",
@@ -37081,7 +37273,8 @@
     "definition": "affecting or involving a large number of people or things",
     "example": "The world faces the tremendous problem of mass unemployment.",
     "uk": "mass_uk.mp3",
-    "us": "mass_us.mp3"
+    "us": "mass_us.mp3",
+    "status": "existing"
   },
   "3217": {
     "word": "mass",
@@ -37139,7 +37332,8 @@
     "definition": "to learn or understand something completely",
     "example": "She never completely mastered the art of lip-reading.",
     "uk": "master_uk.mp3",
-    "us": "master_us.mp3"
+    "us": "master_us.mp3",
+    "status": "existing"
   },
   "3222": {
     "word": "match",
@@ -37184,7 +37378,8 @@
     "definition": "a friend",
     "example": "They've been best mates since school.",
     "uk": "mate_uk.mp3",
-    "us": "mate_us.mp3"
+    "us": "mate_us.mp3",
+    "status": "existing"
   },
   "3226": {
     "word": "mate",
@@ -37381,7 +37576,8 @@
     "definition": "the head of the government of a town or city, etc., elected by the public",
     "example": "the Mayor of New York",
     "uk": "mayor_uk.mp3",
-    "us": "mayor_us.mp3"
+    "us": "mayor_us.mp3",
+    "status": "added"
   },
   "3243": {
     "word": "me",
@@ -37447,7 +37643,8 @@
     "definition": "an action, an object or a system by which a result is achieved; a way of achieving or doing something",
     "example": "means of something, Email is a highly effective means of communication.",
     "uk": "means_uk.mp3",
-    "us": "means_us.mp3"
+    "us": "means_us.mp3",
+    "status": "added"
   },
   "3249": {
     "word": "meantime",
@@ -37528,7 +37725,8 @@
     "definition": "a person whose job is repairing machines, especially the engines of vehicles",
     "example": "a car/motor mechanic",
     "uk": "mechanic_uk.mp3",
-    "us": "mechanic_us.mp3"
+    "us": "mechanic_us.mp3",
+    "status": "added"
   },
   "3256": {
     "word": "mechanical",
@@ -38321,7 +38519,8 @@
     "definition": "a senior member of the government who is in charge of a government department or a branch of one",
     "example": "the Minister of Education",
     "uk": "minister_uk.mp3",
-    "us": "minister_us.mp3"
+    "us": "minister_us.mp3",
+    "status": "added"
   },
   "3325": {
     "word": "ministry",
@@ -38480,7 +38679,8 @@
     "definition": "that cannot exist or be done; not possible",
     "example": "almost/virtually/nearly impossible",
     "uk": "mission_uk.mp3",
-    "us": "mission_us.mp3"
+    "us": "mission_us.mp3",
+    "status": "added"
   },
   "3339": {
     "word": "mistake",
@@ -38642,7 +38842,8 @@
     "definition": "to create a copy or description of an activity, a situation, etc. so that you can study it before dealing with the real thing",
     "example": "The program can model a typical home page for you.",
     "uk": "model_uk.mp3",
-    "us": "model_us.mp3"
+    "us": "model_us.mp3",
+    "status": "added"
   },
   "3353": {
     "word": "moderate",
@@ -38895,7 +39096,8 @@
     "definition": "standards or principles of good behaviour, especially in matters of sexual relationships",
     "example": "Young people these days have no morals.",
     "uk": "moral_uk.mp3",
-    "us": "moral_us.mp3"
+    "us": "moral_us.mp3",
+    "status": "existing"
   },
   "3375": {
     "word": "morality",
@@ -39053,7 +39255,8 @@
     "definition": "the act or process of moving or the way something moves",
     "example": "What was Newton's first law of motion?",
     "uk": "motion_uk.mp3",
-    "us": "motion_us.mp3"
+    "us": "motion_us.mp3",
+    "status": "added"
   },
   "3389": {
     "word": "motivate",
@@ -39099,7 +39302,8 @@
     "definition": "having an engine; using the power of an engine",
     "example": "The street is closed to motor vehicles.",
     "uk": "motor_uk.mp3",
-    "us": "motor_us.mp3"
+    "us": "motor_us.mp3",
+    "status": "existing"
   },
   "3393": {
     "word": "motor",
@@ -39110,7 +39314,8 @@
     "definition": "a device that uses electricity, petrol, etc. to produce movement and makes a machine, a vehicle, a boat, etc. work",
     "example": "An electric motor is used to pump the water.",
     "uk": "motor_uk.mp3",
-    "us": "motor_us.mp3"
+    "us": "motor_us.mp3",
+    "status": "existing"
   },
   "3394": {
     "word": "motorcycle",
@@ -39804,7 +40009,8 @@
     "definition": "a short distance from somebody/something; not far away",
     "example": "They live nearby.",
     "uk": "nearby_uk.mp3",
-    "us": "nearby_us.mp3"
+    "us": "nearby_us.mp3",
+    "status": "existing"
   },
   "3454": {
     "word": "nearly",
@@ -39827,7 +40033,8 @@
     "definition": "tidy and in order; carefully done or arranged",
     "example": "She kept her desk extremely neat.",
     "uk": "neat_uk.mp3",
-    "us": "neat_us.mp3"
+    "us": "neat_us.mp3",
+    "status": "added"
   },
   "3456": {
     "word": "necessarily",
@@ -40719,7 +40926,8 @@
     "definition": "a small book of plain paper for writing notes in",
     "example": "The police officer wrote the details down in his notebook.",
     "uk": "notebook_uk.mp3",
-    "us": "notebook_us.mp3"
+    "us": "notebook_us.mp3",
+    "status": "added"
   },
   "3534": {
     "word": "nothing",
@@ -41183,7 +41391,8 @@
     "definition": "to get something, especially by making an effort",
     "example": "to obtain information/data/results",
     "uk": "obtain_uk.mp3",
-    "us": "obtain_us.mp3"
+    "us": "obtain_us.mp3",
+    "status": "existing"
   },
   "3574": {
     "word": "obvious",
@@ -41253,7 +41462,8 @@
     "definition": "a job or profession",
     "example": "Please state your name, age and occupation below.",
     "uk": "occupation_uk.mp3",
-    "us": "occupation_us.mp3"
+    "us": "occupation_us.mp3",
+    "status": "added"
   },
   "3580": {
     "word": "occupy",
@@ -41390,7 +41600,8 @@
     "definition": "to make somebody feel upset because of something you say or do that is rude or embarrassing",
     "example": "They'll be offended if you don't go to their wedding.",
     "uk": "offend_uk.mp3",
-    "us": "offend_us.mp3"
+    "us": "offend_us.mp3",
+    "status": "added"
   },
   "3592": {
     "word": "offender",
@@ -41495,7 +41706,8 @@
     "definition": "a person who is in a position of authority in a large organization",
     "example": "She is the government official in charge of the project.",
     "uk": "official_uk.mp3",
-    "us": "official_us.mp3"
+    "us": "official_us.mp3",
+    "status": "existing"
   },
   "3601": {
     "word": "offspring",
@@ -41822,7 +42034,8 @@
     "definition": "to work in a particular way",
     "example": "Most domestic freezers operate at below −18°C.",
     "uk": "operate_uk.mp3",
-    "us": "operate_us.mp3"
+    "us": "operate_us.mp3",
+    "status": "added"
   },
   "3630": {
     "word": "operation",
@@ -41856,7 +42069,8 @@
     "definition": "a person who operates equipment or a machine",
     "example": "a computer/machine operator",
     "uk": "operator_uk.mp3",
-    "us": "operator_us.mp3"
+    "us": "operator_us.mp3",
+    "status": "added"
   },
   "3633": {
     "word": "opinion",
@@ -42396,7 +42610,8 @@
     "definition": "the result or effect of an action or event",
     "example": "The likely outcome is a compromise.",
     "uk": "outcome_uk.mp3",
-    "us": "outcome_us.mp3"
+    "us": "outcome_us.mp3",
+    "status": "existing"
   },
   "3680": {
     "word": "outdoor",
@@ -42431,7 +42646,8 @@
     "definition": "on the outside of something",
     "example": "the outer layers of the skin",
     "uk": "outer_uk.mp3",
-    "us": "outer_us.mp3"
+    "us": "outer_us.mp3",
+    "status": "added"
   },
   "3683": {
     "word": "outfit",
@@ -42511,7 +42727,8 @@
     "definition": "the amount of something that a person, a machine or an organization produces",
     "example": "Manufacturing output has increased by 8 per cent.",
     "uk": "output_uk.mp3",
-    "us": "output_us.mp3"
+    "us": "output_us.mp3",
+    "status": "existing"
   },
   "3690": {
     "word": "outrage",
@@ -42660,7 +42877,8 @@
     "definition": "including everything or everyone; in total",
     "example": "The company will invest $1.6m overall in new equipment.",
     "uk": "overall_uk.mp3",
-    "us": "overall_us.mp3"
+    "us": "overall_us.mp3",
+    "status": "existing"
   },
   "3703": {
     "word": "overcome",
@@ -42843,7 +43061,8 @@
     "definition": "the fact of owning something",
     "example": "a growth in home ownership",
     "uk": "ownership_uk.mp3",
-    "us": "ownership_us.mp3"
+    "us": "ownership_us.mp3",
+    "status": "added"
   },
   "3719": {
     "word": "oxygen",
@@ -43306,7 +43525,8 @@
     "definition": "for part of the day or week in which people work",
     "example": "She's looking for a part-time job.",
     "uk": "part-time_uk.mp3",
-    "us": "part-time_us.mp3"
+    "us": "part-time_us.mp3",
+    "status": "added"
   },
   "3759": {
     "word": "partial",
@@ -43339,7 +43559,8 @@
     "definition": "a person who is taking part in an activity or event",
     "example": "The average age of study participants was 48 years.",
     "uk": "participant_uk.mp3",
-    "us": "participant_us.mp3"
+    "us": "participant_us.mp3",
+    "status": "added"
   },
   "3762": {
     "word": "participate",
@@ -43398,7 +43619,8 @@
     "definition": "to some extent; not completely",
     "example": "Some people are unwilling to attend the classes partly because of the cost involved.",
     "uk": "partly_uk.mp3",
-    "us": "partly_us.mp3"
+    "us": "partly_us.mp3",
+    "status": "added"
   },
   "3767": {
     "word": "partner",
@@ -43514,7 +43736,8 @@
     "definition": "having or showing strong feelings of sexual love or of anger, etc.",
     "example": "to have a passionate nature",
     "uk": "passionate_uk.mp3",
-    "us": "passionate_us.mp3"
+    "us": "passionate_us.mp3",
+    "status": "added"
   },
   "3777": {
     "word": "passive",
@@ -43547,7 +43770,8 @@
     "definition": "a series of letters, numbers, etc. that you must type into a computer or computer system in order to be able to use it",
     "example": "Enter a username and password to get into the system.",
     "uk": "password_uk.mp3",
-    "us": "password_us.mp3"
+    "us": "password_us.mp3",
+    "status": "added"
   },
   "3780": {
     "word": "past",
@@ -43856,7 +44080,8 @@
     "definition": "a person who is the same age or who has the same social status as you",
     "example": "She enjoys the respect of her peers.",
     "uk": "peer_uk.mp3",
-    "us": "peer_us.mp3"
+    "us": "peer_us.mp3",
+    "status": "added"
   },
   "3807": {
     "word": "pen",
@@ -43878,7 +44103,8 @@
     "definition": "a punishment for breaking a law, rule or contract",
     "example": "to impose a penalty",
     "uk": "penalty_uk.mp3",
-    "us": "penalty_us.mp3"
+    "us": "penalty_us.mp3",
+    "status": "added"
   },
   "3809": {
     "word": "pencil",
@@ -44148,7 +44374,8 @@
     "definition": "to allow somebody to do something or to allow something to happen",
     "example": "be permitted, Mobile phones are not permitted in the examination room.",
     "uk": "permit_uk.mp3",
-    "us": "permit_us.mp3"
+    "us": "permit_us.mp3",
+    "status": "existing"
   },
   "3832": {
     "word": "persist",
@@ -44309,7 +44536,8 @@
     "definition": "a fact or an event in nature or society, especially one that is not fully understood",
     "example": "cultural/natural phenomena",
     "uk": "phenomenon_uk.mp3",
-    "us": "phenomenon_us.mp3"
+    "us": "phenomenon_us.mp3",
+    "status": "existing"
   },
   "3846": {
     "word": "philosopher",
@@ -44572,7 +44800,8 @@
     "definition": "to put things one on top of another; to form a pile",
     "example": "pile something, She piled the boxes one on top of the other.",
     "uk": "pile_uk.mp3",
-    "us": "pile_us.mp3"
+    "us": "pile_us.mp3",
+    "status": "existing"
   },
   "3869": {
     "word": "pill",
@@ -44720,7 +44949,8 @@
     "definition": "an area of ground specially prepared and marked for playing a sports game",
     "example": "a football pitch",
     "uk": "pitch_uk.mp3",
-    "us": "pitch_us.mp3"
+    "us": "pitch_us.mp3",
+    "status": "added"
   },
   "3882": {
     "word": "pity",
@@ -45078,7 +45308,8 @@
     "definition": "to make a secret plan to harm somebody, especially a government or its leader",
     "example": "plot with somebody, It is claimed he plotted with the country's enemies.",
     "uk": "plot_uk.mp3",
-    "us": "plot_us.mp3"
+    "us": "plot_us.mp3",
+    "status": "existing"
   },
   "3913": {
     "word": "plug",
@@ -45484,7 +45715,8 @@
     "definition": "the state of being liked, enjoyed or supported by a large number of people",
     "example": "the increasing popularity of cycling",
     "uk": "popularity_uk.mp3",
-    "us": "popularity_us.mp3"
+    "us": "popularity_us.mp3",
+    "status": "added"
   },
   "3948": {
     "word": "population",
@@ -45530,7 +45762,8 @@
     "definition": "one part of something larger",
     "example": "a substantial/significant portion of the population",
     "uk": "portion_uk.mp3",
-    "us": "portion_us.mp3"
+    "us": "portion_us.mp3",
+    "status": "added"
   },
   "3952": {
     "word": "portrait",
@@ -45564,7 +45797,8 @@
     "definition": "to create a threat, problem, etc. that has to be dealt with",
     "example": "to pose a threat/risk/challenge/danger",
     "uk": "pose_uk.mp3",
-    "us": "pose_us.mp3"
+    "us": "pose_us.mp3",
+    "status": "added"
   },
   "3955": {
     "word": "position",
@@ -45936,7 +46170,8 @@
     "definition": "to say that you approve of and admire somebody/something",
     "example": "praise somebody/something, She praised his cooking.",
     "uk": "praise_uk.mp3",
-    "us": "praise_us.mp3"
+    "us": "praise_us.mp3",
+    "status": "existing"
   },
   "3987": {
     "word": "pray",
@@ -45982,7 +46217,8 @@
     "definition": "to happen before something or come before something/somebody in order",
     "example": "the years preceding the war",
     "uk": "precede_uk.mp3",
-    "us": "precede_us.mp3"
+    "us": "precede_us.mp3",
+    "status": "existing"
   },
   "3991": {
     "word": "precedent",
@@ -46004,7 +46240,8 @@
     "definition": "rare and worth a lot of money",
     "example": "a precious vase",
     "uk": "precious_uk.mp3",
-    "us": "precious_us.mp3"
+    "us": "precious_us.mp3",
+    "status": "added"
   },
   "3993": {
     "word": "precise",
@@ -46015,7 +46252,8 @@
     "definition": "clear and accurate",
     "example": "precise details/instructions/measurements",
     "uk": "precise_uk.mp3",
-    "us": "precise_us.mp3"
+    "us": "precise_us.mp3",
+    "status": "existing"
   },
   "3994": {
     "word": "precisely",
@@ -46129,7 +46367,8 @@
     "definition": "a greater interest in or desire for somebody/something than somebody/something else",
     "example": "It's a matter of personal preference.",
     "uk": "preference_uk.mp3",
-    "us": "preference_us.mp3"
+    "us": "preference_us.mp3",
+    "status": "added"
   },
   "4004": {
     "word": "pregnancy",
@@ -46218,7 +46457,8 @@
     "definition": "the act or process of getting ready for something or making something ready",
     "example": "food preparation",
     "uk": "preparation_uk.mp3",
-    "us": "preparation_us.mp3"
+    "us": "preparation_us.mp3",
+    "status": "added"
   },
   "4012": {
     "word": "prepare",
@@ -46354,7 +46594,8 @@
     "definition": "to keep a particular quality, feature, etc.; to make sure that something is kept",
     "example": "He was anxious to preserve his reputation.",
     "uk": "preserve_uk.mp3",
-    "us": "preserve_us.mp3"
+    "us": "preserve_us.mp3",
+    "status": "existing"
   },
   "4024": {
     "word": "preside",
@@ -47176,7 +47417,8 @@
     "definition": "a person who does a job that needs special training and a high level of education",
     "example": "You need a professional to sort out your finances.",
     "uk": "professional_uk.mp3",
-    "us": "professional_us.mp3"
+    "us": "professional_us.mp3",
+    "status": "existing"
   },
   "4095": {
     "word": "professor",
@@ -47688,7 +47930,8 @@
     "definition": "a substance, found within all living things, that forms the structure of muscles, organs, etc. There are many different proteins and they are an essential part of what humans and animals eat to help them grow and stay healthy.",
     "example": "essential proteins and vitamins",
     "uk": "protein_uk.mp3",
-    "us": "protein_us.mp3"
+    "us": "protein_us.mp3",
+    "status": "added"
   },
   "4139": {
     "word": "protest",
@@ -47945,7 +48188,8 @@
     "definition": "the profession or business of preparing and printing books, magazines, CD-ROMs, etc. and selling or making them available to the public",
     "example": "a job in publishing",
     "uk": "publishing_uk.mp3",
-    "us": "publishing_us.mp3"
+    "us": "publishing_us.mp3",
+    "status": "added"
   },
   "4161": {
     "word": "pull",
@@ -48119,7 +48363,8 @@
     "definition": "only; completely",
     "example": "I saw the letter purely by chance.",
     "uk": "purely_uk.mp3",
-    "us": "purely_us.mp3"
+    "us": "purely_us.mp3",
+    "status": "added"
   },
   "4176": {
     "word": "purple",
@@ -48363,7 +48608,8 @@
     "definition": "a written list of questions that are answered by a number of people so that information can be collected from the answers",
     "example": "(British English), to fill in a questionnaire",
     "uk": "questionnaire_uk.mp3",
-    "us": "questionnaire_us.mp3"
+    "us": "questionnaire_us.mp3",
+    "status": "added"
   },
   "4197": {
     "word": "queue",
@@ -49115,7 +49361,8 @@
     "definition": "accepting in a sensible way what it is actually possible to do or achieve in a particular situation",
     "example": "a realistic assessment/approach/view",
     "uk": "realistic_uk.mp3",
-    "us": "realistic_us.mp3"
+    "us": "realistic_us.mp3",
+    "status": "added"
   },
   "4262": {
     "word": "reality",
@@ -49228,7 +49475,8 @@
     "definition": "to a degree that is fairly good but not very good",
     "example": "The instructions are reasonably straightforward.",
     "uk": "reasonably_uk.mp3",
-    "us": "reasonably_us.mp3"
+    "us": "reasonably_us.mp3",
+    "status": "added"
   },
   "4272": {
     "word": "reasoning",
@@ -49544,7 +49792,8 @@
     "definition": "the process of becoming well again after an illness or injury",
     "example": "My father has made a full recovery from the operation.",
     "uk": "recovery_uk.mp3",
-    "us": "recovery_us.mp3"
+    "us": "recovery_us.mp3",
+    "status": "added"
   },
   "4299": {
     "word": "recruit",
@@ -49579,7 +49828,8 @@
     "definition": "the act or process of finding new people to join a company, an organization, the armed forces, etc.",
     "example": "the recruitment of new members",
     "uk": "recruitment_uk.mp3",
-    "us": "recruitment_us.mp3"
+    "us": "recruitment_us.mp3",
+    "status": "added"
   },
   "4302": {
     "word": "recycle",
@@ -49797,7 +50047,8 @@
     "definition": "attention to or thought and care for somebody/something",
     "example": "regard for somebody/something, to have scant/little/no regard for somebody/something",
     "uk": "regard_uk.mp3",
-    "us": "regard_us.mp3"
+    "us": "regard_us.mp3",
+    "status": "existing"
   },
   "4321": {
     "word": "regard",
@@ -49866,7 +50117,8 @@
     "definition": "an official list or record of names, items, etc.; a book that contains such a list",
     "example": "The bride and groom signed the register.",
     "uk": "register_uk.mp3",
-    "us": "register_us.mp3"
+    "us": "register_us.mp3",
+    "status": "existing"
   },
   "4327": {
     "word": "register",
@@ -50028,7 +50280,8 @@
     "definition": "to make a feeling, an idea, etc. stronger",
     "example": "The experience reinforced my sense of loss.",
     "uk": "reinforce_uk.mp3",
-    "us": "reinforce_us.mp3"
+    "us": "reinforce_us.mp3",
+    "status": "existing"
   },
   "4341": {
     "word": "reject",
@@ -50216,7 +50469,8 @@
     "definition": "closely connected with the subject you are discussing or the situation you are in",
     "example": "relevant information/facts/documents/factors",
     "uk": "relevant_uk.mp3",
-    "us": "relevant_us.mp3"
+    "us": "relevant_us.mp3",
+    "status": "existing"
   },
   "4357": {
     "word": "reliability",
@@ -50403,7 +50657,8 @@
     "definition": "in a way that is unusual or surprising and causes people to take notice",
     "example": "The car is in remarkably good condition for its age.",
     "uk": "remarkably_uk.mp3",
-    "us": "remarkably_us.mp3"
+    "us": "remarkably_us.mp3",
+    "status": "added"
   },
   "4373": {
     "word": "remedy",
@@ -50749,7 +51004,8 @@
     "definition": "typical of a particular group of people; that is a typical example of something",
     "example": "Is a questionnaire answered by 500 people truly representative of the population as a whole?",
     "uk": "representative_uk.mp3",
-    "us": "representative_us.mp3"
+    "us": "representative_us.mp3",
+    "status": "existing"
   },
   "4403": {
     "word": "representative",
@@ -50853,7 +51109,8 @@
     "definition": "something that you need or want",
     "example": "the basic requirements of life",
     "uk": "requirement_uk.mp3",
-    "us": "requirement_us.mp3"
+    "us": "requirement_us.mp3",
+    "status": "existing"
   },
   "4412": {
     "word": "rescue",
@@ -51085,7 +51342,8 @@
     "definition": "a definite decision to do or not to do something",
     "example": "Have you made any New Year's resolutions (= for example, to give up smoking from 1 January)?",
     "uk": "resolution_uk.mp3",
-    "us": "resolution_us.mp3"
+    "us": "resolution_us.mp3",
+    "status": "added"
   },
   "4432": {
     "word": "resolve",
@@ -51096,7 +51354,8 @@
     "definition": "to find an acceptable solution to a problem or difficulty",
     "example": "resolve something, to resolve an issue/a dispute/a conflict/a crisis",
     "uk": "resolve_uk.mp3",
-    "us": "resolve_us.mp3"
+    "us": "resolve_us.mp3",
+    "status": "existing"
   },
   "4433": {
     "word": "resort",
@@ -51294,7 +51553,8 @@
     "definition": "to limit the size, amount or range of something",
     "example": "restrict something to something, Speed is restricted to 30 mph in towns.",
     "uk": "restrict_uk.mp3",
-    "us": "restrict_us.mp3"
+    "us": "restrict_us.mp3",
+    "status": "existing"
   },
   "4450": {
     "word": "restriction",
@@ -51650,7 +51910,8 @@
     "definition": "to give something to somebody because they have done something good, worked hard, etc.",
     "example": "reward somebody for something, She was rewarded for her efforts with a cash bonus.",
     "uk": "reward_uk.mp3",
-    "us": "reward_us.mp3"
+    "us": "reward_us.mp3",
+    "status": "existing"
   },
   "4481": {
     "word": "rhetoric",
@@ -51706,7 +51967,8 @@
     "definition": "to be free of somebody/something that has been annoying you or that you do not want",
     "example": "She wanted to be rid of her parents and their authority.",
     "uk": "rid_uk.mp3",
-    "us": "rid_us.mp3"
+    "us": "rid_us.mp3",
+    "status": "added"
   },
   "4486": {
     "word": "ride",
@@ -51925,7 +52187,8 @@
     "definition": "a person, company or thing that competes with another in sport, business, etc.",
     "example": "The two teams have always been rivals.",
     "uk": "rival_uk.mp3",
-    "us": "rival_us.mp3"
+    "us": "rival_us.mp3",
+    "status": "existing"
   },
   "4505": {
     "word": "river",
@@ -51970,7 +52233,8 @@
     "definition": "the crime of stealing money or goods from a bank, shop, person, etc., especially using violence or threats",
     "example": "armed robbery (= using a gun, knife, etc.)",
     "uk": "robbery_uk.mp3",
-    "us": "robbery_us.mp3"
+    "us": "robbery_us.mp3",
+    "status": "added"
   },
   "4509": {
     "word": "robot",
@@ -52534,7 +52798,8 @@
     "definition": "to move or to do something with great speed, often too fast",
     "example": "We've got plenty of time; there's no need to rush.",
     "uk": "rush_uk.mp3",
-    "us": "rush_us.mp3"
+    "us": "rush_us.mp3",
+    "status": "existing"
   },
   "4557": {
     "word": "sack",
@@ -53230,7 +53495,8 @@
     "definition": "a mark, a cut or an injury made by scratching somebody’s skin or the surface of something",
     "example": "Her hands were covered in scratches from the brambles.",
     "uk": "scratch_uk.mp3",
-    "us": "scratch_us.mp3"
+    "us": "scratch_us.mp3",
+    "status": "existing"
   },
   "4617": {
     "word": "scratch",
@@ -53253,7 +53519,8 @@
     "definition": "a loud high shout made by somebody who is hurt, frightened, excited, etc.; a loud high noise",
     "example": "scream of something, She let out a scream of pain.",
     "uk": "scream_uk.mp3",
-    "us": "scream_us.mp3"
+    "us": "scream_us.mp3",
+    "status": "existing"
   },
   "4619": {
     "word": "scream",
@@ -53288,7 +53555,8 @@
     "definition": "to show a film, etc. in a cinema or on television",
     "example": "a list of films to be screened as part of the festival",
     "uk": "screen_uk.mp3",
-    "us": "screen_us.mp3"
+    "us": "screen_us.mp3",
+    "status": "existing"
   },
   "4622": {
     "word": "screening",
@@ -53600,7 +53868,8 @@
     "definition": "likely to continue or be successful for a long time",
     "example": "a secure job/income",
     "uk": "secure_uk.mp3",
-    "us": "secure_us.mp3"
+    "us": "secure_us.mp3",
+    "status": "existing"
   },
   "4649": {
     "word": "secure",
@@ -53611,7 +53880,8 @@
     "definition": "to obtain or achieve something, especially when this means using a lot of effort",
     "example": "secure something, to secure a contract/deal/funding",
     "uk": "secure_uk.mp3",
-    "us": "secure_us.mp3"
+    "us": "secure_us.mp3",
+    "status": "existing"
   },
   "4650": {
     "word": "security",
@@ -53795,7 +54065,8 @@
     "definition": "a class at a university or college when a small group of students and a teacher discuss or study a particular topic",
     "example": "Teaching is by lectures and seminars.",
     "uk": "seminar_uk.mp3",
-    "us": "seminar_us.mp3"
+    "us": "seminar_us.mp3",
+    "status": "added"
   },
   "4666": {
     "word": "senator",
@@ -53887,7 +54158,8 @@
     "definition": "aware of and able to understand other people and their feelings",
     "example": "a sensitive and caring man",
     "uk": "sensitive_uk.mp3",
-    "us": "sensitive_us.mp3"
+    "us": "sensitive_us.mp3",
+    "status": "existing"
   },
   "4674": {
     "word": "sensitivity",
@@ -54143,7 +54415,8 @@
     "definition": "to put an end to an argument or a disagreement",
     "example": "settle something, to settle a dispute/a matter/an issue",
     "uk": "settle_uk.mp3",
-    "us": "settle_us.mp3"
+    "us": "settle_us.mp3",
+    "status": "existing"
   },
   "4696": {
     "word": "settlement",
@@ -54246,7 +54519,8 @@
     "definition": "very badly or seriously",
     "example": "severely injured",
     "uk": "severely_uk.mp3",
-    "us": "severely_us.mp3"
+    "us": "severely_us.mp3",
+    "status": "added"
   },
   "4705": {
     "word": "sex",
@@ -55204,7 +55478,8 @@
     "definition": "fine soft thread produced by silkworms",
     "example": "The caterpillar spins the silk around its entire body.",
     "uk": "silk_uk.mp3",
-    "us": "silk_us.mp3"
+    "us": "silk_us.mp3",
+    "status": "added"
   },
   "4787": {
     "word": "silly",
@@ -56524,7 +56799,8 @@
     "definition": "at a time that you do not know exactly or has not yet been decided",
     "example": "I saw him sometime last summer.",
     "uk": "sometime_uk.mp3",
-    "us": "sometime_us.mp3"
+    "us": "sometime_us.mp3",
+    "status": "added"
   },
   "4901": {
     "word": "sometimes",
@@ -56546,7 +56822,8 @@
     "definition": "to some degree",
     "example": "somewhat different/similar",
     "uk": "somewhat_uk.mp3",
-    "us": "somewhat_us.mp3"
+    "us": "somewhat_us.mp3",
+    "status": "added"
   },
   "4903": {
     "word": "somewhere",
@@ -56672,7 +56949,8 @@
     "definition": "the spiritual part of a person, believed to exist after death",
     "example": "He believed his immortal soul was in peril.",
     "uk": "soul_uk.mp3",
-    "us": "soul_us.mp3"
+    "us": "soul_us.mp3",
+    "status": "added"
   },
   "4914": {
     "word": "sound",
@@ -56839,7 +57117,8 @@
     "definition": "available to do what you want with rather than work",
     "example": "He's studying music in his spare time.",
     "uk": "spare_uk.mp3",
-    "us": "spare_us.mp3"
+    "us": "spare_us.mp3",
+    "status": "added"
   },
   "4929": {
     "word": "spare",
@@ -57081,7 +57360,8 @@
     "definition": "the act of forming opinions about what has happened or what might happen without knowing all the facts",
     "example": "His private life is the subject of much speculation.",
     "uk": "speculation_uk.mp3",
-    "us": "speculation_us.mp3"
+    "us": "speculation_us.mp3",
+    "status": "added"
   },
   "4950": {
     "word": "speech",
@@ -57231,7 +57511,8 @@
     "definition": "to flow over the edge of a container by accident; to make liquid do this",
     "example": "Water had spilled out of the bucket onto the floor.",
     "uk": "spill_uk.mp3",
-    "us": "spill_us.mp3"
+    "us": "spill_us.mp3",
+    "status": "added"
   },
   "4963": {
     "word": "spin",
@@ -57359,7 +57640,8 @@
     "definition": "a person who speaks for a group or an organization",
     "example": "a police spokesman",
     "uk": "spokesman_uk.mp3",
-    "us": "spokesman_us.mp3"
+    "us": "spokesman_us.mp3",
+    "status": "added"
   },
   "4974": {
     "word": "spokesperson",
@@ -57406,7 +57688,8 @@
     "definition": "to pay the costs of a particular event, programme, etc. as a way of advertising",
     "example": "Sports events are no longer sponsored by the tobacco industry.",
     "uk": "sponsor_uk.mp3",
-    "us": "sponsor_us.mp3"
+    "us": "sponsor_us.mp3",
+    "status": "existing"
   },
   "4978": {
     "word": "sponsorship",
@@ -57452,7 +57735,8 @@
     "definition": "connected with sports",
     "example": "a major sporting event",
     "uk": "sporting_uk.mp3",
-    "us": "sporting_us.mp3"
+    "us": "sporting_us.mp3",
+    "status": "added"
   },
   "4982": {
     "word": "spot",
@@ -58008,7 +58292,8 @@
     "definition": "the legal position of a person, group or country",
     "example": "They were granted refugee status.",
     "uk": "status_uk.mp3",
-    "us": "status_us.mp3"
+    "us": "status_us.mp3",
+    "status": "existing"
   },
   "5030": {
     "word": "stay",
@@ -58090,7 +58375,8 @@
     "definition": "a strong, hard metal that is made of a mixture of iron and carbon",
     "example": "the iron and steel industry",
     "uk": "steel_uk.mp3",
-    "us": "steel_us.mp3"
+    "us": "steel_us.mp3",
+    "status": "added"
   },
   "5037": {
     "word": "steep",
@@ -58541,7 +58827,8 @@
     "definition": "to become more powerful or effective; to make somebody/something more powerful or effective",
     "example": "Her position in the party has strengthened in recent weeks.",
     "uk": "strengthen_uk.mp3",
-    "us": "strengthen_us.mp3"
+    "us": "strengthen_us.mp3",
+    "status": "existing"
   },
   "5076": {
     "word": "stress",
@@ -58576,7 +58863,8 @@
     "definition": "an area of land or water, especially a long one",
     "example": "a particularly dangerous stretch of road",
     "uk": "stretch_uk.mp3",
-    "us": "stretch_us.mp3"
+    "us": "stretch_us.mp3",
+    "status": "existing"
   },
   "5079": {
     "word": "stretch",
@@ -58623,7 +58911,8 @@
     "definition": "a period of time when an organized group of employees of a company stops working because of an argument over pay or conditions",
     "example": "the miners'/firefighters'/teachers' strike",
     "uk": "strike_uk.mp3",
-    "us": "strike_us.mp3"
+    "us": "strike_us.mp3",
+    "status": "existing"
   },
   "5083": {
     "word": "strike",
@@ -58956,7 +59245,8 @@
     "definition": "to give a document, proposal, etc. to somebody in authority so that they can study or consider it",
     "example": "submit something, to submit an application/a claim/a proposal",
     "uk": "submit_uk.mp3",
-    "us": "submit_us.mp3"
+    "us": "submit_us.mp3",
+    "status": "added"
   },
   "5112": {
     "word": "subscriber",
@@ -59805,7 +60095,8 @@
     "definition": "medical treatment of injuries or diseases that involves cutting open a person’s body and often removing or replacing some parts; the branch of medicine connected with this treatment",
     "example": "major/minor surgery",
     "uk": "surgery_uk.mp3",
-    "us": "surgery_us.mp3"
+    "us": "surgery_us.mp3",
+    "status": "added"
   },
   "5186": {
     "word": "surgical",
@@ -59956,7 +60247,8 @@
     "definition": "the state of continuing to live or exist, often despite difficulty or danger",
     "example": "the struggle/battle/fight for survival",
     "uk": "survival_uk.mp3",
-    "us": "survival_us.mp3"
+    "us": "survival_us.mp3",
+    "status": "added"
   },
   "5199": {
     "word": "survive",
@@ -59979,7 +60271,8 @@
     "definition": "a person who continues to live, especially despite being nearly killed or experiencing great danger or difficulty",
     "example": "the sole/only survivor of the massacre",
     "uk": "survivor_uk.mp3",
-    "us": "survivor_us.mp3"
+    "us": "survivor_us.mp3",
+    "status": "added"
   },
   "5201": {
     "word": "suspect",
@@ -59990,7 +60283,8 @@
     "definition": "a person who is suspected of a crime or of having done something wrong",
     "example": "a murder suspect",
     "uk": "suspect_uk.mp3",
-    "us": "suspect_us.mp3"
+    "us": "suspect_us.mp3",
+    "status": "existing"
   },
   "5202": {
     "word": "suspect",
@@ -60001,7 +60295,8 @@
     "definition": "to have an idea that something is probably true or likely to happen, especially something bad, but without having definite proof",
     "example": "As I had suspected all along, he was not a real policeman.",
     "uk": "suspect_uk.mp3",
-    "us": "suspect_us.mp3"
+    "us": "suspect_us.mp3",
+    "status": "added"
   },
   "5203": {
     "word": "suspend",
@@ -60080,7 +60375,8 @@
     "definition": "to make food, drink, etc. go down your throat into your stomach",
     "example": "swallow (something), Always chew food well before swallowing it.",
     "uk": "swallow_uk.mp3",
-    "us": "swallow_us.mp3"
+    "us": "swallow_us.mp3",
+    "status": "added"
   },
   "5210": {
     "word": "swear",
@@ -60114,7 +60410,8 @@
     "definition": "to clean a room, surface, etc. using a broom (= a type of brush on a long handle)",
     "example": "sweep (something), to sweep the floor",
     "uk": "sweep_uk.mp3",
-    "us": "sweep_us.mp3"
+    "us": "sweep_us.mp3",
+    "status": "existing"
   },
   "5213": {
     "word": "sweet",
@@ -60389,7 +60686,8 @@
     "definition": "to make a determined effort to deal with a difficult problem or situation",
     "example": "The government is determined to tackle inflation.",
     "uk": "tackle_uk.mp3",
-    "us": "tackle_us.mp3"
+    "us": "tackle_us.mp3",
+    "status": "existing"
   },
   "5237": {
     "word": "tactic",
@@ -60422,7 +60720,8 @@
     "definition": "a small piece of paper, cloth, plastic, etc. attached to something to identify it or give information about it",
     "example": "He put name tags on all his shirts.",
     "uk": "tag_uk.mp3",
-    "us": "tag_us.mp3"
+    "us": "tag_us.mp3",
+    "status": "existing"
   },
   "5240": {
     "word": "tag",
@@ -61073,7 +61372,8 @@
     "definition": "to use a particular name or word to describe somebody/something",
     "example": "term somebody/something + adj., At his age, he can hardly be termed young. ",
     "uk": "term_uk.mp3",
-    "us": "term_us.mp3"
+    "us": "term_us.mp3",
+    "status": "existing"
   },
   "5296": {
     "word": "terminal",
@@ -61118,7 +61418,8 @@
     "definition": "the conditions that people offer, demand or accept when they make an agreement, an arrangement or a contract",
     "example": "peace terms",
     "uk": "terms_uk.mp3",
-    "us": "terms_us.mp3"
+    "us": "terms_us.mp3",
+    "status": "added"
   },
   "5300": {
     "word": "terrain",
@@ -61174,7 +61475,8 @@
     "definition": "to make somebody feel extremely frightened",
     "example": "terrify somebody, Flying terrifies her.",
     "uk": "terrify_uk.mp3",
-    "us": "terrify_us.mp3"
+    "us": "terrify_us.mp3",
+    "status": "added"
   },
   "5305": {
     "word": "territory",
@@ -61197,7 +61499,8 @@
     "definition": "a feeling of extreme fear",
     "example": "a feeling of sheer/pure terror",
     "uk": "terror_uk.mp3",
-    "us": "terror_us.mp3"
+    "us": "terror_us.mp3",
+    "status": "added"
   },
   "5307": {
     "word": "terrorism",
@@ -61276,7 +61579,8 @@
     "definition": "the activity of testing somebody/something in order to find something out, see if it works, etc.",
     "example": "nuclear testing",
     "uk": "testing_uk.mp3",
-    "us": "testing_us.mp3"
+    "us": "testing_us.mp3",
+    "status": "added"
   },
   "5314": {
     "word": "text",
@@ -61604,7 +61908,8 @@
     "definition": "the treatment of a physical problem or an illness",
     "example": "He is receiving therapy for cancer.",
     "uk": "therapy_uk.mp3",
-    "us": "therapy_us.mp3"
+    "us": "therapy_us.mp3",
+    "status": "added"
   },
   "5343": {
     "word": "there",
@@ -62282,7 +62587,8 @@
     "definition": "the act of choosing when something happens; a particular point or period of time when something happens or is planned",
     "example": "The timing of the decision was a complete surprise.",
     "uk": "timing_uk.mp3",
-    "us": "timing_us.mp3"
+    "us": "timing_us.mp3",
+    "status": "added"
   },
   "5402": {
     "word": "tin",
@@ -62542,7 +62848,8 @@
     "definition": "a unit for measuring weight, in the UK 2 240 pounds (long ton) and in the US 2 000 pounds (short ton)",
     "example": "(informal), What have you got in this bag? It weighs a ton (= is very heavy).",
     "uk": "ton_uk.mp3",
-    "us": "ton_us.mp3"
+    "us": "ton_us.mp3",
+    "status": "added"
   },
   "5425": {
     "word": "tone",
@@ -63077,7 +63384,8 @@
     "definition": "a very sad event or situation, especially one that involves death",
     "example": "It's a tragedy that she died so young.",
     "uk": "tragedy_uk.mp3",
-    "us": "tragedy_us.mp3"
+    "us": "tragedy_us.mp3",
+    "status": "added"
   },
   "5471": {
     "word": "tragic",
@@ -63272,7 +63580,8 @@
     "definition": "the process or a period of changing from one state or condition to another",
     "example": "transition from something to something, the transition from school to full-time work",
     "uk": "transition_uk.mp3",
-    "us": "transition_us.mp3"
+    "us": "transition_us.mp3",
+    "status": "existing"
   },
   "5488": {
     "word": "translate",
@@ -63376,7 +63685,8 @@
     "definition": "a system for carrying people or goods from one place to another using vehicles, roads, etc.",
     "example": "public transportation (= the system of buses, trains, etc. provided for people to travel from one place to another)",
     "uk": "transportation_uk.mp3",
-    "us": "transportation_us.mp3"
+    "us": "transportation_us.mp3",
+    "status": "added"
   },
   "5497": {
     "word": "trap",
@@ -63387,7 +63697,8 @@
     "definition": "a piece of equipment for catching animals",
     "example": "a fox with its leg in a trap",
     "uk": "trap_uk.mp3",
-    "us": "trap_us.mp3"
+    "us": "trap_us.mp3",
+    "status": "existing"
   },
   "5498": {
     "word": "trap",
@@ -63801,7 +64112,8 @@
     "definition": "used to emphasize that a particular statement, feeling, etc. is sincere or real",
     "example": "She truly believes that none of this is her fault.",
     "uk": "truly_uk.mp3",
-    "us": "truly_us.mp3"
+    "us": "truly_us.mp3",
+    "status": "added"
   },
   "5534": {
     "word": "trust",
@@ -63928,7 +64240,8 @@
     "definition": "a series of musical notes that are sung or played in a particular order to form a piece of music",
     "example": "to sing/whistle a tune",
     "uk": "tune_uk.mp3",
-    "us": "tune_us.mp3"
+    "us": "tune_us.mp3",
+    "status": "added"
   },
   "5545": {
     "word": "tunnel",
@@ -64295,7 +64608,8 @@
     "definition": "to experience something, especially a change or something unpleasant",
     "example": "to undergo tests/trials/repairs",
     "uk": "undergo_uk.mp3",
-    "us": "undergo_us.mp3"
+    "us": "undergo_us.mp3",
+    "status": "added"
   },
   "5577": {
     "word": "undergraduate",
@@ -64445,7 +64759,8 @@
     "definition": "if something is unexpected, it surprises you because you were not expecting it",
     "example": "Things took an unexpected turn.",
     "uk": "unexpected_uk.mp3",
-    "us": "unexpected_us.mp3"
+    "us": "unexpected_us.mp3",
+    "status": "added"
   },
   "5590": {
     "word": "unfair",
@@ -65064,7 +65379,8 @@
     "definition": "not useful; not doing or achieving what is needed or wanted",
     "example": "This pen is useless.",
     "uk": "useless_uk.mp3",
-    "us": "useless_us.mp3"
+    "us": "useless_us.mp3",
+    "status": "added"
   },
   "5643": {
     "word": "user",
@@ -65176,7 +65492,8 @@
     "definition": "that is legally or officially acceptable",
     "example": "Do you have a valid passport?",
     "uk": "valid_uk.mp3",
-    "us": "valid_us.mp3"
+    "us": "valid_us.mp3",
+    "status": "added"
   },
   "5653": {
     "word": "validity",
@@ -65234,7 +65551,8 @@
     "definition": "to think that somebody/something is important",
     "example": "value somebody/something, He has come to value her advice and support.",
     "uk": "value_uk.mp3",
-    "us": "value_us.mp3"
+    "us": "value_us.mp3",
+    "status": "existing"
   },
   "5658": {
     "word": "van",
@@ -65621,7 +65939,8 @@
     "definition": "success in a game, an election, a war, etc.",
     "example": "to win a narrow victory",
     "uk": "victory_uk.mp3",
-    "us": "victory_us.mp3"
+    "us": "victory_us.mp3",
+    "status": "added"
   },
   "5692": {
     "word": "video",
@@ -65794,7 +66113,8 @@
     "definition": "a stamp or mark put in your passport by officials of a foreign country that gives you permission to enter, pass through or leave their country",
     "example": "to apply for a visa",
     "uk": "visa_uk.mp3",
-    "us": "visa_us.mp3"
+    "us": "visa_us.mp3",
+    "status": "existing"
   },
   "5707": {
     "word": "visible",
@@ -65886,7 +66206,8 @@
     "definition": "a natural substance found in food that is an essential part of what humans and animals need to help them grow and stay healthy. There are many different vitamins.",
     "example": "vitamin A/B/D/E",
     "uk": "vitamin_uk.mp3",
-    "us": "vitamin_us.mp3"
+    "us": "vitamin_us.mp3",
+    "status": "added"
   },
   "5715": {
     "word": "vocal",
@@ -65992,7 +66313,8 @@
     "definition": "the action of choosing somebody/something in an election or at a meeting",
     "example": "He was eliminated in the first round of voting.",
     "uk": "voting_uk.mp3",
-    "us": "voting_us.mp3"
+    "us": "voting_us.mp3",
+    "status": "added"
   },
   "5724": {
     "word": "vow",
@@ -66036,7 +66358,8 @@
     "definition": "a regular amount of money that you earn, usually every week or every month, for work or services",
     "example": "wage/wages of something, wages of £300 a week",
     "uk": "wage_uk.mp3",
-    "us": "wage_us.mp3"
+    "us": "wage_us.mp3",
+    "status": "added"
   },
   "5728": {
     "word": "wait",
@@ -66506,7 +66829,8 @@
     "definition": "having a lot of money, possessions, etc.",
     "example": "a wealthy businessman/individual/family",
     "uk": "wealthy_uk.mp3",
-    "us": "wealthy_us.mp3"
+    "us": "wealthy_us.mp3",
+    "status": "added"
   },
   "5769": {
     "word": "weapon",
@@ -67017,7 +67341,8 @@
     "definition": "used to compare or contrast two facts",
     "example": "Some of the studies show positive results, whereas others do not.",
     "uk": "whereas_uk.mp3",
-    "us": "whereas_us.mp3"
+    "us": "whereas_us.mp3",
+    "status": "added"
   },
   "5814": {
     "word": "whereby",
@@ -67131,7 +67456,8 @@
     "definition": "a low, quiet voice or the sound it makes",
     "example": "in a whisper, ‘I love you,’ he said in a whisper.",
     "uk": "whisper_uk.mp3",
-    "us": "whisper_us.mp3"
+    "us": "whisper_us.mp3",
+    "status": "existing"
   },
   "5824": {
     "word": "whisper",
@@ -67316,7 +67642,8 @@
     "definition": "existing or happening over a large area or among many people",
     "example": "The storm caused widespread damage.",
     "uk": "widespread_uk.mp3",
-    "us": "widespread_us.mp3"
+    "us": "widespread_us.mp3",
+    "status": "existing"
   },
   "5840": {
     "word": "widow",
@@ -67465,7 +67792,8 @@
     "definition": "to have many bends and twists",
     "example": "wind + adv./prep., The path wound down to the beach.",
     "uk": "wind_uk.mp3",
-    "us": "wind_us.mp3"
+    "us": "wind_us.mp3",
+    "status": "existing"
   },
   "5853": {
     "word": "window",
@@ -67672,7 +68000,8 @@
     "definition": "a person who sees something happen and is able to describe it to other people",
     "example": "He failed to interview a key witness.",
     "uk": "witness_uk.mp3",
-    "us": "witness_us.mp3"
+    "us": "witness_us.mp3",
+    "status": "existing"
   },
   "5871": {
     "word": "witness",
@@ -68069,7 +68398,8 @@
     "definition": "an amount of something that has the value mentioned",
     "example": "The winner will receive fifty pounds' worth of books.",
     "uk": "worth_uk.mp3",
-    "us": "worth_us.mp3"
+    "us": "worth_us.mp3",
+    "status": "existing"
   },
   "5905": {
     "word": "worthwhile",
@@ -68149,7 +68479,8 @@
     "definition": "to cover something completely in paper or other material, for example when you are giving it as a present",
     "example": "wrap something up, He spent the evening wrapping up the Christmas presents.",
     "uk": "wrap_uk.mp3",
-    "us": "wrap_us.mp3"
+    "us": "wrap_us.mp3",
+    "status": "existing"
   },
   "5912": {
     "word": "wrist",
